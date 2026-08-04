@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relatório financeiro — Formatura Biomedicina e Nutrição 2028/2</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --ink: #131722;
+  --ink-2: #4c5566;
+  --ink-3: #79839a;
+  --line: #dee3ed;
+  --line-strong: #c6cddc;
+  --accent: #22406f;
+  --accent-soft: #e7ecf7;
+  --gold: #9a7a2c;
+  --good-mark: #0ca30c;
+  --good-text: #046604;
+  --good-soft: #e4f5e4;
+  --crit-mark: #d03b3b;
+  --crit-text: #a52121;
+  --crit-soft: #fbe8e8;
+  --warn-mark: #fab219;
+  --shadow: 0 1px 2px rgba(19, 23, 34, .05), 0 8px 24px -18px rgba(19, 23, 34, .35);
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg: #0f121a;
+    --surface: #161a23;
+    --surface-2: #1d232f;
+    --ink: #f0f3f8;
+    --ink-2: #b2bbcc;
+    --ink-3: #7d879a;
+    --line: #29303e;
+    --line-strong: #3a4353;
+    --accent: #93b4ea;
+    --accent-soft: #1a2540;
+    --gold: #cfa956;
+    --good-mark: #21b521;
+    --good-text: #5fd35f;
+    --good-soft: #122a12;
+    --crit-mark: #e05555;
+    --crit-text: #f08b8b;
+    --crit-soft: #2d1414;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f121a;
+  --surface: #161a23;
+  --surface-2: #1d232f;
+  --ink: #f0f3f8;
+  --ink-2: #b2bbcc;
+  --ink-3: #7d879a;
+  --line: #29303e;
+  --line-strong: #3a4353;
+  --accent: #93b4ea;
+  --accent-soft: #1a2540;
+  --gold: #cfa956;
+  --good-mark: #21b521;
+  --good-text: #5fd35f;
+  --good-soft: #122a12;
+  --crit-mark: #e05555;
+  --crit-text: #f08b8b;
+  --crit-soft: #2d1414;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 40px 24px 96px; display: flex; flex-direction: column; gap: 34px; }
+@media (max-width: 640px) { .wrap { padding: 24px 14px 64px; gap: 26px; } }
+
+/* ---------- cabeçalho ---------- */
+.cabecalho { display: flex; flex-direction: column; gap: 18px; }
+.eyebrow {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); opacity: .5; }
+h1 {
+  font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.1; margin: 0; letter-spacing: -.015em; text-wrap: balance;
+}
+.subtitulo { color: var(--ink-2); font-size: 16px; max-width: 62ch; margin: 0; }
+.meta-evento {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+}
+.meta-evento div { background: var(--surface); padding: 12px 14px; }
+.meta-evento dt { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 3px; font-weight: 600; }
+.meta-evento dd { margin: 0; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.meta-evento dd.mono { font-family: var(--mono); font-size: 13.5px; letter-spacing: .02em; }
+
+/* ---------- KPIs ---------- */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 4px;
+}
+.kpi .rot { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+.kpi .num { font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi .pe { font-size: 12.5px; color: var(--ink-3); }
+.kpi.ok .num { color: var(--good-text); }
+.kpi.alerta { border-color: color-mix(in srgb, var(--crit-mark) 45%, var(--line)); }
+.kpi.alerta .num { color: var(--crit-text); }
+
+/* ---------- blocos ---------- */
+.bloco { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.bloco > header { padding: 18px 22px 0; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+.bloco h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.bloco .dica { font-size: 13px; color: var(--ink-3); margin: 2px 0 0; }
+.bloco > .corpo { padding: 18px 22px 22px; }
+@media (max-width: 640px) { .bloco > header { padding: 16px 14px 0; } .bloco > .corpo { padding: 14px; } }
+
+/* ---------- barra de arrecadação ---------- */
+.barra-total { display: flex; gap: 2px; height: 34px; border-radius: 6px; overflow: hidden; background: var(--surface-2); margin: 14px 0 12px; }
+.barra-total span { display: block; height: 100%; }
+.seg-pago { background: var(--good-mark); border-radius: 4px 0 0 4px; }
+.seg-vencido { background: var(--crit-mark); }
+.seg-aberto { background: color-mix(in srgb, var(--ink-3) 26%, var(--surface-2)); border-radius: 0 4px 4px 0; }
+.legenda { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: 13px; color: var(--ink-2); }
+.legenda .item { display: flex; align-items: center; gap: 8px; }
+.legenda .marca { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.legenda b { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+
+/* ---------- gráfico mensal ---------- */
+.grafico { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; align-items: end; height: 190px; margin: 8px 0 10px; }
+.col { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; position: relative; }
+.col .pilha { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; }
+.col i { display: block; border-radius: 2px; min-height: 2px; }
+.col i:first-child { border-radius: 4px 4px 2px 2px; }
+.col i:last-child { border-radius: 2px 2px 4px 4px; }
+.col .rot-mes { font-size: 10.5px; color: var(--ink-3); text-align: center; margin-top: 8px; font-family: var(--mono); letter-spacing: -.02em; }
+.col:hover .tip, .col:focus-within .tip { opacity: 1; transform: translate(-50%, -6px); pointer-events: auto; }
+.tip {
+  position: absolute; bottom: 100%; left: 50%; transform: translate(-50%, 2px);
+  background: var(--ink); color: var(--bg); font-size: 12px; line-height: 1.45; padding: 8px 10px;
+  border-radius: 8px; white-space: nowrap; opacity: 0; transition: opacity .13s ease, transform .13s ease;
+  pointer-events: none; z-index: 5; box-shadow: 0 6px 18px -8px rgba(0,0,0,.5);
+}
+.tip b { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+
+/* ---------- atenção ---------- */
+.cards-atencao { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.card-atencao { border: 1px solid color-mix(in srgb, var(--crit-mark) 35%, var(--line)); background: var(--crit-soft); border-radius: 12px; padding: 16px 18px; }
+.card-atencao h3 { margin: 0 0 2px; font-size: 16.5px; font-weight: 650; }
+.card-atencao .resumo-linha { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+.card-atencao ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.card-atencao li { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; padding: 6px 0; border-top: 1px solid color-mix(in srgb, var(--crit-mark) 18%, transparent); }
+.card-atencao li span:first-child { color: var(--ink-2); }
+.card-atencao li b, .card-atencao li a { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--crit-text); }
+.card-atencao a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- controles ---------- */
+.controles { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 14px 22px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+@media (max-width: 640px) { .controles { padding: 12px 14px; } }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 6px 13px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .chip[aria-pressed="true"], :root:where(:not([data-theme="light"])) .chip[aria-pressed="true"] { color: #0f121a; }
+.busca { flex: 1; min-width: 170px; }
+.busca input {
+  width: 100%; font: inherit; font-size: 13.5px; padding: 7px 12px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+}
+.btn-print {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 7px 14px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip:hover, .btn-print:hover { border-color: var(--accent); color: var(--accent); }
+.chip[aria-pressed="true"]:hover { color: var(--surface); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- tabela ---------- */
+.tabela-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead th {
+  text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+  font-weight: 650; padding: 12px 14px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; background: var(--surface);
+}
+thead th.num, td.num { text-align: right; }
+thead th button {
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none;
+  border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+}
+thead th button::after { content: "↕"; opacity: .35; font-size: 11px; }
+thead th[aria-sort="ascending"] button::after { content: "↑"; opacity: 1; }
+thead th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; }
+thead th[aria-sort] button { color: var(--accent); }
+tbody tr { border-bottom: 1px solid var(--line); }
+tbody tr.linha-aluno { cursor: pointer; }
+tbody tr.linha-aluno:hover { background: var(--surface-2); }
+tbody td { padding: 11px 14px; vertical-align: middle; }
+td.nome { font-weight: 600; min-width: 190px; }
+td.nome .sub { display: block; font-weight: 400; font-size: 12px; color: var(--ink-3); font-family: var(--mono); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 650; padding: 3px 10px 3px 8px; border-radius: 999px; white-space: nowrap; }
+.pill.ok { background: var(--good-soft); color: var(--good-text); }
+.pill.mal { background: var(--crit-soft); color: var(--crit-text); }
+.pill .ponto { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pill.ok .ponto { background: var(--good-mark); }
+.pill.mal .ponto { background: var(--crit-mark); }
+.progresso { display: flex; align-items: center; gap: 8px; min-width: 118px; }
+.progresso .trilha { flex: 1; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.progresso .preenchido { display: block; height: 100%; background: var(--good-mark); border-radius: 3px; }
+.progresso .pct { font-family: var(--mono); font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; width: 42px; text-align: right; }
+tr.detalhe > td { padding: 0; background: var(--surface-2); }
+tr.detalhe .caixa { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+.parcelas { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 8px; }
+.parcela { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; display: flex; flex-direction: column; gap: 2px; }
+.parcela .data { font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela .val { font-family: var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela .est { font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+.parcela.paga { border-left: 3px solid var(--good-mark); }
+.parcela.paga .est { color: var(--good-text); }
+.parcela.vencida { border-left: 3px solid var(--crit-mark); background: var(--crit-soft); }
+.parcela.vencida .est { color: var(--crit-text); }
+.parcela.aberta { border-left: 3px solid var(--line-strong); }
+.parcela.aberta .est { color: var(--ink-3); }
+.parcela a { color: var(--accent); font-size: 11.5px; text-decoration: underline; text-underline-offset: 2px; }
+.contato-linha { font-size: 13px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.contato-linha span { font-family: var(--mono); font-size: 12.5px; }
+.vazio { padding: 28px; text-align: center; color: var(--ink-3); font-size: 14px; }
+
+/* ---------- central de cobrança ---------- */
+.cobrancas { display: flex; flex-direction: column; gap: 8px; }
+.cob {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3px 20px;
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; background: var(--surface);
+}
+.cob.atraso { border-color: color-mix(in srgb, var(--crit-mark) 40%, var(--line)); background: var(--crit-soft); }
+.cob .quem { grid-column: 1; font-weight: 600; font-size: 14.5px; }
+.cob .info { grid-column: 1; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .quanto { font-family: var(--mono); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .acoes { grid-column: 2; grid-row: 1 / 3; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-self: center; max-width: 430px; }
+.acao {
+  font: inherit; font-size: 12.5px; font-weight: 550; padding: 5px 11px; border-radius: 7px; cursor: pointer;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+}
+.acao:hover { border-color: var(--accent); color: var(--accent); }
+.acao.principal { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal, :root:where(:not([data-theme="light"])) .acao.principal { color: #0f121a; }
+.acao.principal:hover { filter: brightness(1.08); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal:hover, :root:where(:not([data-theme="light"])) .acao.principal:hover { color: #0f121a; }
+.acao.feito { border-color: var(--good-mark); color: var(--good-text); }
+.cob .aguardando { grid-column: 2; grid-row: 1 / 3; font-size: 12.5px; color: var(--ink-3); text-align: right; align-self: center; }
+.parcelas-cob { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1px; margin-top: 10px; }
+.parcela-cob {
+  display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 4px 14px;
+  padding: 8px 0; border-top: 1px dashed var(--line-strong);
+}
+.parcela-cob .quanto { font-family: var(--mono); font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela-cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela-cob .acoes { grid-column: 3; grid-row: 1; justify-content: flex-end; }
+.parcela-cob .linha-dig { grid-column: 1 / -1; border: 0; margin: 2px 0 0; padding: 0; }
+.linha-dig { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .01em; word-break: break-all; }
+@media (max-width: 860px) {
+  .parcela-cob { grid-template-columns: auto 1fr; }
+  .parcela-cob .acoes { grid-column: 1 / -1; grid-row: auto; justify-content: flex-start; margin-top: 6px; }
+}
+@media (max-width: 860px) {
+  .cob { grid-template-columns: 1fr; }
+  .cob .acoes { grid-column: 1; grid-row: auto; justify-content: flex-start; max-width: none; margin-top: 8px; }
+  .cob .aguardando { grid-column: 1; grid-row: auto; text-align: left; margin-top: 4px; }
+}
+.sub-secao { font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 650; margin: 18px 0 8px; }
+.sub-secao:first-child { margin-top: 0; }
+
+/* ---------- notas ---------- */
+.notas { font-size: 13.5px; color: var(--ink-2); display: flex; flex-direction: column; gap: 10px; }
+.notas h3 { font-family: var(--serif); font-size: 17px; margin: 0 0 2px; color: var(--ink); font-weight: 600; }
+.notas ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 7px; }
+.notas code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.aviso { border-left: 3px solid var(--warn-mark); background: color-mix(in srgb, var(--warn-mark) 9%, var(--surface)); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13.5px; }
+.aviso b { color: var(--ink); }
+.rodape { font-size: 12.5px; color: var(--ink-3); text-align: center; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 760px) {
+  thead { display: none; }
+  tbody tr.linha-aluno { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 12px 14px; }
+  tbody tr.linha-aluno td { padding: 0; border: 0; }
+  td.nome { grid-column: 1; grid-row: 1; }
+  td.situacao { grid-column: 2; grid-row: 1; text-align: right; align-self: start; }
+  tbody td.col-oculta-mobile { display: none; }
+  td.celula-recebido { grid-column: 1; grid-row: 2; }
+  td.celula-vencido { grid-column: 2; grid-row: 2; }
+  td.celula-recebido, td.celula-vencido { text-align: left !important; display: flex; gap: 7px; align-items: baseline; }
+  td.celula-recebido::before, td.celula-vencido::before {
+    content: attr(data-rot); font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink-3); font-weight: 600;
+  }
+}
+@media print {
+  body { background: #fff; }
+  .wrap { padding: 0; gap: 20px; max-width: none; }
+  .controles, .btn-print, .tip, .acao[data-copiar], .acao.principal { display: none !important; }
+  .bloco, .kpi { box-shadow: none; }
+  .kpi, .card-atencao, .cob, .parcela-cob { break-inside: avoid; }
+  .bloco { break-inside: auto; }
+  .bloco > header { break-after: avoid; }
+  thead { display: table-header-group; }
+  tbody tr { break-inside: avoid; }
+  tr.detalhe { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="cabecalho">
+    <p class="eyebrow">Indaiá Eventos · Grandes Formaturas</p>
+    <h1>Turma Biomedicina e Nutrição — 2028/2</h1>
+    <p class="subtitulo">Posição de contratos e pagamentos dos formandos da turma, para acompanhamento da comissão. Apuração em <strong>4 de agosto de 2026</strong>.</p>
+    <dl class="meta-evento">
+      <div><dt>Evento</dt><dd class="mono">7506 · E08058</dd></div>
+      <div><dt>Instituição</dt><dd>Censupeg</dd></div>
+      <div><dt>Data do baile</dt><dd class="mono">17/03/2029</dd></div>
+      <div><dt>Local</dt><dd>Espaço Joinville · Joinville</dd></div>
+      <div><dt>Consultora</dt><dd>Camyla Cecchin</dd></div>
+    </dl>
+  </header>
+
+  <section class="kpis">
+    <div class="kpi"><span class="rot">Formandos contratados</span><span class="num">29</span><span class="pe">de 29 previstos na turma</span></div>
+    <div class="kpi ok"><span class="rot">Em dia</span><span class="num">27</span><span class="pe">93% da turma</span></div>
+    <div class="kpi alerta"><span class="rot">Em atraso</span><span class="num">2</span><span class="pe">5 parcelas vencidas</span></div>
+    <div class="kpi"><span class="rot">Já recebido</span><span class="num" id="kpi-pago"></span><span class="pe">de <span id="kpi-contratado"></span> contratados</span></div>
+    <div class="kpi alerta"><span class="rot">Vencido em aberto</span><span class="num" id="kpi-vencido"></span><span class="pe">maior atraso: 110 dias</span></div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Situação da arrecadação</h2><p class="dica">Total contratado pela turma e quanto disso já entrou.</p></div></header>
+    <div class="corpo">
+      <div class="barra-total" id="barra-total" role="img" aria-label="Distribuição do valor contratado entre recebido, vencido em aberto e a receber"></div>
+      <div class="legenda" id="legenda-total"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Precisam de atenção</h2><p class="dica">Formandos com parcela vencida e não paga até 04/08/2026.</p></div></header>
+    <div class="corpo"><div class="cards-atencao" id="cards-atencao"></div></div>
+  </section>
+
+  
+
+  <section class="bloco">
+    <header><div><h2>Recebimento mês a mês</h2><p class="dica">Parcelas com vencimento em cada mês — pagas, vencidas em aberto e a vencer.</p></div></header>
+    <div class="corpo">
+      <div class="grafico" id="grafico"></div>
+      <div class="legenda" id="legenda-meses"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Todos os formandos</h2><p class="dica">Clique em um nome para ver as parcelas.</p></div></header>
+    <div class="controles">
+      <div class="chips" role="group" aria-label="Filtrar por situação">
+        <button class="chip" data-filtro="todos" aria-pressed="true">Todos (29)</button>
+        <button class="chip" data-filtro="adimplente" aria-pressed="false">Em dia (27)</button>
+        <button class="chip" data-filtro="inadimplente" aria-pressed="false">Em atraso (2)</button>
+      </div>
+      <div class="busca"><input type="search" id="busca" placeholder="Buscar formando…" aria-label="Buscar formando pelo nome"></div>
+      <button class="btn-print" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+    <div class="tabela-scroll">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th scope="col" data-col="nome" aria-sort="ascending"><button type="button">Formando</button></th>
+            <th scope="col" class="situacao" data-col="situacao"><button type="button">Situação</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="pagas"><button type="button">Parcelas pagas</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="mensalidade"><button type="button">Parcela</button></th>
+            <th scope="col" class="num" data-col="valor_pago"><button type="button">Recebido</button></th>
+            <th scope="col" class="col-oculta-mobile" data-col="pct_pago"><button type="button">% do contrato</button></th>
+            <th scope="col" class="num" data-col="valor_vencido"><button type="button">Vencido</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="proxima_venc"><button type="button">Próx. vencimento</button></th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela"></tbody>
+      </table>
+    </div>
+    <div class="vazio" id="vazio" hidden>Nenhum formando encontrado com esse filtro.</div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Como ler este relatório</h2></div></header>
+    <div class="corpo notas">
+      
+      <ul><li>Situação apurada em 04/08/2026 a partir das cobranças emitidas pela Indaiá Eventos.</li>
+       <li><b>Em dia</b> = nenhuma parcela vencida em aberto. <b>Em atraso</b> = pelo menos uma parcela vencida e não paga.</li>
+       <li>Os boletos das próximas parcelas são enviados por e-mail conforme o vencimento de cada contrato.</li>
+       <li>Pagamento feito nos últimos dias pode ainda não constar — se houver divergência, fale com a consultora da turma.</li></ul>
+      <p class="rodape">Indaiá Eventos · Grandes Formaturas · gerado em 04/08/2026</p>
+    </div>
+  </section>
+</div>
+
+<script>
+const DADOS = {"resumo":{"gerado_em":"2026-08-04","evento":{"cod_planilha":"7506","codigo_crm":"E08058","turma":"Biomedicina e Nutrição — 2028/2","instituicao":"Censupeg","data_evento":"2029-03-17","cidade":"Joinville","espaco":"Espaço Joinville","consultora":"Camyla Cecchin","orcamento":"ORC-2026-01355"},"formandos":29,"adimplentes":27,"inadimplentes":2,"contratado":172965,"pago":17627.53,"vencido":857.35,"boletos_vencidos":5,"saldo":155337.47,"emitido":48892.39,"boletos_emitidos":284,"parcelas_pagas":81,"parcelas_contratadas":921,"canceladas":14},"alunos":[{"nome":"Ester Viana","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":4,"valor_vencido":685.88,"atraso_dias":110,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5900,"pct_pago":0,"parcelas_restantes":34,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"inadimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-05-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-06-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-07-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-08-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Amanda Larissa de Campos","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":3,"valor_pago":514.41,"ultima_paga":"2026-06-15","vencidas":1,"valor_vencido":171.47,"atraso_dias":19,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5385.59,"pct_pago":8.7,"parcelas_restantes":31,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"inadimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-11"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-16"},{"venc":"2026-07-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-08-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Anderson Dutra de Almeida","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-12","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":187.28,"status":"paid","pago_em":"2026-07-16"},{"venc":"2026-08-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Arthur Souza da Silva","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-10","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-30","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-30","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-30","situacao":"adimplente","bills":[{"venc":"2026-07-30","valor":187.28,"status":"paid","pago_em":"2026-07-31"},{"venc":"2026-08-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-09-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-30","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Bruna cristina Ricoldi da Silva","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-04-20","valor":171.47,"status":"paid","pago_em":"2026-04-17"},{"venc":"2026-05-10","valor":171.47,"status":"paid","pago_em":"2026-05-08"},{"venc":"2026-06-10","valor":171.47,"status":"paid","pago_em":"2026-06-05"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-16"},{"venc":"2026-08-10","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Camilly Cristina de Andrade Oliveira","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-07","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15"},{"venc":"2026-06-03","valor":171.47,"status":"paid","pago_em":"2026-06-03"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-15"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-15"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Carlos Augusto Garcete Alvarenga","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-15","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":187.28,"status":"paid","pago_em":"2026-07-15"},{"venc":"2026-08-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Carolina de Jesus da Costa Carvalho","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-04-10","valor":171.47,"status":"paid","pago_em":"2026-04-07"},{"venc":"2026-05-10","valor":171.47,"status":"paid","pago_em":"2026-05-04"},{"venc":"2026-06-10","valor":171.47,"status":"paid","pago_em":"2026-06-01"},{"venc":"2026-07-10","valor":171.47,"status":"paid","pago_em":"2026-07-02"},{"venc":"2026-08-10","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Carolina Estéfane dos Santos","contrato_total":6740,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":195.47,"pagas":5,"valor_pago":977.35,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":195.47,"saldo":5762.65,"pct_pago":14.5,"parcelas_restantes":29,"boletos_emitidos":9,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-04-10","valor":195.47,"status":"paid","pago_em":"2026-04-01"},{"venc":"2026-05-10","valor":195.47,"status":"paid","pago_em":"2026-05-04"},{"venc":"2026-06-10","valor":195.47,"status":"paid","pago_em":"2026-06-03"},{"venc":"2026-07-10","valor":195.47,"status":"paid","pago_em":"2026-07-03"},{"venc":"2026-08-10","valor":195.47,"status":"paid","pago_em":"2026-08-03"},{"venc":"2026-09-10","valor":195.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":195.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":195.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":195.47,"status":"scheduled","pago_em":null}]},{"nome":"Catiane da Silva Marcelino","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-13"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-14"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-15"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-13"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Cinara Lorena de Almeida farias","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-10","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-07-10","valor":187.28,"status":"paid","pago_em":"2026-07-13"},{"venc":"2026-08-10","valor":187.28,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Cintia leal dos Santos","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-17","valor":171.47,"status":"paid","pago_em":"2026-04-17"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-13"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-09"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-13"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Claudia Antunes de Oliveira","contrato_total":5900,"contrato_parcelas":6,"primeira_parcela":"2026-04-20","mensalidade":986.23,"pagas":4,"valor_pago":3944.92,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":986.23,"saldo":1955.08,"pct_pago":66.9,"parcelas_restantes":2,"boletos_emitidos":6,"ultimo_boleto":"2026-09-20","situacao":"adimplente","bills":[{"venc":"2026-04-20","valor":986.23,"status":"paid","pago_em":"2026-04-15"},{"venc":"2026-05-20","valor":986.23,"status":"paid","pago_em":"2026-05-20"},{"venc":"2026-06-20","valor":986.23,"status":"paid","pago_em":"2026-06-22"},{"venc":"2026-07-20","valor":986.23,"status":"paid","pago_em":"2026-07-20"},{"venc":"2026-08-20","valor":986.23,"status":"scheduled","pago_em":null},{"venc":"2026-09-20","valor":986.23,"status":"scheduled","pago_em":null}]},{"nome":"Clotilde Borba Manarin","contrato_total":5900,"contrato_parcelas":30,"primeira_parcela":"2026-07-20","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":29,"boletos_emitidos":6,"ultimo_boleto":"2026-12-20","situacao":"adimplente","bills":[{"venc":"2026-07-20","valor":187.28,"status":"paid","pago_em":"2026-07-10"},{"venc":"2026-08-20","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-09-20","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-20","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-20","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-20","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Eliani Ferreira Valandro","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-16"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-18"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-15"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-20"},{"venc":"2026-08-15","valor":171.47,"status":"pending","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Fernanda Fatuche","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-15"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-16"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-15"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Gianni Cristina Welter","contrato_total":6210,"contrato_parcelas":32,"primeira_parcela":"2026-06-05","mensalidade":191.08,"pagas":3,"valor_pago":573.24,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":191.08,"saldo":5636.76,"pct_pago":9.2,"parcelas_restantes":29,"boletos_emitidos":7,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-06-11","valor":191.08,"status":"paid","pago_em":"2026-06-11"},{"venc":"2026-07-10","valor":191.08,"status":"paid","pago_em":"2026-07-01"},{"venc":"2026-08-10","valor":191.08,"status":"paid","pago_em":"2026-08-03"},{"venc":"2026-09-10","valor":191.08,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":191.08,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":191.08,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":191.08,"status":"scheduled","pago_em":null}]},{"nome":"Kamilla dos Santos Abreu","contrato_total":6055,"contrato_parcelas":32,"primeira_parcela":"2026-06-03","mensalidade":186.38,"pagas":3,"valor_pago":559.14,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":186.38,"saldo":5495.86,"pct_pago":9.2,"parcelas_restantes":29,"boletos_emitidos":7,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-06-10","valor":186.38,"status":"paid","pago_em":"2026-05-29"},{"venc":"2026-07-10","valor":186.38,"status":"paid","pago_em":"2026-06-30"},{"venc":"2026-08-10","valor":186.38,"status":"paid","pago_em":"2026-07-30"},{"venc":"2026-09-10","valor":186.38,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":186.38,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":186.38,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":186.38,"status":"scheduled","pago_em":null}]},{"nome":"Kamylla Rocha Barbosa","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-20","situacao":"adimplente","bills":[{"venc":"2026-04-20","valor":171.47,"status":"paid","pago_em":"2026-04-15"},{"venc":"2026-05-20","valor":171.47,"status":"paid","pago_em":"2026-05-20"},{"venc":"2026-06-20","valor":171.47,"status":"paid","pago_em":"2026-06-17"},{"venc":"2026-07-20","valor":171.47,"status":"paid","pago_em":"2026-07-21"},{"venc":"2026-08-20","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-09-20","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-20","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-20","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-20","valor":171.47,"status":"scheduled","pago_em":null}]},{"nome":"Kelly vitória angélico Corrêa","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-10","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-07-10","valor":187.28,"status":"paid","pago_em":"2026-07-10"},{"venc":"2026-08-10","valor":187.28,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Lucileia Schalanski de Lima","contrato_total":5900,"contrato_parcelas":33,"primeira_parcela":"2026-05-05","mensalidade":176.43,"pagas":3,"valor_pago":529.29,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":176.43,"saldo":5370.71,"pct_pago":9,"parcelas_restantes":30,"boletos_emitidos":38,"ultimo_boleto":"2029-01-14","situacao":"adimplente","bills":[{"venc":"2026-05-10","valor":176.43,"status":"paid","pago_em":"2026-05-11"},{"venc":"2026-06-10","valor":176.43,"status":"paid","pago_em":"2026-06-01"},{"venc":"2026-07-20","valor":176.43,"status":"paid","pago_em":"2026-07-20"},{"venc":"2026-08-10","valor":176.43,"status":"pending","pago_em":null},{"venc":"2026-08-14","valor":69.57,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-09-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-10-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-11-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-12-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-01-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-02-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-03-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-04-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-05-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-06-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-07-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-08-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-09-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-10-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-11-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2027-12-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-01-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-02-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-03-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-04-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-05-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-06-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-07-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-08-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-09-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-10-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-11-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2028-12-14","valor":69.57,"status":"scheduled","pago_em":null},{"venc":"2029-01-14","valor":69.57,"status":"scheduled","pago_em":null}]},{"nome":"Maria Clara Salasar Oliveira","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-06-28","mensalidade":181.69,"pagas":2,"valor_pago":363.38,"ultima_paga":"2026-07-28","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-28","proxima_valor":181.69,"saldo":5536.62,"pct_pago":6.2,"parcelas_restantes":29,"boletos_emitidos":7,"ultimo_boleto":"2026-12-28","situacao":"adimplente","bills":[{"venc":"2026-06-28","valor":181.69,"status":"paid","pago_em":"2026-06-22"},{"venc":"2026-07-28","valor":181.69,"status":"paid","pago_em":"2026-07-29"},{"venc":"2026-08-28","valor":181.69,"status":"scheduled","pago_em":null},{"venc":"2026-09-28","valor":181.69,"status":"scheduled","pago_em":null},{"venc":"2026-10-28","valor":181.69,"status":"scheduled","pago_em":null},{"venc":"2026-11-28","valor":181.69,"status":"scheduled","pago_em":null},{"venc":"2026-12-28","valor":181.69,"status":"scheduled","pago_em":null}]},{"nome":"Mariana Fonseca de Oliveira","contrato_total":5900,"contrato_parcelas":30,"primeira_parcela":"2026-07-30","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-30","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-30","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":29,"boletos_emitidos":6,"ultimo_boleto":"2026-12-30","situacao":"adimplente","bills":[{"venc":"2026-07-30","valor":187.28,"status":"paid","pago_em":"2026-07-30"},{"venc":"2026-08-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-09-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-30","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-30","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Nathalia Cardozo","contrato_total":5900,"contrato_parcelas":32,"primeira_parcela":"2026-05-20","mensalidade":176.53,"pagas":3,"valor_pago":529.59,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":176.53,"saldo":5370.41,"pct_pago":9,"parcelas_restantes":29,"boletos_emitidos":8,"ultimo_boleto":"2026-12-20","situacao":"adimplente","bills":[{"venc":"2026-05-20","valor":176.53,"status":"paid","pago_em":"2026-05-11"},{"venc":"2026-06-20","valor":176.53,"status":"paid","pago_em":"2026-06-11"},{"venc":"2026-07-20","valor":176.53,"status":"paid","pago_em":"2026-07-10"},{"venc":"2026-08-20","valor":176.53,"status":"scheduled","pago_em":null},{"venc":"2026-09-20","valor":176.53,"status":"scheduled","pago_em":null},{"venc":"2026-10-20","valor":176.53,"status":"scheduled","pago_em":null},{"venc":"2026-11-20","valor":176.53,"status":"scheduled","pago_em":null},{"venc":"2026-12-20","valor":176.53,"status":"scheduled","pago_em":null}]},{"nome":"renata lippi sobral dos santos","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-15","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":187.28,"status":"paid","pago_em":"2026-07-15"},{"venc":"2026-08-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":187.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":187.28,"status":"scheduled","pago_em":null}]},{"nome":"Rosimeyre Campos dos Santos","contrato_total":5900,"contrato_parcelas":33,"primeira_parcela":"2026-05-12","mensalidade":176.43,"pagas":3,"valor_pago":529.29,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":176.43,"saldo":5370.71,"pct_pago":9,"parcelas_restantes":30,"boletos_emitidos":8,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-05-18","valor":176.43,"status":"paid","pago_em":"2026-05-18"},{"venc":"2026-06-16","valor":176.43,"status":"paid","pago_em":"2026-06-16"},{"venc":"2026-07-15","valor":176.43,"status":"paid","pago_em":"2026-07-15"},{"venc":"2026-08-15","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":176.43,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":176.43,"status":"scheduled","pago_em":null}]},{"nome":"Sinval Antônio Borges Júnior","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":38,"ultimo_boleto":"2028-12-21","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-06"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-05"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-06"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-08-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-09-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-01-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-02-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-03-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-04-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-05-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-06-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-07-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-08-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-09-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-10-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-11-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2027-12-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-01-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-02-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-03-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-04-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-05-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-06-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-07-20","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-08-21","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-09-21","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-10-21","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-11-21","valor":61.52,"status":"scheduled","pago_em":null},{"venc":"2028-12-21","valor":61.52,"status":"scheduled","pago_em":null}]},{"nome":"Tauane Naiara de Mira Pires","contrato_total":6040,"contrato_parcelas":34,"primeira_parcela":"2026-04-13","mensalidade":175.47,"pagas":4,"valor_pago":701.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":175.47,"saldo":5338.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":175.47,"status":"paid","pago_em":"2026-04-22"},{"venc":"2026-05-15","valor":175.47,"status":"paid","pago_em":"2026-05-15"},{"venc":"2026-06-15","valor":175.47,"status":"paid","pago_em":"2026-06-15"},{"venc":"2026-07-15","valor":175.47,"status":"paid","pago_em":"2026-07-15"},{"venc":"2026-08-15","valor":175.47,"status":"pending","pago_em":null},{"venc":"2026-09-15","valor":175.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":175.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":175.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":175.47,"status":"scheduled","pago_em":null}]},{"nome":"Thiana Miglaci Ramos Schlosser","contrato_total":6320,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":183.47,"pagas":4,"valor_pago":733.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":183.47,"saldo":5586.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":183.47,"status":"paid","pago_em":"2026-04-09"},{"venc":"2026-05-15","valor":183.47,"status":"paid","pago_em":"2026-05-05"},{"venc":"2026-06-15","valor":183.47,"status":"paid","pago_em":"2026-06-10"},{"venc":"2026-07-15","valor":183.47,"status":"paid","pago_em":"2026-07-10"},{"venc":"2026-08-15","valor":183.47,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":183.47,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":183.47,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":183.47,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":183.47,"status":"scheduled","pago_em":null}]}],"meses":[{"mes":"2026-04","pago":3255.34,"vencido":171.47,"aberto":0},{"mes":"2026-05","pago":3613.26,"vencido":171.47,"aberto":0},{"mes":"2026-06","pago":4515.35,"vencido":171.47,"aberto":0},{"mes":"2026-07","pago":5670.65,"vencido":342.94,"aberto":0},{"mes":"2026-08","pago":572.93,"vencido":0,"aberto":5571.75},{"mes":"2026-09","pago":0,"vencido":0,"aberto":6144.68},{"mes":"2026-10","pago":0,"vencido":0,"aberto":5158.45},{"mes":"2026-11","pago":0,"vencido":0,"aberto":5158.45},{"mes":"2026-12","pago":0,"vencido":0,"aberto":5158.45},{"mes":"2027-01","pago":0,"vencido":0,"aberto":131.09}]};
+const INTERNO = false;
+const HOJE = new Date('2026-08-04T00:00:00-03:00');
+
+const brl = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const brlCurto = (n) => 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const dataBR = (s) => s ? s.slice(8, 10) + '/' + s.slice(5, 7) + '/' + s.slice(0, 4) : '—';
+const mesBR = (s) => ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'][Number(s.slice(5,7)) - 1] + '/' + s.slice(2, 4);
+
+const R = DADOS.resumo;
+document.getElementById('kpi-pago').textContent = brlCurto(R.pago);
+document.getElementById('kpi-contratado').textContent = brlCurto(R.contratado);
+document.getElementById('kpi-vencido').textContent = brl(R.vencido);
+
+// ----- barra de arrecadação -----
+const aReceber = R.contratado - R.pago - R.vencido;
+const segmentos = [
+  { cls: 'seg-pago', rot: 'Já recebido', valor: R.pago, cor: 'var(--good-mark)' },
+  { cls: 'seg-vencido', rot: 'Vencido em aberto', valor: R.vencido, cor: 'var(--crit-mark)' },
+  { cls: 'seg-aberto', rot: 'A receber até 2029', valor: aReceber, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+];
+document.getElementById('barra-total').innerHTML = segmentos
+  .map((s) => '<span class="' + s.cls + '" style="width:' + Math.max((s.valor / R.contratado) * 100, 0.4) + '%"></span>')
+  .join('');
+document.getElementById('legenda-total').innerHTML = segmentos
+  .map((s) => '<span class="item"><span class="marca" style="background:' + s.cor + '"></span>' + s.rot + ' <b>' + brl(s.valor) + '</b> <span style="color:var(--ink-3)">(' + ((s.valor / R.contratado) * 100).toFixed(1) + '%)</span></span>')
+  .join('');
+
+// ----- gráfico mensal -----
+const maxMes = Math.max(...DADOS.meses.map((m) => m.pago + m.vencido + m.aberto));
+document.getElementById('grafico').innerHTML = DADOS.meses
+  .map((m) => {
+    const partes = [
+      { v: m.aberto, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+      { v: m.vencido, cor: 'var(--crit-mark)' },
+      { v: m.pago, cor: 'var(--good-mark)' },
+    ].filter((p) => p.v > 0);
+    const barras = partes
+      .map((p) => '<i style="background:' + p.cor + ';height:' + (p.v / maxMes) * 100 + '%"></i>')
+      .join('');
+    const tot = m.pago + m.vencido + m.aberto;
+    const tip = '<span class="tip">' + mesBR(m.mes) + '<br>Pago <b>' + brl(m.pago) + '</b>' +
+      (m.vencido ? '<br>Vencido <b>' + brl(m.vencido) + '</b>' : '') +
+      (m.aberto ? '<br>A vencer <b>' + brl(m.aberto) + '</b>' : '') +
+      '<br>Total <b>' + brl(tot) + '</b></span>';
+    return '<div class="col" tabindex="0">' + tip + '<div class="pilha">' + barras + '</div><span class="rot-mes">' + mesBR(m.mes) + '</span></div>';
+  })
+  .join('');
+document.getElementById('legenda-meses').innerHTML =
+  '<span class="item"><span class="marca" style="background:var(--good-mark)"></span>Pago</span>' +
+  '<span class="item"><span class="marca" style="background:var(--crit-mark)"></span>Vencido em aberto</span>' +
+  '<span class="item"><span class="marca" style="background:color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))"></span>A vencer</span>' +
+  '<span class="item" style="color:var(--ink-3)">Boletos emitidos até jan/2027</span>';
+
+// ----- cards de atenção -----
+const atrasados = DADOS.alunos.filter((a) => a.situacao === 'inadimplente');
+document.getElementById('cards-atencao').innerHTML = atrasados
+  .map((a) => {
+    const vencidas = a.bills.filter((b) => b.status === 'pending' && new Date(b.venc + 'T23:59:59-03:00') < HOJE);
+    const linhas = vencidas
+      .map((b) => '<li><span>Venceu em ' + dataBR(b.venc) + '</span>' +
+        (INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">' + brl(b.valor) + ' ↗</a>' : '<b>' + brl(b.valor) + '</b>') + '</li>')
+      .join('');
+    return '<article class="card-atencao"><h3>' + a.nome + '</h3>' +
+      '<p class="resumo-linha">' + vencidas.length + ' parcela' + (vencidas.length > 1 ? 's' : '') + ' em aberto · ' +
+      brl(a.valor_vencido) + ' · ' + a.atraso_dias + ' dias de atraso' +
+      (a.pagas === 0 ? ' · <strong>nunca pagou nenhuma parcela</strong>' : ' · ' + a.pagas + ' parcelas pagas antes') + '</p>' +
+      '<ul>' + linhas + '</ul></article>';
+  })
+  .join('');
+
+
+
+// ----- tabela -----
+let filtro = 'todos';
+let busca = '';
+let ordem = { col: 'nome', dir: 'asc' };
+
+function linhaAluno(a, i) {
+  const pill = a.situacao === 'adimplente'
+    ? '<span class="pill ok"><span class="ponto"></span>Em dia</span>'
+    : '<span class="pill mal"><span class="ponto"></span>Em atraso ' + a.atraso_dias + 'd</span>';
+  return (
+    '<tr class="linha-aluno" data-i="' + i + '" tabindex="0" role="button" aria-expanded="false">' +
+    '<td class="nome">' + a.nome + '<span class="sub">' + a.contrato_parcelas + 'x ' + brl(a.mensalidade) + ' · total ' + brl(a.contrato_total) + '</span></td>' +
+    '<td class="situacao">' + pill + '</td>' +
+    '<td class="num col-oculta-mobile">' + a.pagas + ' / ' + a.contrato_parcelas + '</td>' +
+    '<td class="num col-oculta-mobile">' + brl(a.mensalidade) + '</td>' +
+    '<td class="num celula-recebido" data-rot="Recebido">' + brl(a.valor_pago) + '</td>' +
+    '<td class="col-oculta-mobile"><span class="progresso"><span class="trilha"><span class="preenchido" style="width:' + Math.min(a.pct_pago, 100) + '%"></span></span><span class="pct">' + a.pct_pago.toFixed(1) + '%</span></span></td>' +
+    '<td class="num celula-vencido" data-rot="Vencido" style="color:' + (a.valor_vencido ? 'var(--crit-text)' : 'var(--ink-3)') + ';font-weight:' + (a.valor_vencido ? '650' : '400') + '">' + (a.valor_vencido ? brl(a.valor_vencido) : '—') + '</td>' +
+    '<td class="num col-oculta-mobile">' + dataBR(a.proxima_venc) + '</td>' +
+    '</tr>'
+  );
+}
+
+function linhaDetalhe(a, i) {
+  const parcelas = a.bills
+    .map((b) => {
+      const venceu = new Date(b.venc + 'T23:59:59-03:00') < HOJE;
+      const cls = b.status === 'paid' ? 'paga' : venceu ? 'vencida' : 'aberta';
+      const est = b.status === 'paid' ? 'Paga ' + dataBR(b.pago_em).slice(0, 5) : venceu ? 'Vencida' : b.status === 'scheduled' ? 'Agendada' : 'A vencer';
+      const link = INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">boleto ↗</a>' : '';
+      return '<div class="parcela ' + cls + '"><span class="data">' + dataBR(b.venc) + '</span><span class="val">' + brl(b.valor) + '</span><span class="est">' + est + '</span>' + link + '</div>';
+    })
+    .join('');
+  const contato = INTERNO
+    ? '<div class="contato-linha"><span>CPF ' + (a.cpf || '—') + '</span><span>' + (a.telefone || '—') + '</span><span>' + (a.email || '—') + '</span>' +
+      (a.canceladas ? '<span style="color:var(--ink-3)">' + a.canceladas + ' boleto(s) cancelado(s)/reemitido(s)</span>' : '') + '</div>'
+    : '';
+  return (
+    '<tr class="detalhe" data-detalhe="' + i + '" hidden><td colspan="8"><div class="caixa">' +
+    contato +
+    '<div class="contato-linha"><span style="font-family:var(--sans)">' + a.boletos_emitidos + ' boletos emitidos · último em ' + dataBR(a.ultimo_boleto) +
+    ' · faltam ' + a.parcelas_restantes + ' parcelas do contrato · saldo ' + brl(a.saldo) + '</span></div>' +
+    (INTERNO && a.series_multiplas
+      ? '<div class="contato-linha" style="color:var(--crit-text)"><span style="font-family:var(--sans)">⚠ Duas séries de cobrança neste contrato (' + a.series.join(' + ') + ') — conferir com o financeiro se é aditivo ou renegociação.</span></div>'
+      : '') +
+    '<div class="parcelas">' + parcelas + '</div></div></td></tr>'
+  );
+}
+
+function ordenar(lista) {
+  const c = ordem.col, s = ordem.dir === 'asc' ? 1 : -1;
+  return [...lista].sort((a, b) => {
+    let x = a[c], y = b[c];
+    if (c === 'situacao') { x = a.valor_vencido; y = b.valor_vencido; }
+    if (typeof x === 'string' || x === null) return s * String(x ?? '').localeCompare(String(y ?? ''), 'pt-BR');
+    return s * ((x ?? 0) - (y ?? 0));
+  });
+}
+
+function render() {
+  const lista = ordenar(
+    DADOS.alunos.filter((a) => (filtro === 'todos' || a.situacao === filtro) && a.nome.toLowerCase().includes(busca)),
+  );
+  const corpo = document.getElementById('corpo-tabela');
+  corpo.innerHTML = lista.map((a) => linhaAluno(a, DADOS.alunos.indexOf(a)) + linhaDetalhe(a, DADOS.alunos.indexOf(a))).join('');
+  document.getElementById('vazio').hidden = lista.length > 0;
+}
+
+document.querySelectorAll('.chip').forEach((c) =>
+  c.addEventListener('click', () => {
+    filtro = c.dataset.filtro;
+    document.querySelectorAll('.chip').forEach((o) => o.setAttribute('aria-pressed', String(o === c)));
+    render();
+  }),
+);
+document.getElementById('busca').addEventListener('input', (e) => {
+  busca = e.target.value.toLowerCase().trim();
+  render();
+});
+document.querySelectorAll('thead th[data-col]').forEach((th) =>
+  th.querySelector('button').addEventListener('click', () => {
+    const col = th.dataset.col;
+    ordem = { col, dir: ordem.col === col && ordem.dir === 'asc' ? 'desc' : 'asc' };
+    document.querySelectorAll('thead th').forEach((o) => o.removeAttribute('aria-sort'));
+    th.setAttribute('aria-sort', ordem.dir === 'asc' ? 'ascending' : 'descending');
+    render();
+  }),
+);
+
+function alternar(tr) {
+  const det = document.querySelector('[data-detalhe="' + tr.dataset.i + '"]');
+  if (!det) return;
+  det.hidden = !det.hidden;
+  tr.setAttribute('aria-expanded', String(!det.hidden));
+}
+document.getElementById('corpo-tabela').addEventListener('click', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && !e.target.closest('a')) alternar(tr);
+});
+document.getElementById('corpo-tabela').addEventListener('keydown', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); alternar(tr); }
+});
+
+render();
+</script>
+<style>
+#alternar-tema {
+  position: fixed; top: 14px; right: 14px; z-index: 30;
+  font: inherit; font-size: 12.5px; font-weight: 550; padding: 7px 13px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  cursor: pointer; box-shadow: var(--shadow);
+}
+#alternar-tema:hover { border-color: var(--accent); color: var(--accent); }
+@media print { #alternar-tema { display: none; } }
+</style>
+<script>
+(function () {
+  var raiz = document.documentElement;
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.id = 'alternar-tema';
+  var escuro = function () {
+    var t = raiz.getAttribute('data-theme');
+    return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  var rotular = function () { b.textContent = escuro() ? '☀ Tema claro' : '☾ Tema escuro'; };
+  b.addEventListener('click', function () {
+    raiz.setAttribute('data-theme', escuro() ? 'light' : 'dark');
+    rotular();
+  });
+  rotular();
+  document.body.appendChild(b);
+})();
+</script>
+</body>
+</html>

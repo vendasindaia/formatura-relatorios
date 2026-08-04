@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relatório financeiro — Formatura 7506 (interno)</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --ink: #131722;
+  --ink-2: #4c5566;
+  --ink-3: #79839a;
+  --line: #dee3ed;
+  --line-strong: #c6cddc;
+  --accent: #22406f;
+  --accent-soft: #e7ecf7;
+  --gold: #9a7a2c;
+  --good-mark: #0ca30c;
+  --good-text: #046604;
+  --good-soft: #e4f5e4;
+  --crit-mark: #d03b3b;
+  --crit-text: #a52121;
+  --crit-soft: #fbe8e8;
+  --warn-mark: #fab219;
+  --shadow: 0 1px 2px rgba(19, 23, 34, .05), 0 8px 24px -18px rgba(19, 23, 34, .35);
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg: #0f121a;
+    --surface: #161a23;
+    --surface-2: #1d232f;
+    --ink: #f0f3f8;
+    --ink-2: #b2bbcc;
+    --ink-3: #7d879a;
+    --line: #29303e;
+    --line-strong: #3a4353;
+    --accent: #93b4ea;
+    --accent-soft: #1a2540;
+    --gold: #cfa956;
+    --good-mark: #21b521;
+    --good-text: #5fd35f;
+    --good-soft: #122a12;
+    --crit-mark: #e05555;
+    --crit-text: #f08b8b;
+    --crit-soft: #2d1414;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f121a;
+  --surface: #161a23;
+  --surface-2: #1d232f;
+  --ink: #f0f3f8;
+  --ink-2: #b2bbcc;
+  --ink-3: #7d879a;
+  --line: #29303e;
+  --line-strong: #3a4353;
+  --accent: #93b4ea;
+  --accent-soft: #1a2540;
+  --gold: #cfa956;
+  --good-mark: #21b521;
+  --good-text: #5fd35f;
+  --good-soft: #122a12;
+  --crit-mark: #e05555;
+  --crit-text: #f08b8b;
+  --crit-soft: #2d1414;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 40px 24px 96px; display: flex; flex-direction: column; gap: 34px; }
+@media (max-width: 640px) { .wrap { padding: 24px 14px 64px; gap: 26px; } }
+
+/* ---------- cabeçalho ---------- */
+.cabecalho { display: flex; flex-direction: column; gap: 18px; }
+.eyebrow {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); opacity: .5; }
+h1 {
+  font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.1; margin: 0; letter-spacing: -.015em; text-wrap: balance;
+}
+.subtitulo { color: var(--ink-2); font-size: 16px; max-width: 62ch; margin: 0; }
+.meta-evento {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+}
+.meta-evento div { background: var(--surface); padding: 12px 14px; }
+.meta-evento dt { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 3px; font-weight: 600; }
+.meta-evento dd { margin: 0; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.meta-evento dd.mono { font-family: var(--mono); font-size: 13.5px; letter-spacing: .02em; }
+
+/* ---------- KPIs ---------- */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 4px;
+}
+.kpi .rot { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+.kpi .num { font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi .pe { font-size: 12.5px; color: var(--ink-3); }
+.kpi.ok .num { color: var(--good-text); }
+.kpi.alerta { border-color: color-mix(in srgb, var(--crit-mark) 45%, var(--line)); }
+.kpi.alerta .num { color: var(--crit-text); }
+
+/* ---------- blocos ---------- */
+.bloco { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.bloco > header { padding: 18px 22px 0; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+.bloco h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.bloco .dica { font-size: 13px; color: var(--ink-3); margin: 2px 0 0; }
+.bloco > .corpo { padding: 18px 22px 22px; }
+@media (max-width: 640px) { .bloco > header { padding: 16px 14px 0; } .bloco > .corpo { padding: 14px; } }
+
+/* ---------- barra de arrecadação ---------- */
+.barra-total { display: flex; gap: 2px; height: 34px; border-radius: 6px; overflow: hidden; background: var(--surface-2); margin: 14px 0 12px; }
+.barra-total span { display: block; height: 100%; }
+.seg-pago { background: var(--good-mark); border-radius: 4px 0 0 4px; }
+.seg-vencido { background: var(--crit-mark); }
+.seg-aberto { background: color-mix(in srgb, var(--ink-3) 26%, var(--surface-2)); border-radius: 0 4px 4px 0; }
+.legenda { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: 13px; color: var(--ink-2); }
+.legenda .item { display: flex; align-items: center; gap: 8px; }
+.legenda .marca { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.legenda b { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+
+/* ---------- gráfico mensal ---------- */
+.grafico { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; align-items: end; height: 190px; margin: 8px 0 10px; }
+.col { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; position: relative; }
+.col .pilha { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; }
+.col i { display: block; border-radius: 2px; min-height: 2px; }
+.col i:first-child { border-radius: 4px 4px 2px 2px; }
+.col i:last-child { border-radius: 2px 2px 4px 4px; }
+.col .rot-mes { font-size: 10.5px; color: var(--ink-3); text-align: center; margin-top: 8px; font-family: var(--mono); letter-spacing: -.02em; }
+.col:hover .tip, .col:focus-within .tip { opacity: 1; transform: translate(-50%, -6px); pointer-events: auto; }
+.tip {
+  position: absolute; bottom: 100%; left: 50%; transform: translate(-50%, 2px);
+  background: var(--ink); color: var(--bg); font-size: 12px; line-height: 1.45; padding: 8px 10px;
+  border-radius: 8px; white-space: nowrap; opacity: 0; transition: opacity .13s ease, transform .13s ease;
+  pointer-events: none; z-index: 5; box-shadow: 0 6px 18px -8px rgba(0,0,0,.5);
+}
+.tip b { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+
+/* ---------- atenção ---------- */
+.cards-atencao { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.card-atencao { border: 1px solid color-mix(in srgb, var(--crit-mark) 35%, var(--line)); background: var(--crit-soft); border-radius: 12px; padding: 16px 18px; }
+.card-atencao h3 { margin: 0 0 2px; font-size: 16.5px; font-weight: 650; }
+.card-atencao .resumo-linha { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+.card-atencao ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.card-atencao li { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; padding: 6px 0; border-top: 1px solid color-mix(in srgb, var(--crit-mark) 18%, transparent); }
+.card-atencao li span:first-child { color: var(--ink-2); }
+.card-atencao li b, .card-atencao li a { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--crit-text); }
+.card-atencao a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- controles ---------- */
+.controles { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 14px 22px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+@media (max-width: 640px) { .controles { padding: 12px 14px; } }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 6px 13px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .chip[aria-pressed="true"], :root:where(:not([data-theme="light"])) .chip[aria-pressed="true"] { color: #0f121a; }
+.busca { flex: 1; min-width: 170px; }
+.busca input {
+  width: 100%; font: inherit; font-size: 13.5px; padding: 7px 12px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+}
+.btn-print {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 7px 14px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip:hover, .btn-print:hover { border-color: var(--accent); color: var(--accent); }
+.chip[aria-pressed="true"]:hover { color: var(--surface); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- tabela ---------- */
+.tabela-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead th {
+  text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+  font-weight: 650; padding: 12px 14px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; background: var(--surface);
+}
+thead th.num, td.num { text-align: right; }
+thead th button {
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none;
+  border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+}
+thead th button::after { content: "↕"; opacity: .35; font-size: 11px; }
+thead th[aria-sort="ascending"] button::after { content: "↑"; opacity: 1; }
+thead th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; }
+thead th[aria-sort] button { color: var(--accent); }
+tbody tr { border-bottom: 1px solid var(--line); }
+tbody tr.linha-aluno { cursor: pointer; }
+tbody tr.linha-aluno:hover { background: var(--surface-2); }
+tbody td { padding: 11px 14px; vertical-align: middle; }
+td.nome { font-weight: 600; min-width: 190px; }
+td.nome .sub { display: block; font-weight: 400; font-size: 12px; color: var(--ink-3); font-family: var(--mono); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 650; padding: 3px 10px 3px 8px; border-radius: 999px; white-space: nowrap; }
+.pill.ok { background: var(--good-soft); color: var(--good-text); }
+.pill.mal { background: var(--crit-soft); color: var(--crit-text); }
+.pill .ponto { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pill.ok .ponto { background: var(--good-mark); }
+.pill.mal .ponto { background: var(--crit-mark); }
+.progresso { display: flex; align-items: center; gap: 8px; min-width: 118px; }
+.progresso .trilha { flex: 1; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.progresso .preenchido { display: block; height: 100%; background: var(--good-mark); border-radius: 3px; }
+.progresso .pct { font-family: var(--mono); font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; width: 42px; text-align: right; }
+tr.detalhe > td { padding: 0; background: var(--surface-2); }
+tr.detalhe .caixa { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+.parcelas { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 8px; }
+.parcela { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; display: flex; flex-direction: column; gap: 2px; }
+.parcela .data { font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela .val { font-family: var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela .est { font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+.parcela.paga { border-left: 3px solid var(--good-mark); }
+.parcela.paga .est { color: var(--good-text); }
+.parcela.vencida { border-left: 3px solid var(--crit-mark); background: var(--crit-soft); }
+.parcela.vencida .est { color: var(--crit-text); }
+.parcela.aberta { border-left: 3px solid var(--line-strong); }
+.parcela.aberta .est { color: var(--ink-3); }
+.parcela a { color: var(--accent); font-size: 11.5px; text-decoration: underline; text-underline-offset: 2px; }
+.contato-linha { font-size: 13px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.contato-linha span { font-family: var(--mono); font-size: 12.5px; }
+.vazio { padding: 28px; text-align: center; color: var(--ink-3); font-size: 14px; }
+
+/* ---------- central de cobrança ---------- */
+.cobrancas { display: flex; flex-direction: column; gap: 8px; }
+.cob {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3px 20px;
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; background: var(--surface);
+}
+.cob.atraso { border-color: color-mix(in srgb, var(--crit-mark) 40%, var(--line)); background: var(--crit-soft); }
+.cob .quem { grid-column: 1; font-weight: 600; font-size: 14.5px; }
+.cob .info { grid-column: 1; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .quanto { font-family: var(--mono); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .acoes { grid-column: 2; grid-row: 1 / 3; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-self: center; max-width: 430px; }
+.acao {
+  font: inherit; font-size: 12.5px; font-weight: 550; padding: 5px 11px; border-radius: 7px; cursor: pointer;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+}
+.acao:hover { border-color: var(--accent); color: var(--accent); }
+.acao.principal { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal, :root:where(:not([data-theme="light"])) .acao.principal { color: #0f121a; }
+.acao.principal:hover { filter: brightness(1.08); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal:hover, :root:where(:not([data-theme="light"])) .acao.principal:hover { color: #0f121a; }
+.acao.feito { border-color: var(--good-mark); color: var(--good-text); }
+.cob .aguardando { grid-column: 2; grid-row: 1 / 3; font-size: 12.5px; color: var(--ink-3); text-align: right; align-self: center; }
+.parcelas-cob { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1px; margin-top: 10px; }
+.parcela-cob {
+  display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 4px 14px;
+  padding: 8px 0; border-top: 1px dashed var(--line-strong);
+}
+.parcela-cob .quanto { font-family: var(--mono); font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela-cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela-cob .acoes { grid-column: 3; grid-row: 1; justify-content: flex-end; }
+.parcela-cob .linha-dig { grid-column: 1 / -1; border: 0; margin: 2px 0 0; padding: 0; }
+.linha-dig { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .01em; word-break: break-all; }
+@media (max-width: 860px) {
+  .parcela-cob { grid-template-columns: auto 1fr; }
+  .parcela-cob .acoes { grid-column: 1 / -1; grid-row: auto; justify-content: flex-start; margin-top: 6px; }
+}
+@media (max-width: 860px) {
+  .cob { grid-template-columns: 1fr; }
+  .cob .acoes { grid-column: 1; grid-row: auto; justify-content: flex-start; max-width: none; margin-top: 8px; }
+  .cob .aguardando { grid-column: 1; grid-row: auto; text-align: left; margin-top: 4px; }
+}
+.sub-secao { font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 650; margin: 18px 0 8px; }
+.sub-secao:first-child { margin-top: 0; }
+
+/* ---------- notas ---------- */
+.notas { font-size: 13.5px; color: var(--ink-2); display: flex; flex-direction: column; gap: 10px; }
+.notas h3 { font-family: var(--serif); font-size: 17px; margin: 0 0 2px; color: var(--ink); font-weight: 600; }
+.notas ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 7px; }
+.notas code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.aviso { border-left: 3px solid var(--warn-mark); background: color-mix(in srgb, var(--warn-mark) 9%, var(--surface)); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13.5px; }
+.aviso b { color: var(--ink); }
+.rodape { font-size: 12.5px; color: var(--ink-3); text-align: center; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 760px) {
+  thead { display: none; }
+  tbody tr.linha-aluno { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 12px 14px; }
+  tbody tr.linha-aluno td { padding: 0; border: 0; }
+  td.nome { grid-column: 1; grid-row: 1; }
+  td.situacao { grid-column: 2; grid-row: 1; text-align: right; align-self: start; }
+  tbody td.col-oculta-mobile { display: none; }
+  td.celula-recebido { grid-column: 1; grid-row: 2; }
+  td.celula-vencido { grid-column: 2; grid-row: 2; }
+  td.celula-recebido, td.celula-vencido { text-align: left !important; display: flex; gap: 7px; align-items: baseline; }
+  td.celula-recebido::before, td.celula-vencido::before {
+    content: attr(data-rot); font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink-3); font-weight: 600;
+  }
+}
+@media print {
+  body { background: #fff; }
+  .wrap { padding: 0; gap: 20px; max-width: none; }
+  .controles, .btn-print, .tip, .acao[data-copiar], .acao.principal { display: none !important; }
+  .bloco, .kpi { box-shadow: none; }
+  .kpi, .card-atencao, .cob, .parcela-cob { break-inside: avoid; }
+  .bloco { break-inside: auto; }
+  .bloco > header { break-after: avoid; }
+  thead { display: table-header-group; }
+  tbody tr { break-inside: avoid; }
+  tr.detalhe { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="cabecalho">
+    <p class="eyebrow">Indaiá Eventos · Grandes Formaturas</p>
+    <h1>Turma Biomedicina e Nutrição — 2028/2</h1>
+    <p class="subtitulo">Posição de adesões e pagamentos dos 29 formandos contratados, cruzando o contrato coletivo do CRM com as cobranças efetivas na Vindi. Apuração em <strong>4 de agosto de 2026</strong>.</p>
+    <dl class="meta-evento">
+      <div><dt>Evento</dt><dd class="mono">7506 · E08058</dd></div>
+      <div><dt>Instituição</dt><dd>Censupeg</dd></div>
+      <div><dt>Data do baile</dt><dd class="mono">17/03/2029</dd></div>
+      <div><dt>Local</dt><dd>Espaço Joinville · Joinville</dd></div>
+      <div><dt>Consultora</dt><dd>Camyla Cecchin</dd></div>
+    </dl>
+  </header>
+
+  <section class="kpis">
+    <div class="kpi"><span class="rot">Formandos contratados</span><span class="num">29</span><span class="pe">de 29 previstos na turma</span></div>
+    <div class="kpi ok"><span class="rot">Em dia</span><span class="num">27</span><span class="pe">93% da turma</span></div>
+    <div class="kpi alerta"><span class="rot">Em atraso</span><span class="num">2</span><span class="pe">5 parcelas vencidas</span></div>
+    <div class="kpi"><span class="rot">Já recebido</span><span class="num" id="kpi-pago"></span><span class="pe">de <span id="kpi-contratado"></span> contratados</span></div>
+    <div class="kpi alerta"><span class="rot">Vencido em aberto</span><span class="num" id="kpi-vencido"></span><span class="pe">maior atraso: 110 dias</span></div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Situação da arrecadação</h2><p class="dica">Total contratado pela turma e quanto disso já entrou.</p></div></header>
+    <div class="corpo">
+      <div class="barra-total" id="barra-total" role="img" aria-label="Distribuição do valor contratado entre recebido, vencido em aberto e a receber"></div>
+      <div class="legenda" id="legenda-total"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Precisam de atenção</h2><p class="dica">Formandos com parcela vencida e não paga até 04/08/2026.</p></div></header>
+    <div class="corpo"><div class="cards-atencao" id="cards-atencao"></div></div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Links de pagamento para enviar</h2><p class="dica">Parcelas em aberto vencidas ou com vencimento até 31/08/2026. Copie o link, a linha digitável ou abra o WhatsApp com a mensagem pronta.</p></div></header>
+    <div class="corpo">
+      <p class="sub-secao" id="rot-prontos"></p>
+      <div class="cobrancas" id="cob-prontos"></div>
+      <p class="sub-secao" id="rot-agendados"></p>
+      <p class="dica" style="margin:-4px 0 10px">A Vindi emite o boleto 10 dias antes do vencimento — antes disso o link não abre para pagamento. As datas abaixo são o dia em que cada boleto fica disponível.</p>
+      <div class="cobrancas" id="cob-agendados"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Recebimento mês a mês</h2><p class="dica">Parcelas com vencimento em cada mês — pagas, vencidas em aberto e a vencer.</p></div></header>
+    <div class="corpo">
+      <div class="grafico" id="grafico"></div>
+      <div class="legenda" id="legenda-meses"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Todos os formandos</h2><p class="dica">Clique em um nome para ver as parcelas e o link do boleto.</p></div></header>
+    <div class="controles">
+      <div class="chips" role="group" aria-label="Filtrar por situação">
+        <button class="chip" data-filtro="todos" aria-pressed="true">Todos (29)</button>
+        <button class="chip" data-filtro="adimplente" aria-pressed="false">Em dia (27)</button>
+        <button class="chip" data-filtro="inadimplente" aria-pressed="false">Em atraso (2)</button>
+      </div>
+      <div class="busca"><input type="search" id="busca" placeholder="Buscar formando…" aria-label="Buscar formando pelo nome"></div>
+      <button class="btn-print" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+    <div class="tabela-scroll">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th scope="col" data-col="nome" aria-sort="ascending"><button type="button">Formando</button></th>
+            <th scope="col" class="situacao" data-col="situacao"><button type="button">Situação</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="pagas"><button type="button">Parcelas pagas</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="mensalidade"><button type="button">Parcela</button></th>
+            <th scope="col" class="num" data-col="valor_pago"><button type="button">Recebido</button></th>
+            <th scope="col" class="col-oculta-mobile" data-col="pct_pago"><button type="button">% do contrato</button></th>
+            <th scope="col" class="num" data-col="valor_vencido"><button type="button">Vencido</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="proxima_venc"><button type="button">Próx. vencimento</button></th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela"></tbody>
+      </table>
+    </div>
+    <div class="vazio" id="vazio" hidden>Nenhum formando encontrado com esse filtro.</div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Como ler este relatório</h2></div></header>
+    <div class="corpo notas">
+      
+      <div class="aviso">
+        <b>Emissão de boletos parada em dezembro/2026.</b> 27 dos 29 formandos têm boletos gerados na Vindi
+        só até dez/2026, mas os contratos vão até 2029 — são 921 parcelas contratadas contra 284 boletos emitidos.
+        A partir de jan/2027 só existem cobranças de 2 alunos (Lucileia e Sinval). Antes de novembro é preciso
+        gerar o restante das parcelas, senão a arrecadação da turma para.
+      </div>
+      <div class="aviso">
+        <b>Sobre os "alunos de Fisioterapia".</b> O sistema não guarda o curso de cada formando — a turma inteira
+        está cadastrada como <code>BIOMEDICINA E NUTRIÇÃO – 2028/2</code> (Censupeg), e o evento no CRM se chama
+        "TRAVAR DATA FORMATURA Biomedicina 28/2 Censupeg". Se a cerimônia é conjunta e há formandos de Fisioterapia
+        nessa lista, a comissão precisa apontar quais nomes são — este relatório traz os 29 contratados da turma.
+      </div>
+      <ul><li>Origem dos dados: adesões da turma no CRM (<code>ORC-2026-01355</code>, 29 alunos migrados da planilha BD Formaturas) cruzadas com as cobranças reais na Vindi — conta WINDI COBRANCAS, customers "(E08058) Nome".</li>
+       <li><b>Adimplente</b> = nenhum boleto vencido em aberto até 04/08/2026. <b>Inadimplente</b> = pelo menos um boleto vencido e não pago.</li>
+       <li>Boletos cancelados/reemitidos (14 no total, em 4 alunos) foram desconsiderados no cálculo.</li>
+       <li>Lucileia Schalanski e Sinval Antônio têm duas séries de cobrança no mesmo evento ("PARC FORMATURA" + "Essential formatura") — vale conferir com o financeiro se é aditivo ou renegociação.</li>
+       <li>Pagamentos feitos por fora da Vindi (PIX, dinheiro, cartão na mão) não aparecem aqui e podem gerar falso atraso.</li></ul>
+      <p class="rodape">Indaiá Eventos · Grandes Formaturas · gerado em 04/08/2026 · uso interno — contém dados pessoais dos formandos</p>
+    </div>
+  </section>
+</div>
+
+<script>
+const DADOS = {"resumo":{"gerado_em":"2026-08-04","evento":{"cod_planilha":"7506","codigo_crm":"E08058","turma":"Biomedicina e Nutrição — 2028/2","instituicao":"Censupeg","data_evento":"2029-03-17","cidade":"Joinville","espaco":"Espaço Joinville","consultora":"Camyla Cecchin","orcamento":"ORC-2026-01355"},"formandos":29,"adimplentes":27,"inadimplentes":2,"contratado":172965,"pago":17627.53,"vencido":857.35,"boletos_vencidos":5,"saldo":155337.47,"emitido":48892.39,"boletos_emitidos":284,"parcelas_pagas":81,"parcelas_contratadas":921,"canceladas":14},"alunos":[{"nome":"Ester Viana","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":4,"valor_vencido":685.88,"atraso_dias":110,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5900,"pct_pago":0,"parcelas_restantes":34,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"inadimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232248?token=2d07be56-401f-4edb-ae3e-863a81205bee","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232255?token=4fc8f305-7371-4c63-bc71-d2c592b7a811","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232257?token=9fed004a-6952-4a51-b3f6-cc529ad83876","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232258?token=78a306e5-8e19-477e-9438-29ac27529be3","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232259?token=1e5fe3c2-10af-46e4-a049-6b3787c97aea","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232260?token=77a18f58-c834-4fef-8030-481d4cc3dd86","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232261?token=851f88d7-df31-4e4a-aceb-5d021ad21c13","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232262?token=f0807c32-769b-4a56-98d1-463a5fcfcc5d","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232264?token=c9c0ce3e-0e49-4b71-a6d6-3f060b738cae","item":"PARC FORMATURA"}],"cpf":"039.468.162-23","email":"estviana01@gmail.com","telefone":"47999668705","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Amanda Larissa de Campos","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":3,"valor_pago":514.41,"ultima_paga":"2026-06-15","vencidas":1,"valor_vencido":171.47,"atraso_dias":19,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5385.59,"pct_pago":8.7,"parcelas_restantes":31,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"inadimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15","url":"https://app.vindi.com.br/customer/bills/487233459?token=9e0e6250-60b2-4579-b31b-39ae6eb7bdb8","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-11","url":"https://app.vindi.com.br/customer/bills/487233478?token=a7500fd0-e565-4f91-9825-836491422fbb","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-16","url":"https://app.vindi.com.br/customer/bills/487233479?token=88c8813c-ac35-4a5b-83f3-a78611e37027","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487233480?token=f9896f7b-3797-4eb1-b75a-e709a6c585a2","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487233481?token=5b0ac121-efad-4a15-9c8c-bc454647698c","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487233482?token=a6fe2568-7adc-4906-b469-139b619fa024","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487233483?token=d9ce2bf5-d456-4c77-b89a-9e3985534d78","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487233484?token=8f2d928c-e462-4481-b82d-25294a96145d","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487233485?token=130c51cd-e687-4cc9-80fc-77b38aebd2fa","item":"PARC FORMATURA"}],"cpf":"090.715.009-85","email":"amaandacampos@outlook.com","telefone":"47996448167","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Anderson Dutra de Almeida","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-12","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":187.28,"status":"paid","pago_em":"2026-07-16","url":"https://app.vindi.com.br/customer/bills/504137314?token=340ba2c5-9ce4-4e42-8db7-aba37395cf85","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137315?token=2eae0661-e385-4175-82e7-8e1d96ee8853","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137316?token=c4160821-a55e-409c-9703-77fdfc9d2ccb","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137318?token=08bc0591-0e42-4c6c-ab07-c76c084ba065","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137320?token=b5565d6a-2ea8-47a7-b861-2092b72c24a4","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137321?token=dc0aa4dd-7c4d-49e8-b4b5-70de5210e039","item":"PARC FORMATURA"}],"cpf":"030.142.042-42","email":"dutraa603@gmail.com","telefone":"47996389783","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Arthur Souza da Silva","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-10","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-30","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-30","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-30","situacao":"adimplente","bills":[{"venc":"2026-07-30","valor":187.28,"status":"paid","pago_em":"2026-07-31","url":"https://app.vindi.com.br/customer/bills/504136109?token=f1014182-efc4-4801-8cf6-4e79c882f5ad","item":"PARC FORMATURA"},{"venc":"2026-08-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/522731968?token=9648a7d7-ed9d-499f-8ca7-0ba16598577c","item":"PARC FORMATURA"},{"venc":"2026-09-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/522731969?token=1b02d208-d3bc-402d-ac9a-78f35907c368","item":"PARC FORMATURA"},{"venc":"2026-10-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/522731970?token=e014cdcc-d80c-4a90-a494-c3b9aeb83f95","item":"PARC FORMATURA"},{"venc":"2026-11-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/522731971?token=dfeb278c-efed-42c7-a750-a2b629c0f885","item":"PARC FORMATURA"},{"venc":"2026-12-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/522731972?token=8a8ac8b9-1ec3-47b1-8791-ef5cf61de685","item":"PARC FORMATURA"}],"cpf":"019.693.712-42","email":"arthurduarte.1044@gmail.com","telefone":"91989414633","canceladas":5,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Bruna cristina Ricoldi da Silva","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-04-20","valor":171.47,"status":"paid","pago_em":"2026-04-17","url":"https://app.vindi.com.br/customer/bills/492345578?token=2f2674df-9254-4fd6-b639-e496605b34b4","item":"PARC FORMATURA"},{"venc":"2026-05-10","valor":171.47,"status":"paid","pago_em":"2026-05-08","url":"https://app.vindi.com.br/customer/bills/492345594?token=3b67587c-c997-4e0b-a1d5-c4bebfb5f353","item":"PARC FORMATURA"},{"venc":"2026-06-10","valor":171.47,"status":"paid","pago_em":"2026-06-05","url":"https://app.vindi.com.br/customer/bills/507893628?token=bc19de31-4556-42e3-a384-bafd34d52889","item":"PARC"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-16","url":"https://app.vindi.com.br/customer/bills/492345596?token=1f2cf2bf-145f-41af-8abd-0f12cd437470","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/492345597?token=73bdb8c6-af0a-40bd-947c-f3dabd921d4f","item":"PARC FORMATURA"},{"venc":"2026-09-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/492345598?token=147213c6-7cdd-4871-8e0e-237a9986986c","item":"PARC FORMATURA"},{"venc":"2026-10-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/492345601?token=005810e0-5350-4a8e-a3b1-57176b900e19","item":"PARC FORMATURA"},{"venc":"2026-11-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/492345603?token=bec7c6b6-c973-46ac-8b61-5af3df89f4bc","item":"PARC FORMATURA"},{"venc":"2026-12-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/492345605?token=166da813-27fe-4b86-9a72-3d0d3cbb01ff","item":"PARC FORMATURA"}],"cpf":"081.181.109-31","email":"bruricoldi@gmail.com","telefone":"47984626242","canceladas":1,"reajuste":"Não","series_multiplas":true,"series":["PARC FORMATURA","PARC"]},{"nome":"Camilly Cristina de Andrade Oliveira","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-07","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15","url":"https://app.vindi.com.br/customer/bills/484215684?token=3652929e-ce89-47eb-bb00-3ca7f04c46ce","item":"PARC FORMATURA"},{"venc":"2026-06-03","valor":171.47,"status":"paid","pago_em":"2026-06-03","url":"https://app.vindi.com.br/customer/bills/507820288?token=123142b4-1389-4722-a762-942a1c5d1974","item":"Neg Parc Maio"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-15","url":"https://app.vindi.com.br/customer/bills/484215686?token=2edddce8-735a-46e4-9990-be6443409856","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-15","url":"https://app.vindi.com.br/customer/bills/484215688?token=50bded29-42dd-42df-bae2-30645e42c62a","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484215689?token=f887a5f3-d60a-4f9c-bd3f-13f88f949e70","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484215692?token=7966909c-83cf-4863-8307-bc3ff236b80a","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484215695?token=efb43c8d-5aae-475f-ad30-7c83290f8b27","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484215696?token=5e943099-f453-4fe0-a4a7-bfc746fd58e6","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484215697?token=89546b16-bb73-4d8d-b0a5-e22e90458683","item":"PARC FORMATURA"}],"cpf":"140.183.619-47","email":"camillycristina270406@gmail.com","telefone":"47999657217","canceladas":1,"reajuste":"Não","series_multiplas":true,"series":["PARC FORMATURA","Neg Parc Maio"]},{"nome":"Carlos Augusto Garcete Alvarenga","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-15","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":187.28,"status":"paid","pago_em":"2026-07-15","url":"https://app.vindi.com.br/customer/bills/504141471?token=bb29df89-c933-44b7-8bd5-68a47417571a","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504141472?token=02dae03d-5ce9-477a-8a58-8d3f9911f7dd","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504141473?token=0200525d-9b39-400e-852e-313612d82e36","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504141474?token=79de4899-cac7-43b3-a965-80f13088cb7e","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504141476?token=08dc94e3-7c13-4df8-b9c0-ffd45fc21fca","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504141481?token=6a9f6a6d-3a95-4612-afcd-e9407fbc8187","item":"PARC FORMATURA"}],"cpf":"031.521.351-57","email":"carlosalvarenga054@gmail.com","telefone":"47988932174","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Carolina de Jesus da Costa Carvalho","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-04-10","valor":171.47,"status":"paid","pago_em":"2026-04-07","url":"https://app.vindi.com.br/customer/bills/487232641?token=3c5a4be0-5862-4208-9556-e8afeb17ba5d","item":"PARC FORMATURA"},{"venc":"2026-05-10","valor":171.47,"status":"paid","pago_em":"2026-05-04","url":"https://app.vindi.com.br/customer/bills/487232647?token=fa977072-fa2d-4824-94f9-edb918851ae6","item":"PARC FORMATURA"},{"venc":"2026-06-10","valor":171.47,"status":"paid","pago_em":"2026-06-01","url":"https://app.vindi.com.br/customer/bills/487232648?token=dd93996a-9668-435c-b1d5-c6b077692c1b","item":"PARC FORMATURA"},{"venc":"2026-07-10","valor":171.47,"status":"paid","pago_em":"2026-07-02","url":"https://app.vindi.com.br/customer/bills/487232649?token=d6288946-d5ae-4a73-9f0e-9da644d27f6d","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232650?token=e0b76a70-7450-4ccd-bd01-a593124b9167","item":"PARC FORMATURA"},{"venc":"2026-09-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232651?token=d6142ab2-3bc6-416d-be18-533a9b630b2f","item":"PARC FORMATURA"},{"venc":"2026-10-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232652?token=fc255747-6d49-497a-9436-37b9b14a5669","item":"PARC FORMATURA"},{"venc":"2026-11-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232653?token=ed69f9e2-8bd6-4997-80b6-fc45d113991e","item":"PARC FORMATURA"},{"venc":"2026-12-10","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487232655?token=185b83b3-ac02-4104-8c70-043b6c5a9e8f","item":"PARC FORMATURA"}],"cpf":"612.516.033-51","email":"carol.carolinacta@hotmail.com","telefone":"47996716540","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Carolina Estéfane dos Santos","contrato_total":6740,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":195.47,"pagas":5,"valor_pago":977.35,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":195.47,"saldo":5762.65,"pct_pago":14.5,"parcelas_restantes":29,"boletos_emitidos":9,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-04-10","valor":195.47,"status":"paid","pago_em":"2026-04-01","url":"https://app.vindi.com.br/customer/bills/484219085?token=a2b182a7-aa29-456d-91bf-2b1addec2ad0","item":"PARC FORMATURA"},{"venc":"2026-05-10","valor":195.47,"status":"paid","pago_em":"2026-05-04","url":"https://app.vindi.com.br/customer/bills/484219086?token=7440af3a-b63d-4bd2-9eac-8dfa82e884f0","item":"PARC FORMATURA"},{"venc":"2026-06-10","valor":195.47,"status":"paid","pago_em":"2026-06-03","url":"https://app.vindi.com.br/customer/bills/484219089?token=bb0642dc-b92e-4a4d-8651-01aa9d482f55","item":"PARC FORMATURA"},{"venc":"2026-07-10","valor":195.47,"status":"paid","pago_em":"2026-07-03","url":"https://app.vindi.com.br/customer/bills/484219090?token=aa958104-9d21-41b1-919c-0b25bf54d7f3","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":195.47,"status":"paid","pago_em":"2026-08-03","url":"https://app.vindi.com.br/customer/bills/484219091?token=d4a9fcbf-26f0-4feb-a98c-d4c6d4db7629","item":"PARC FORMATURA"},{"venc":"2026-09-10","valor":195.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484219092?token=8c297507-fb3e-40d3-9383-5f0c53b21bc2","item":"PARC FORMATURA"},{"venc":"2026-10-10","valor":195.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484219093?token=5b6cc0e7-7bc0-4efd-acf0-878f4f2af9f5","item":"PARC FORMATURA"},{"venc":"2026-11-10","valor":195.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484219094?token=1f57949b-0a0b-4a19-a1bd-3f72e3e6175a","item":"PARC FORMATURA"},{"venc":"2026-12-10","valor":195.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484219097?token=aafa7e5e-667e-41a9-a9c1-5d66047ed886","item":"PARC FORMATURA"}],"cpf":"111.478.329-35","email":"caroolinasntos@gmail.com","telefone":"47992939422","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Catiane da Silva Marcelino","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-13","url":"https://app.vindi.com.br/customer/bills/484227127?token=3bfc304e-2a02-45e3-bef3-506162372495","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-14","url":"https://app.vindi.com.br/customer/bills/484227129?token=6f972e28-cf51-47f8-9fae-ce08577c94ff","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-15","url":"https://app.vindi.com.br/customer/bills/484227131?token=96c3f999-5b95-4044-943a-6bf8cf3aa50e","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-13","url":"https://app.vindi.com.br/customer/bills/484227132?token=da00b957-83d4-4e9a-982d-d0c445f0d28b","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484227134?token=aba6d44b-cf74-4c8d-ad23-fe57ce226d05","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484227136?token=c9ed0b69-3e9d-4047-b70c-e3d35c9af96d","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484227137?token=d178e422-59fc-42e8-b1bf-0eae1df7bf9b","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484227140?token=65736349-232d-48f8-ae6b-97626aec2441","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484227141?token=5c093f69-1835-417e-b13f-6c7e3f249ba8","item":"PARC FORMATURA"}],"cpf":"021.399.422-48","email":"catiane2710@hotmail.com","telefone":"47989194233","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Cinara Lorena de Almeida farias","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-10","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-07-10","valor":187.28,"status":"paid","pago_em":"2026-07-13","url":"https://app.vindi.com.br/customer/bills/504139205?token=1c1c797b-cfa6-4c55-89fd-34399f597ccb","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":187.28,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504139206?token=1148d804-b3a3-47d6-9e94-3af9fa060780","item":"PARC FORMATURA"},{"venc":"2026-09-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504139207?token=73fac9d8-0129-40c0-8e2a-e8c1689f1821","item":"PARC FORMATURA"},{"venc":"2026-10-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504139208?token=3aced2da-a0c4-4848-9d45-813dd49b04f7","item":"PARC FORMATURA"},{"venc":"2026-11-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504139209?token=93f88b64-4cd9-45ac-9df8-4984c2b3b58f","item":"PARC FORMATURA"},{"venc":"2026-12-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504139210?token=17070b29-0c27-4f7f-b13c-e2e1e8df8a05","item":"PARC FORMATURA"}],"cpf":"036.571.942-07","email":"sandrasuely706@gmail.com","telefone":"47999442504","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Cintia leal dos Santos","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-17","valor":171.47,"status":"paid","pago_em":"2026-04-17","url":"https://app.vindi.com.br/customer/bills/484229347?token=01de6b5f-a09e-4769-8ff8-ff4965850feb","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-13","url":"https://app.vindi.com.br/customer/bills/484229348?token=48ccb6c3-c61d-4cb5-90ac-71f5f43297e3","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-09","url":"https://app.vindi.com.br/customer/bills/484229349?token=6d4469e8-6841-4b6f-b570-c566a638e80e","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-13","url":"https://app.vindi.com.br/customer/bills/484229351?token=447ab8ee-d224-4774-a12e-6e5228a7978b","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484229353?token=90486d88-fa28-4814-a817-bc693b8883cb","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484229355?token=9fa01992-fd70-4445-b11f-270bac43a54c","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484229356?token=ac88301f-aca3-4090-b41b-4cf754aac73d","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484229358?token=adf6e941-2718-48ef-867c-a27364af9cb8","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484229359?token=ec2980a3-c7e0-4555-911e-77c554201bc8","item":"PARC FORMATURA"}],"cpf":"926.072.092-34","email":"cynthyacybelle2@gmail.com","telefone":"47989269191","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Claudia Antunes de Oliveira","contrato_total":5900,"contrato_parcelas":6,"primeira_parcela":"2026-04-20","mensalidade":986.23,"pagas":4,"valor_pago":3944.92,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":986.23,"saldo":1955.08,"pct_pago":66.9,"parcelas_restantes":2,"boletos_emitidos":6,"ultimo_boleto":"2026-09-20","situacao":"adimplente","bills":[{"venc":"2026-04-20","valor":986.23,"status":"paid","pago_em":"2026-04-15","url":"https://app.vindi.com.br/customer/bills/484232950?token=9f2f94b6-5a1b-4e4f-a831-91d86e0b1e1e","item":"PARC FORMATURA"},{"venc":"2026-05-20","valor":986.23,"status":"paid","pago_em":"2026-05-20","url":"https://app.vindi.com.br/customer/bills/484232951?token=135b585c-b30c-42a6-9434-06b2c158074b","item":"PARC FORMATURA"},{"venc":"2026-06-20","valor":986.23,"status":"paid","pago_em":"2026-06-22","url":"https://app.vindi.com.br/customer/bills/484232952?token=9752aada-9fee-461b-9cbd-5bb7b6d3bb93","item":"PARC FORMATURA"},{"venc":"2026-07-20","valor":986.23,"status":"paid","pago_em":"2026-07-20","url":"https://app.vindi.com.br/customer/bills/484232954?token=c42eec15-2cd9-4d5c-8a26-28e11741bf39","item":"PARC FORMATURA"},{"venc":"2026-08-20","valor":986.23,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484232956?token=14500b3f-9052-4f6c-bdfa-7a2eda77672d","item":"PARC FORMATURA"},{"venc":"2026-09-20","valor":986.23,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484232959?token=243d08fb-bc67-4501-9bef-27602c7dd9fb","item":"PARC FORMATURA"}],"cpf":"071.951.779-63","email":"claudia.antunes88@gmail.com","telefone":"47997385233","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Clotilde Borba Manarin","contrato_total":5900,"contrato_parcelas":30,"primeira_parcela":"2026-07-20","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":29,"boletos_emitidos":6,"ultimo_boleto":"2026-12-20","situacao":"adimplente","bills":[{"venc":"2026-07-20","valor":187.28,"status":"paid","pago_em":"2026-07-10","url":"https://app.vindi.com.br/customer/bills/504137750?token=d9c1dc49-7cc7-4417-962f-4ef3e8ddce40","item":"PARC FORMATURA"},{"venc":"2026-08-20","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137751?token=7e9ebb94-fba8-4622-ab79-3d7e649d022b","item":"PARC FORMATURA"},{"venc":"2026-09-20","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137753?token=aed4f55b-cfc5-40c8-aec7-51004dcede50","item":"PARC FORMATURA"},{"venc":"2026-10-20","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137754?token=383d1ca3-befb-49f2-98f7-26b4f8f3aa83","item":"PARC FORMATURA"},{"venc":"2026-11-20","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137755?token=efb38935-6218-4249-be0e-43ac919af2cf","item":"PARC FORMATURA"},{"venc":"2026-12-20","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504137756?token=6cbbd5ac-1113-4040-9e01-e956e4123204","item":"PARC FORMATURA"}],"cpf":"028.257.349-69","email":"clomanarin@yahoo.com.br","telefone":"47999030087","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Eliani Ferreira Valandro","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-16","url":"https://app.vindi.com.br/customer/bills/487240101?token=70686f58-957c-4867-a045-3ddd32cf95a9","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-18","url":"https://app.vindi.com.br/customer/bills/487240114?token=15173d66-0a09-451f-96d5-8859fd27e3cd","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-15","url":"https://app.vindi.com.br/customer/bills/487240115?token=273ca8d9-af3a-47b0-8ced-1f409efa8375","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-20","url":"https://app.vindi.com.br/customer/bills/487240116?token=8029315e-569f-4d34-a746-fa07a8e734e2","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487240117?token=951eb44d-1428-4448-813d-d645821416b5","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487240118?token=d62b246b-9007-4068-ba03-21ae80a7b7f2","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487240119?token=db62374d-579a-4b21-b5e9-74857a332c31","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487240121?token=e97bbb03-d96e-4cd6-a03b-f2305c9de145","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487240122?token=69fab73b-4c45-4d5a-b366-71c07fdaeaad","item":"PARC FORMATURA"}],"cpf":"012.860.347-01","email":"pretaeliane235@gmail.com","telefone":"47991104134","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Fernanda Fatuche","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15","url":"https://app.vindi.com.br/customer/bills/484225638?token=e2c94e37-0c91-4a30-8e98-b7cb787f14ca","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-15","url":"https://app.vindi.com.br/customer/bills/484225640?token=406e3d2b-e85c-4c30-a81a-3940b4e1085e","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-16","url":"https://app.vindi.com.br/customer/bills/484225641?token=4e992d07-5190-4869-b1e6-e52152b1ca12","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-15","url":"https://app.vindi.com.br/customer/bills/484225643?token=02b23fdf-14f4-4d70-8b24-95217407e22f","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484225644?token=928aa375-ac76-4b9d-9f29-3d2dd7ee1a71","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484225645?token=84dece02-0c2a-4a8d-a57e-2eac5ce4d5a1","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484225646?token=dfc14853-7aff-41ce-b10d-e00e03d29bc3","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484225648?token=e63c1384-817a-4c58-ab4d-337ca4627c2d","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484225649?token=a07cd63a-ec02-4478-a757-32dc79997103","item":"PARC FORMATURA"}],"cpf":"052.273.039-67","email":"fer.fatuche@gmail.com","telefone":"47997873765","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Gianni Cristina Welter","contrato_total":6210,"contrato_parcelas":32,"primeira_parcela":"2026-06-05","mensalidade":191.08,"pagas":3,"valor_pago":573.24,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":191.08,"saldo":5636.76,"pct_pago":9.2,"parcelas_restantes":29,"boletos_emitidos":7,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-06-11","valor":191.08,"status":"paid","pago_em":"2026-06-11","url":"https://app.vindi.com.br/customer/bills/504143217?token=f18802b9-02ce-40e5-a9a0-c6b57be5c2f1","item":"PARC FORMATURA"},{"venc":"2026-07-10","valor":191.08,"status":"paid","pago_em":"2026-07-01","url":"https://app.vindi.com.br/customer/bills/504143218?token=5eb094ec-4fe0-4e14-a7ad-f1d20a73d96b","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":191.08,"status":"paid","pago_em":"2026-08-03","url":"https://app.vindi.com.br/customer/bills/504143219?token=703e216d-cb8e-4ccc-a8ea-b1fbc8911e3d","item":"PARC FORMATURA"},{"venc":"2026-09-10","valor":191.08,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504143220?token=1c796c12-e673-4839-9a7a-9f1566aba5ad","item":"PARC FORMATURA"},{"venc":"2026-10-10","valor":191.08,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504143222?token=d8413053-fdf8-47b9-94ef-5c5ec21489c6","item":"PARC FORMATURA"},{"venc":"2026-11-10","valor":191.08,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504143223?token=a0ea20ba-93f1-44d0-8964-f7969d2686bb","item":"PARC FORMATURA"},{"venc":"2026-12-10","valor":191.08,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504143224?token=f2df9fe2-e85c-46ef-858d-8337e6a23f87","item":"PARC FORMATURA"}],"cpf":"214.227.388-25","email":"gianni.sara.37@gmail.com","telefone":"47997116121","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Kamilla dos Santos Abreu","contrato_total":6055,"contrato_parcelas":32,"primeira_parcela":"2026-06-03","mensalidade":186.38,"pagas":3,"valor_pago":559.14,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":186.38,"saldo":5495.86,"pct_pago":9.2,"parcelas_restantes":29,"boletos_emitidos":7,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-06-10","valor":186.38,"status":"paid","pago_em":"2026-05-29","url":"https://app.vindi.com.br/customer/bills/504142681?token=a44cf2e8-896b-455f-a782-7029b4eaa512","item":"PARC FORMATURA"},{"venc":"2026-07-10","valor":186.38,"status":"paid","pago_em":"2026-06-30","url":"https://app.vindi.com.br/customer/bills/504142682?token=1a7efbe6-0bf4-4760-8ea0-00ce82e2036a","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":186.38,"status":"paid","pago_em":"2026-07-30","url":"https://app.vindi.com.br/customer/bills/504142683?token=abce92d3-063c-4c73-86e9-3e3817bec0cb","item":"PARC FORMATURA"},{"venc":"2026-09-10","valor":186.38,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504142685?token=7ebc4237-9f9e-4230-8735-da8e4785c0bb","item":"PARC FORMATURA"},{"venc":"2026-10-10","valor":186.38,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504142686?token=57c72c82-42a7-43a0-bfad-41e807e633d9","item":"PARC FORMATURA"},{"venc":"2026-11-10","valor":186.38,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504142687?token=36e15ed6-120e-45a8-8f5f-49b094bcadfb","item":"PARC FORMATURA"},{"venc":"2026-12-10","valor":186.38,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504142689?token=6c5a0995-f434-4602-acfa-2aefabf8fd26","item":"PARC FORMATURA"}],"cpf":"429.253.438-13","email":"kaahsantis2019@gmail.com","telefone":"47999759139","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Kamylla Rocha Barbosa","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-10","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-20","situacao":"adimplente","bills":[{"venc":"2026-04-20","valor":171.47,"status":"paid","pago_em":"2026-04-15","url":"https://app.vindi.com.br/customer/bills/484220937?token=769fd4f2-b9b3-4753-ab7f-66c2c97245c2","item":"PARC FORMATURA"},{"venc":"2026-05-20","valor":171.47,"status":"paid","pago_em":"2026-05-20","url":"https://app.vindi.com.br/customer/bills/484220940?token=5a252db3-b423-49a3-ac4d-823005ee46fb","item":"PARC FORMATURA"},{"venc":"2026-06-20","valor":171.47,"status":"paid","pago_em":"2026-06-17","url":"https://app.vindi.com.br/customer/bills/484220941?token=15a7d6b7-4379-4cbc-8039-1b60a2583e5a","item":"PARC FORMATURA"},{"venc":"2026-07-20","valor":171.47,"status":"paid","pago_em":"2026-07-21","url":"https://app.vindi.com.br/customer/bills/484220942?token=b82fadfb-6362-4778-8223-a007680804bb","item":"PARC FORMATURA"},{"venc":"2026-08-20","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484220944?token=f35e9d7d-b645-412d-ae65-4c99228b08e0","item":"PARC FORMATURA"},{"venc":"2026-09-20","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484220948?token=139ab44a-86ec-4640-8495-7595fff2b184","item":"PARC FORMATURA"},{"venc":"2026-10-20","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484220950?token=615771eb-d317-44cb-b689-49d0d5734262","item":"PARC FORMATURA"},{"venc":"2026-11-20","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484220952?token=f69e9486-6168-4c23-b152-f712d41d9e83","item":"PARC FORMATURA"},{"venc":"2026-12-20","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484220954?token=4dd7942c-1082-484b-b31a-05ae81c329bb","item":"PARC FORMATURA"}],"cpf":"122.152.329-51","email":"kamylla.rochabarbosa.1@gmail.com","telefone":"47992173950","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Kelly vitória angélico Corrêa","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-10","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-07-10","valor":187.28,"status":"paid","pago_em":"2026-07-10","url":"https://app.vindi.com.br/customer/bills/504135492?token=053bbaf0-120d-49dc-9b19-c8e4f92a3f03","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":187.28,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504135493?token=d5726fbf-bdaa-4db4-8d57-d6039db298ee","item":"PARC FORMATURA"},{"venc":"2026-09-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504135495?token=82b19984-cd6a-401d-b2aa-929686fa9369","item":"PARC FORMATURA"},{"venc":"2026-10-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504135497?token=5f29b5f0-d1d9-40c6-8baa-55ff315c57cf","item":"PARC FORMATURA"},{"venc":"2026-11-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504135499?token=5de311e9-6599-4d36-bb90-d1c2f06c08b7","item":"PARC FORMATURA"},{"venc":"2026-12-10","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504135501?token=220d49c2-4c7c-44ea-a79f-b710e0bf3807","item":"PARC FORMATURA"}],"cpf":"139.158.069-94","email":"kv4415@gmail.com","telefone":"41997474725","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Lucileia Schalanski de Lima","contrato_total":5900,"contrato_parcelas":33,"primeira_parcela":"2026-05-05","mensalidade":176.43,"pagas":3,"valor_pago":529.29,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":176.43,"saldo":5370.71,"pct_pago":9,"parcelas_restantes":30,"boletos_emitidos":38,"ultimo_boleto":"2029-01-14","situacao":"adimplente","bills":[{"venc":"2026-05-10","valor":176.43,"status":"paid","pago_em":"2026-05-11","url":"https://app.vindi.com.br/customer/bills/497724392?token=eb3f714f-d557-46b1-afe3-272bb93f3383","item":"PARC FORMATURA"},{"venc":"2026-06-10","valor":176.43,"status":"paid","pago_em":"2026-06-01","url":"https://app.vindi.com.br/customer/bills/497724403?token=3c745b29-516e-43d8-9b9c-d5a28eb5e4e4","item":"PARC FORMATURA"},{"venc":"2026-07-20","valor":176.43,"status":"paid","pago_em":"2026-07-20","url":"https://app.vindi.com.br/customer/bills/497724405?token=a4db57ea-e953-49bb-9846-d25605cbef74","item":"PARC FORMATURA"},{"venc":"2026-08-10","valor":176.43,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497724407?token=4ead8acf-d763-40cb-9636-a7d9b4a56add","item":"PARC FORMATURA"},{"venc":"2026-08-14","valor":69.57,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925914?token=2af1b4f2-d651-464b-ae2c-b16cf8b9129f","item":"Formatura Essential"},{"venc":"2026-09-10","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497724408?token=efe9c7d3-793a-4f62-8000-0c0e161f377a","item":"PARC FORMATURA"},{"venc":"2026-09-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925915?token=9a0d5d13-376c-4c4b-91f4-ea29c793cae4","item":"Formatura Essential"},{"venc":"2026-10-10","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497724410?token=cb78d0a7-fd5f-4d03-bbb7-87ef3d324760","item":"PARC FORMATURA"},{"venc":"2026-10-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925916?token=5b1fced5-03f3-449d-823c-92c7a00a105b","item":"Formatura Essential"},{"venc":"2026-11-10","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497724411?token=edb70796-75f9-4767-927b-3d0389bdd20d","item":"PARC FORMATURA"},{"venc":"2026-11-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925917?token=8f3f435d-ee06-4bab-ac70-05a6608fd340","item":"Formatura Essential"},{"venc":"2026-12-10","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497724413?token=ba84b442-a917-4515-ae71-e6797a1ce106","item":"PARC FORMATURA"},{"venc":"2026-12-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925918?token=5eb71e8e-8203-4350-96d9-630b75bd2b54","item":"Formatura Essential"},{"venc":"2027-01-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925919?token=7f9217d9-c8bb-4828-b9a8-89ad670ab976","item":"Formatura Essential"},{"venc":"2027-02-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925920?token=cbe14bd6-b2aa-4395-879f-f5c7644467fa","item":"Formatura Essential"},{"venc":"2027-03-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925921?token=41b1fb76-8a34-44f3-8f26-9ef91084c497","item":"Formatura Essential"},{"venc":"2027-04-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925922?token=9e8af0ab-d2a9-4ba8-9c72-d284488ea8cb","item":"Formatura Essential"},{"venc":"2027-05-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925924?token=5f136b8e-c0d7-470d-aac1-da60ea65cef7","item":"Formatura Essential"},{"venc":"2027-06-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925925?token=757a683b-170d-451d-9d7b-10eff517a54e","item":"Formatura Essential"},{"venc":"2027-07-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526925926?token=6cc8195e-8769-4bb5-8772-8d07a1c4eed4","item":"Formatura Essential"},{"venc":"2027-08-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926046?token=d54bc05b-8aca-470f-8fa1-b52cb1ebce18","item":"Formatura Essential"},{"venc":"2027-09-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926047?token=86b1dbe3-5dd0-495f-9999-1906f4cc2a06","item":"Formatura Essential"},{"venc":"2027-10-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926048?token=a4243523-4a87-447d-932b-c7803e8d22da","item":"Formatura Essential"},{"venc":"2027-11-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926049?token=7d13534e-d401-4639-9655-e5dddc5c76b6","item":"Formatura Essential"},{"venc":"2027-12-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926051?token=25489948-3bbe-4d11-90cf-5b1e8cbd3b80","item":"Formatura Essential"},{"venc":"2028-01-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926052?token=8089ae4a-a044-477b-abe9-07b64f95bbda","item":"Formatura Essential"},{"venc":"2028-02-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926053?token=cb9c39dc-b9cf-468a-8358-58ef5aa5821a","item":"Formatura Essential"},{"venc":"2028-03-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926054?token=a057fa86-3a51-4188-a06e-71b2783de4dc","item":"Formatura Essential"},{"venc":"2028-04-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926055?token=b8ddf797-cddd-4951-b915-ad386217f239","item":"Formatura Essential"},{"venc":"2028-05-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926056?token=af3272a5-57c0-4dd9-bc67-21103cad87a4","item":"Formatura Essential"},{"venc":"2028-06-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926058?token=59dd696d-ba3b-4f0a-96c6-f929e8d9b3ef","item":"Formatura Essential"},{"venc":"2028-07-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926060?token=09c64d72-43a0-42a9-910f-faa4371c3ef2","item":"Formatura Essential"},{"venc":"2028-08-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926414?token=caae7243-d064-4b14-8ce1-a5f3a89fe46f","item":"Formatura Essential"},{"venc":"2028-09-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926416?token=232f7f8e-a6dd-42e0-8b93-36e077d6df2c","item":"Formatura Essential"},{"venc":"2028-10-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926417?token=9ba0ff37-1447-49c4-a275-0c4f94138505","item":"Formatura Essential"},{"venc":"2028-11-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926419?token=e7ba4271-91c7-43eb-a64d-8ede3e4502e8","item":"Formatura Essential"},{"venc":"2028-12-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926420?token=c65d6e83-f626-4d4b-ae03-60805249de59","item":"Formatura Essential"},{"venc":"2029-01-14","valor":69.57,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526926421?token=acac9198-9f38-4f83-b221-496575432f8d","item":"Formatura Essential"}],"cpf":"960.347.000-78","email":"limaschal.leia@gmail.com","telefone":"47992876171","canceladas":0,"reajuste":"Não","series_multiplas":true,"series":["PARC FORMATURA","Formatura Essential"]},{"nome":"Maria Clara Salasar Oliveira","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-06-28","mensalidade":181.69,"pagas":2,"valor_pago":363.38,"ultima_paga":"2026-07-28","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-28","proxima_valor":181.69,"saldo":5536.62,"pct_pago":6.2,"parcelas_restantes":29,"boletos_emitidos":7,"ultimo_boleto":"2026-12-28","situacao":"adimplente","bills":[{"venc":"2026-06-28","valor":181.69,"status":"paid","pago_em":"2026-06-22","url":"https://app.vindi.com.br/customer/bills/507344695?token=9896c5cc-ae77-44d9-aade-e57ce4fc2aaf","item":"PARC FORMATURA"},{"venc":"2026-07-28","valor":181.69,"status":"paid","pago_em":"2026-07-29","url":"https://app.vindi.com.br/customer/bills/507344701?token=62ae2bf8-40d7-49d8-8658-dba687382922","item":"PARC FORMATURA"},{"venc":"2026-08-28","valor":181.69,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507344706?token=c50b3ac7-b0c3-4653-9d44-d9234ba194ea","item":"PARC FORMATURA"},{"venc":"2026-09-28","valor":181.69,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507344712?token=82fabe79-f7ae-47a7-a215-b1cd08046f5c","item":"PARC FORMATURA"},{"venc":"2026-10-28","valor":181.69,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507344716?token=3fc1c72b-d41e-45d1-9b76-bb240cbaafb4","item":"PARC FORMATURA"},{"venc":"2026-11-28","valor":181.69,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507344722?token=01a6398d-ac70-48b7-8542-bb48af712733","item":"PARC FORMATURA"},{"venc":"2026-12-28","valor":181.69,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507344726?token=9887a686-031c-4be4-9c48-01c41b287c86","item":"PARC FORMATURA"}],"cpf":"148.109.409-26","email":"mariasalasaroliveira@gmail.com","telefone":"47991828359","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Mariana Fonseca de Oliveira","contrato_total":5900,"contrato_parcelas":30,"primeira_parcela":"2026-07-30","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-30","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-30","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":29,"boletos_emitidos":6,"ultimo_boleto":"2026-12-30","situacao":"adimplente","bills":[{"venc":"2026-07-30","valor":187.28,"status":"paid","pago_em":"2026-07-30","url":"https://app.vindi.com.br/customer/bills/504140172?token=fd1488be-d4f9-410a-950c-ba1f4a4c6503","item":"PARC FORMATURA"},{"venc":"2026-08-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504140173?token=55af6e6a-6363-49b8-bcde-35b5c970e0f1","item":"PARC FORMATURA"},{"venc":"2026-09-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504140175?token=879d825b-bc81-4f54-bed5-28b0ae358b57","item":"PARC FORMATURA"},{"venc":"2026-10-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504140176?token=015798b8-751f-4e88-9c5b-4f9fd9364368","item":"PARC FORMATURA"},{"venc":"2026-11-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504140178?token=cd4dfc4e-812d-4e3e-91be-6e2a05ab68e4","item":"PARC FORMATURA"},{"venc":"2026-12-30","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504140179?token=d8635876-90cc-4819-b04c-6d7274f4a9f5","item":"PARC FORMATURA"}],"cpf":"086.941.069-57","email":"mariana_fonseca18@outlook.com","telefone":"47997745896","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Nathalia Cardozo","contrato_total":5900,"contrato_parcelas":32,"primeira_parcela":"2026-05-20","mensalidade":176.53,"pagas":3,"valor_pago":529.59,"ultima_paga":"2026-07-20","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-20","proxima_valor":176.53,"saldo":5370.41,"pct_pago":9,"parcelas_restantes":29,"boletos_emitidos":8,"ultimo_boleto":"2026-12-20","situacao":"adimplente","bills":[{"venc":"2026-05-20","valor":176.53,"status":"paid","pago_em":"2026-05-11","url":"https://app.vindi.com.br/customer/bills/500398988?token=b0244ba3-8475-4340-b8d0-10eaefc3302e","item":"PARC FORMATURA"},{"venc":"2026-06-20","valor":176.53,"status":"paid","pago_em":"2026-06-11","url":"https://app.vindi.com.br/customer/bills/500399007?token=05d2938f-3486-4fbd-8f91-cf4d6c1619d1","item":"PARC FORMATURA"},{"venc":"2026-07-20","valor":176.53,"status":"paid","pago_em":"2026-07-10","url":"https://app.vindi.com.br/customer/bills/500399015?token=f8574e89-18a5-4f87-82f0-87b66578fa49","item":"PARC FORMATURA"},{"venc":"2026-08-20","valor":176.53,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/500399090?token=82534ad8-7176-4891-9add-6d0d6c6cdbdd","item":"PARC FORMATURA"},{"venc":"2026-09-20","valor":176.53,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/500399091?token=c59e5c0e-94a3-4d6a-ae11-e7c77eec275a","item":"PARC FORMATURA"},{"venc":"2026-10-20","valor":176.53,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/500399092?token=9c1b2eef-5c47-4705-9e7b-0ce0a8e74abf","item":"PARC FORMATURA"},{"venc":"2026-11-20","valor":176.53,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/500399094?token=f822a723-c4de-4731-8379-abe78a2486b1","item":"PARC FORMATURA"},{"venc":"2026-12-20","valor":176.53,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/500399097?token=5a950be4-6366-42fb-8a85-f278b233b79b","item":"PARC FORMATURA"}],"cpf":"090.688.039-48","email":"nathaliaaparecidacardozo8652@gmail.com","telefone":"47996983211","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"renata lippi sobral dos santos","contrato_total":5900,"contrato_parcelas":31,"primeira_parcela":"2026-07-15","mensalidade":187.28,"pagas":1,"valor_pago":187.28,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":187.28,"saldo":5712.72,"pct_pago":3.2,"parcelas_restantes":30,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":187.28,"status":"paid","pago_em":"2026-07-15","url":"https://app.vindi.com.br/customer/bills/504136902?token=a4a427ca-38ec-477b-9ac3-0bdebbc0e33b","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504136903?token=2e8e52b6-9236-4f8d-bfd8-7e5e662edfbe","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504136904?token=8e5ce34c-3400-4342-a8df-e162ffbc2877","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504136905?token=16cd8b7f-cc5f-4c8f-92ed-3fba7b922286","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504136908?token=2acfab2f-cbc4-485b-82b0-926f9bccfcbd","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":187.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/504136910?token=394deab6-2b64-4b05-a241-93a263f659ed","item":"PARC FORMATURA"}],"cpf":"397.304.678-62","email":"renatalippi2015@gmail.com","telefone":"47989049350","canceladas":0,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Rosimeyre Campos dos Santos","contrato_total":5900,"contrato_parcelas":33,"primeira_parcela":"2026-05-12","mensalidade":176.43,"pagas":3,"valor_pago":529.29,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":176.43,"saldo":5370.71,"pct_pago":9,"parcelas_restantes":30,"boletos_emitidos":8,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-05-18","valor":176.43,"status":"paid","pago_em":"2026-05-18","url":"https://app.vindi.com.br/customer/bills/497751104?token=26a52b4f-8866-4b81-bfef-9ca0f4882ee9","item":"PARC FORMATURA"},{"venc":"2026-06-16","valor":176.43,"status":"paid","pago_em":"2026-06-16","url":"https://app.vindi.com.br/customer/bills/501417067?token=6d753ea2-6870-4e65-9b34-1e964071742b","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":176.43,"status":"paid","pago_em":"2026-07-15","url":"https://app.vindi.com.br/customer/bills/501417068?token=c5d40283-5622-4162-b32f-50c455dfbe86","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/501417069?token=2b4e2c0f-a9d8-40fa-997f-1f5157045d48","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/501417072?token=b92eda99-5db1-405f-bd45-838ba3fe81f8","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/501417073?token=d7ed3d14-2962-4a05-9ceb-8c63e7f3ff00","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/501417074?token=bd8df951-322a-4b6f-ad06-6fe835d4683a","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":176.43,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/501417077?token=4aeea012-fb61-4b50-b650-b0934c97cfb5","item":"PARC FORMATURA"}],"cpf":"040.904.812-79","email":"rosycamposdossantos@gmail.com","telefone":"47996083374","canceladas":7,"reajuste":"Sim","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Sinval Antônio Borges Júnior","contrato_total":5900,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":171.47,"pagas":4,"valor_pago":685.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":171.47,"saldo":5214.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":38,"ultimo_boleto":"2028-12-21","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":171.47,"status":"paid","pago_em":"2026-04-15","url":"https://app.vindi.com.br/customer/bills/484231773?token=22834640-8506-469c-a30d-ec1f4c4ad40d","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":171.47,"status":"paid","pago_em":"2026-05-06","url":"https://app.vindi.com.br/customer/bills/484231776?token=a226b19f-397b-49ee-8de1-c5b8e45f7e44","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":171.47,"status":"paid","pago_em":"2026-06-05","url":"https://app.vindi.com.br/customer/bills/484231777?token=8dc03c8d-3e39-4961-8ae0-8c68182c8826","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":171.47,"status":"paid","pago_em":"2026-07-06","url":"https://app.vindi.com.br/customer/bills/484231779?token=fc0bad52-aa0f-4968-bd7e-df4cd6be62e2","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484231781?token=994c989b-352e-465c-8b96-d21ce5cfea45","item":"PARC FORMATURA"},{"venc":"2026-08-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845657?token=c28b8b27-1ea9-4567-b5bd-da22de5b3c51","item":"Essential formatura"},{"venc":"2026-09-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484231783?token=841cdcd7-6cc0-4a1c-95f0-f39c1752c6ef","item":"PARC FORMATURA"},{"venc":"2026-09-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845662?token=dde49b2a-db6a-46bd-922c-fea90b347ffc","item":"Essential formatura"},{"venc":"2026-10-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484231784?token=e9dc43c3-3466-4757-943e-af57273c1698","item":"PARC FORMATURA"},{"venc":"2026-10-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845668?token=18ebea01-5a24-4464-8833-0fa88590d4f3","item":"Essential formatura"},{"venc":"2026-11-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484231786?token=939f751a-3bba-43cf-b6bc-ee1107ad75c0","item":"PARC FORMATURAE08058 - PARC FORMATURA"},{"venc":"2026-11-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845670?token=d2724c40-a929-40d8-b13c-9f2bd83f1f97","item":"Essential formatura"},{"venc":"2026-12-15","valor":171.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/484231787?token=dce3d650-deb8-41b4-9ca9-cdb3c103b622","item":"PARC FORMATURA"},{"venc":"2026-12-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845677?token=5e250c39-99f2-4812-ace9-ef9cab515ead","item":"Essential formatura"},{"venc":"2027-01-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845680?token=98b62eaf-716a-4997-8679-7b5822d91ca1","item":"Essential formatura"},{"venc":"2027-02-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845691?token=08e7abaa-b995-4168-9cc4-ef35fe958d16","item":"Essential formatura"},{"venc":"2027-03-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845693?token=350d251d-eb66-4152-9855-f127b243e464","item":"Essential formatura"},{"venc":"2027-04-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845705?token=0f0282bf-e2eb-4bc4-b50c-9172a45e2dcc","item":"Essential formatura"},{"venc":"2027-05-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845710?token=c7a7213b-5bf0-4cab-a504-d22dda3beaad","item":"Essential formatura"},{"venc":"2027-06-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845718?token=f4658c55-75c7-45bd-a634-39429c2ee59c","item":"Essential formatura"},{"venc":"2027-07-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526845725?token=98aca662-060e-430d-aa8d-6befff531248","item":"Essential formatura"},{"venc":"2027-08-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846619?token=a86aa80f-6fa7-4d72-929a-1d66013cf03d","item":"Essential formatura"},{"venc":"2027-09-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846622?token=8988a324-5c1a-45fb-88eb-d39907854688","item":"Essential formatura"},{"venc":"2027-10-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846630?token=646aeee8-99c8-4ed5-b007-a9b561d3a50f","item":"Essential formatura"},{"venc":"2027-11-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846633?token=04009dba-e21f-477f-a294-fea5c5e0fa44","item":"Essential formatura"},{"venc":"2027-12-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846642?token=ca92fef6-0fb6-42f7-8444-76ebebbe7672","item":"Essential formatura"},{"venc":"2028-01-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846650?token=cee38865-2a4f-4b90-b911-b6e2a376df26","item":"Essential formatura"},{"venc":"2028-02-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846653?token=7fd8ff9f-96ad-4440-9919-57a77054d6f8","item":"Essential formatura"},{"venc":"2028-03-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846666?token=8491c4f1-8dcd-4f04-b126-dd897749d73a","item":"Essential formatura"},{"venc":"2028-04-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846672?token=67f9280b-dd07-4d8d-86a5-2c4bc6173e59","item":"Essential formatura"},{"venc":"2028-05-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846678?token=20f96b07-8614-4556-bcda-04115d5e2a14","item":"Essential formatura"},{"venc":"2028-06-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846684?token=bc7c271a-5f42-440e-8390-66e03b16ec2b","item":"Essential formatura"},{"venc":"2028-07-20","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526846694?token=4b1f7cc4-3fa9-4571-be26-d4e6764cc573","item":"Essential formatura"},{"venc":"2028-08-21","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526847553?token=bb727450-f340-4b90-b9e7-d8ec6ca37adb","item":"Essential formatura"},{"venc":"2028-09-21","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526847572?token=0e292ece-f0b2-416e-8183-e8bb4c46456e","item":"Essential formatura"},{"venc":"2028-10-21","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526847574?token=681c6c2f-2516-4aff-a392-9a2ee37dd1b1","item":"Essential formatura"},{"venc":"2028-11-21","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526847575?token=4f67ac70-024e-4c9b-9582-a06712fb72f2","item":"Essential formatura"},{"venc":"2028-12-21","valor":61.52,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526847577?token=46b4ca65-37d8-4027-994c-0a10a3a86d8d","item":"Essential formatura"}],"cpf":"036.445.729-50","email":"salaojuniorborges@gmail.com","telefone":"47989002422","canceladas":0,"reajuste":"Não","series_multiplas":true,"series":["PARC FORMATURA","Essential formatura","PARC FORMATURAE08058 - PARC FORMATURA"]},{"nome":"Tauane Naiara de Mira Pires","contrato_total":6040,"contrato_parcelas":34,"primeira_parcela":"2026-04-13","mensalidade":175.47,"pagas":4,"valor_pago":701.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":175.47,"saldo":5338.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":175.47,"status":"paid","pago_em":"2026-04-22","url":"https://app.vindi.com.br/customer/bills/487231578?token=38171dd3-383f-4628-8da1-ff781a601830","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":175.47,"status":"paid","pago_em":"2026-05-15","url":"https://app.vindi.com.br/customer/bills/487231584?token=b00745bb-9919-4306-8d4d-da55048050f8","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":175.47,"status":"paid","pago_em":"2026-06-15","url":"https://app.vindi.com.br/customer/bills/487231585?token=2bef12b5-d940-45f7-a415-80e938feebcb","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":175.47,"status":"paid","pago_em":"2026-07-15","url":"https://app.vindi.com.br/customer/bills/487231586?token=5bd9a03e-ab56-4525-bd27-9d3808e1d755","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":175.47,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487231589?token=e5c7fab2-3b00-489a-9f95-6dfe48714706","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":175.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487231590?token=651dc6ab-7ba9-408d-9546-480877a38e5d","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":175.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487231591?token=fea6cca1-acc6-4eac-931a-bec02d2d244a","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":175.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487231592?token=9e1288d9-5c99-46f0-83ca-a7e42a9e4025","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":175.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487231594?token=c1dc909f-a684-4eb4-bd3d-e792739cfb5d","item":"PARC FORMATURA"}],"cpf":"093.146.739-01","email":"tauaneepiress@gmail.com","telefone":"15981896310","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]},{"nome":"Thiana Miglaci Ramos Schlosser","contrato_total":6320,"contrato_parcelas":34,"primeira_parcela":"2026-04-15","mensalidade":183.47,"pagas":4,"valor_pago":733.88,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":183.47,"saldo":5586.12,"pct_pago":11.6,"parcelas_restantes":30,"boletos_emitidos":9,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-04-15","valor":183.47,"status":"paid","pago_em":"2026-04-09","url":"https://app.vindi.com.br/customer/bills/487240873?token=1fa44275-d801-4d63-81a4-4661de32a406","item":"PARC FORMATURA"},{"venc":"2026-05-15","valor":183.47,"status":"paid","pago_em":"2026-05-05","url":"https://app.vindi.com.br/customer/bills/487241358?token=57913d3d-ffa3-4985-95cb-39d240f9382b","item":"PARC FORMATURA"},{"venc":"2026-06-15","valor":183.47,"status":"paid","pago_em":"2026-06-10","url":"https://app.vindi.com.br/customer/bills/487241360?token=1c7fbdbc-cf88-48e5-b331-c33cadc8d118","item":"PARC FORMATURA"},{"venc":"2026-07-15","valor":183.47,"status":"paid","pago_em":"2026-07-10","url":"https://app.vindi.com.br/customer/bills/487241361?token=8f05dae1-dc11-4f43-9808-c03921f4e18f","item":"PARC FORMATURA"},{"venc":"2026-08-15","valor":183.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487241363?token=cf6572f7-8903-4467-8440-1365f00150a7","item":"PARC FORMATURA"},{"venc":"2026-09-15","valor":183.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487241364?token=e463ca1e-a930-47e9-be67-b28b78039c92","item":"PARC FORMATURA"},{"venc":"2026-10-15","valor":183.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487241365?token=f34378e1-2cc3-4bf6-949d-71210dd6b7f1","item":"PARC FORMATURA"},{"venc":"2026-11-15","valor":183.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487241366?token=1b16ba05-07db-422e-a3dc-5b4dc8180683","item":"PARC FORMATURA"},{"venc":"2026-12-15","valor":183.47,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/487241367?token=24df0749-6c2d-4a11-9838-25adc0e98d75","item":"PARC FORMATURA"}],"cpf":"057.930.119-27","email":"thyanamr@gmail.com","telefone":"47981815144","canceladas":0,"reajuste":"Não","series_multiplas":false,"series":["PARC FORMATURA"]}],"meses":[{"mes":"2026-04","pago":3255.34,"vencido":171.47,"aberto":0},{"mes":"2026-05","pago":3613.26,"vencido":171.47,"aberto":0},{"mes":"2026-06","pago":4515.35,"vencido":171.47,"aberto":0},{"mes":"2026-07","pago":5670.65,"vencido":342.94,"aberto":0},{"mes":"2026-08","pago":572.93,"vencido":0,"aberto":5571.75},{"mes":"2026-09","pago":0,"vencido":0,"aberto":6144.68},{"mes":"2026-10","pago":0,"vencido":0,"aberto":5158.45},{"mes":"2026-11","pago":0,"vencido":0,"aberto":5158.45},{"mes":"2026-12","pago":0,"vencido":0,"aberto":5158.45},{"mes":"2027-01","pago":0,"vencido":0,"aberto":131.09}],"cobrancas":[{"aluno":"Amanda Larissa de Campos","telefone":"47996448167","venc":"2026-07-15","valor":171.47,"atrasado":true,"emitido":true,"billing_at":"2026-07-02","url":"https://app.vindi.com.br/customer/bills/487233480?token=f9896f7b-3797-4eb1-b75a-e709a6c585a2","pdf":"https://intermediador.yapay.com.br/orders/billet/251ae757ac61ec84e62ae5e3c9b3c6e7","linha":"34191099174468542293185334580009115080000017147"},{"aluno":"Amanda Larissa de Campos","telefone":"47996448167","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":true,"billing_at":"2026-08-02","url":"https://app.vindi.com.br/customer/bills/487233481?token=5b0ac121-efad-4a15-9c8c-bc454647698c","pdf":"https://intermediador.yapay.com.br/orders/billet/c6cd62e09c2fb04ade08fef8e6cf3663","linha":"34191099662924545293285334580009115390000017147"},{"aluno":"Anderson Dutra de Almeida","telefone":"47996389783","venc":"2026-08-15","valor":187.28,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/504137315?token=2eae0661-e385-4175-82e7-8e1d96ee8853","pdf":null,"linha":null},{"aluno":"Arthur Souza da Silva","telefone":"91989414633","venc":"2026-08-30","valor":187.28,"atrasado":false,"emitido":false,"billing_at":"2026-08-20","url":"https://app.vindi.com.br/customer/bills/522731968?token=9648a7d7-ed9d-499f-8ca7-0ba16598577c","pdf":null,"linha":null},{"aluno":"Bruna cristina Ricoldi da Silva","telefone":"47984626242","venc":"2026-08-10","valor":171.47,"atrasado":false,"emitido":true,"billing_at":"2026-08-01","url":"https://app.vindi.com.br/customer/bills/492345597?token=73bdb8c6-af0a-40bd-947c-f3dabd921d4f","pdf":"https://intermediador.yapay.com.br/orders/billet/84437a02abe61897e966f0e49498e243","linha":"34191099661594513293285334580009915340000017147"},{"aluno":"Camilly Cristina de Andrade Oliveira","telefone":"47999657217","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/484215689?token=f887a5f3-d60a-4f9c-bd3f-13f88f949e70","pdf":null,"linha":null},{"aluno":"Carlos Augusto Garcete Alvarenga","telefone":"47988932174","venc":"2026-08-15","valor":187.28,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/504141472?token=02dae03d-5ce9-477a-8a58-8d3f9911f7dd","pdf":null,"linha":null},{"aluno":"Carolina de Jesus da Costa Carvalho","telefone":"47996716540","venc":"2026-08-10","valor":171.47,"atrasado":false,"emitido":true,"billing_at":"2026-08-02","url":"https://app.vindi.com.br/customer/bills/487232650?token=e0b76a70-7450-4ccd-bd01-a593124b9167","pdf":"https://intermediador.yapay.com.br/orders/billet/ef0fb990052528c997c1733e05fac4bd","linha":"34191099662924594293285334580009415340000017147"},{"aluno":"Catiane da Silva Marcelino","telefone":"47989194233","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/484227134?token=aba6d44b-cf74-4c8d-ad23-fe57ce226d05","pdf":null,"linha":null},{"aluno":"Cinara Lorena de Almeida farias","telefone":"47999442504","venc":"2026-08-10","valor":187.28,"atrasado":false,"emitido":true,"billing_at":"2026-08-01","url":"https://app.vindi.com.br/customer/bills/504139206?token=1148d804-b3a3-47d6-9e94-3af9fa060780","pdf":"https://intermediador.yapay.com.br/orders/billet/6e2166955c2f5e198a3f5623b6fe13dc","linha":"34191099661595478293285334580009115340000018728"},{"aluno":"Cintia leal dos Santos","telefone":"47989269191","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/484229353?token=90486d88-fa28-4814-a817-bc693b8883cb","pdf":null,"linha":null},{"aluno":"Claudia Antunes de Oliveira","telefone":"47997385233","venc":"2026-08-20","valor":986.23,"atrasado":false,"emitido":false,"billing_at":"2026-08-10","url":"https://app.vindi.com.br/customer/bills/484232956?token=14500b3f-9052-4f6c-bdfa-7a2eda77672d","pdf":null,"linha":null},{"aluno":"Clotilde Borba Manarin","telefone":"47999030087","venc":"2026-08-20","valor":187.28,"atrasado":false,"emitido":false,"billing_at":"2026-08-10","url":"https://app.vindi.com.br/customer/bills/504137751?token=7e9ebb94-fba8-4622-ab79-3d7e649d022b","pdf":null,"linha":null},{"aluno":"Eliani Ferreira Valandro","telefone":"47991104134","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":true,"billing_at":"2026-08-02","url":"https://app.vindi.com.br/customer/bills/487240117?token=951eb44d-1428-4448-813d-d645821416b5","pdf":"https://intermediador.yapay.com.br/orders/billet/9707df6af05db06eff36161080a97419","linha":"34191099662924586293285334580009615390000017147"},{"aluno":"Ester Viana","telefone":"47999668705","venc":"2026-04-15","valor":171.47,"atrasado":true,"emitido":true,"billing_at":"2026-04-02","url":"https://app.vindi.com.br/customer/bills/487232248?token=2d07be56-401f-4edb-ae3e-863a81205bee","pdf":"https://intermediador.yapay.com.br/orders/billet/2713b7e7e38cccc16f5bcee39fbff08b","linha":"34191097762933777293285334580009314170000017147"},{"aluno":"Ester Viana","telefone":"47999668705","venc":"2026-05-15","valor":171.47,"atrasado":true,"emitido":true,"billing_at":"2026-05-02","url":"https://app.vindi.com.br/customer/bills/487232255?token=4fc8f305-7371-4c63-bc71-d2c592b7a811","pdf":"https://intermediador.yapay.com.br/orders/billet/37cb27b81984954c5d48064368ea3fa4","linha":"34191098187455612293085334580009314470000017147"},{"aluno":"Ester Viana","telefone":"47999668705","venc":"2026-06-15","valor":171.47,"atrasado":true,"emitido":true,"billing_at":"2026-06-02","url":"https://app.vindi.com.br/customer/bills/487232257?token=9fed004a-6952-4a51-b3f6-cc529ad83876","pdf":"https://intermediador.yapay.com.br/orders/billet/0efd95a28fb011bdea9ef7b36f8add30","linha":"34191098677148851293185334580009414780000017147"},{"aluno":"Ester Viana","telefone":"47999668705","venc":"2026-07-15","valor":171.47,"atrasado":true,"emitido":true,"billing_at":"2026-07-02","url":"https://app.vindi.com.br/customer/bills/487232258?token=78a306e5-8e19-477e-9438-29ac27529be3","pdf":"https://intermediador.yapay.com.br/orders/billet/ebe05c353b42d2ecbac5a5c14361f10f","linha":"34191099174468559293185334580009815080000017147"},{"aluno":"Ester Viana","telefone":"47999668705","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":true,"billing_at":"2026-08-02","url":"https://app.vindi.com.br/customer/bills/487232259?token=1e5fe3c2-10af-46e4-a049-6b3787c97aea","pdf":"https://intermediador.yapay.com.br/orders/billet/2b8a7ab9f6e1ece36168636c678c5ac8","linha":"34191099662924537293285334580009615390000017147"},{"aluno":"Fernanda Fatuche","telefone":"47997873765","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/484225644?token=928aa375-ac76-4b9d-9f29-3d2dd7ee1a71","pdf":null,"linha":null},{"aluno":"Kamylla Rocha Barbosa","telefone":"47992173950","venc":"2026-08-20","valor":171.47,"atrasado":false,"emitido":false,"billing_at":"2026-08-10","url":"https://app.vindi.com.br/customer/bills/484220944?token=f35e9d7d-b645-412d-ae65-4c99228b08e0","pdf":null,"linha":null},{"aluno":"Kelly vitória angélico Corrêa","telefone":"41997474725","venc":"2026-08-10","valor":187.28,"atrasado":false,"emitido":true,"billing_at":"2026-08-01","url":"https://app.vindi.com.br/customer/bills/504135493?token=d5726fbf-bdaa-4db4-8d57-d6039db298ee","pdf":"https://intermediador.yapay.com.br/orders/billet/83ba6b836047dd83480ea3e5d0ec5a21","linha":"34191099661595460293285334580009115340000018728"},{"aluno":"Lucileia Schalanski de Lima","telefone":"47992876171","venc":"2026-08-10","valor":176.43,"atrasado":false,"emitido":true,"billing_at":"2026-08-01","url":"https://app.vindi.com.br/customer/bills/497724407?token=4ead8acf-d763-40cb-9636-a7d9b4a56add","pdf":"https://intermediador.yapay.com.br/orders/billet/509c9e4b41be5086635ad21ccc942cd6","linha":"34191099661594950293285334580009415340000017643"},{"aluno":"Lucileia Schalanski de Lima","telefone":"47992876171","venc":"2026-08-14","valor":69.57,"atrasado":false,"emitido":true,"billing_at":"2026-08-04","url":"https://app.vindi.com.br/customer/bills/526925914?token=2af1b4f2-d651-464b-ae2c-b16cf8b9129f","pdf":"https://intermediador.yapay.com.br/orders/billet/a14c083f0b9ced5c36901adc4816b1aa","linha":"34191099665910731293285334580009115380000006957"},{"aluno":"Maria Clara Salasar Oliveira","telefone":"47991828359","venc":"2026-08-28","valor":181.69,"atrasado":false,"emitido":false,"billing_at":"2026-08-18","url":"https://app.vindi.com.br/customer/bills/507344706?token=c50b3ac7-b0c3-4653-9d44-d9234ba194ea","pdf":null,"linha":null},{"aluno":"Mariana Fonseca de Oliveira","telefone":"47997745896","venc":"2026-08-30","valor":187.28,"atrasado":false,"emitido":false,"billing_at":"2026-08-20","url":"https://app.vindi.com.br/customer/bills/504140173?token=55af6e6a-6363-49b8-bcde-35b5c970e0f1","pdf":null,"linha":null},{"aluno":"Nathalia Cardozo","telefone":"47996983211","venc":"2026-08-20","valor":176.53,"atrasado":false,"emitido":false,"billing_at":"2026-08-10","url":"https://app.vindi.com.br/customer/bills/500399090?token=82534ad8-7176-4891-9add-6d0d6c6cdbdd","pdf":null,"linha":null},{"aluno":"renata lippi sobral dos santos","telefone":"47989049350","venc":"2026-08-15","valor":187.28,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/504136903?token=2e8e52b6-9236-4f8d-bfd8-7e5e662edfbe","pdf":null,"linha":null},{"aluno":"Rosimeyre Campos dos Santos","telefone":"47996083374","venc":"2026-08-15","valor":176.43,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/501417069?token=2b4e2c0f-a9d8-40fa-997f-1f5157045d48","pdf":null,"linha":null},{"aluno":"Sinval Antônio Borges Júnior","telefone":"47989002422","venc":"2026-08-15","valor":171.47,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/484231781?token=994c989b-352e-465c-8b96-d21ce5cfea45","pdf":null,"linha":null},{"aluno":"Sinval Antônio Borges Júnior","telefone":"47989002422","venc":"2026-08-20","valor":61.52,"atrasado":false,"emitido":false,"billing_at":"2026-08-10","url":"https://app.vindi.com.br/customer/bills/526845657?token=c28b8b27-1ea9-4567-b5bd-da22de5b3c51","pdf":null,"linha":null},{"aluno":"Tauane Naiara de Mira Pires","telefone":"15981896310","venc":"2026-08-15","valor":175.47,"atrasado":false,"emitido":true,"billing_at":"2026-08-02","url":"https://app.vindi.com.br/customer/bills/487231589?token=e5c7fab2-3b00-489a-9f95-6dfe48714706","pdf":"https://intermediador.yapay.com.br/orders/billet/5860af25748d9c6dcc15153e91b909c2","linha":"34191099662924560293285334580009115390000017547"},{"aluno":"Thiana Miglaci Ramos Schlosser","telefone":"47981815144","venc":"2026-08-15","valor":183.47,"atrasado":false,"emitido":false,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/487241363?token=cf6572f7-8903-4467-8440-1365f00150a7","pdf":null,"linha":null}]};
+const INTERNO = true;
+const HOJE = new Date('2026-08-04T00:00:00-03:00');
+
+const brl = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const brlCurto = (n) => 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const dataBR = (s) => s ? s.slice(8, 10) + '/' + s.slice(5, 7) + '/' + s.slice(0, 4) : '—';
+const mesBR = (s) => ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'][Number(s.slice(5,7)) - 1] + '/' + s.slice(2, 4);
+
+const R = DADOS.resumo;
+document.getElementById('kpi-pago').textContent = brlCurto(R.pago);
+document.getElementById('kpi-contratado').textContent = brlCurto(R.contratado);
+document.getElementById('kpi-vencido').textContent = brl(R.vencido);
+
+// ----- barra de arrecadação -----
+const aReceber = R.contratado - R.pago - R.vencido;
+const segmentos = [
+  { cls: 'seg-pago', rot: 'Já recebido', valor: R.pago, cor: 'var(--good-mark)' },
+  { cls: 'seg-vencido', rot: 'Vencido em aberto', valor: R.vencido, cor: 'var(--crit-mark)' },
+  { cls: 'seg-aberto', rot: 'A receber até 2029', valor: aReceber, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+];
+document.getElementById('barra-total').innerHTML = segmentos
+  .map((s) => '<span class="' + s.cls + '" style="width:' + Math.max((s.valor / R.contratado) * 100, 0.4) + '%"></span>')
+  .join('');
+document.getElementById('legenda-total').innerHTML = segmentos
+  .map((s) => '<span class="item"><span class="marca" style="background:' + s.cor + '"></span>' + s.rot + ' <b>' + brl(s.valor) + '</b> <span style="color:var(--ink-3)">(' + ((s.valor / R.contratado) * 100).toFixed(1) + '%)</span></span>')
+  .join('');
+
+// ----- gráfico mensal -----
+const maxMes = Math.max(...DADOS.meses.map((m) => m.pago + m.vencido + m.aberto));
+document.getElementById('grafico').innerHTML = DADOS.meses
+  .map((m) => {
+    const partes = [
+      { v: m.aberto, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+      { v: m.vencido, cor: 'var(--crit-mark)' },
+      { v: m.pago, cor: 'var(--good-mark)' },
+    ].filter((p) => p.v > 0);
+    const barras = partes
+      .map((p) => '<i style="background:' + p.cor + ';height:' + (p.v / maxMes) * 100 + '%"></i>')
+      .join('');
+    const tot = m.pago + m.vencido + m.aberto;
+    const tip = '<span class="tip">' + mesBR(m.mes) + '<br>Pago <b>' + brl(m.pago) + '</b>' +
+      (m.vencido ? '<br>Vencido <b>' + brl(m.vencido) + '</b>' : '') +
+      (m.aberto ? '<br>A vencer <b>' + brl(m.aberto) + '</b>' : '') +
+      '<br>Total <b>' + brl(tot) + '</b></span>';
+    return '<div class="col" tabindex="0">' + tip + '<div class="pilha">' + barras + '</div><span class="rot-mes">' + mesBR(m.mes) + '</span></div>';
+  })
+  .join('');
+document.getElementById('legenda-meses').innerHTML =
+  '<span class="item"><span class="marca" style="background:var(--good-mark)"></span>Pago</span>' +
+  '<span class="item"><span class="marca" style="background:var(--crit-mark)"></span>Vencido em aberto</span>' +
+  '<span class="item"><span class="marca" style="background:color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))"></span>A vencer</span>' +
+  '<span class="item" style="color:var(--ink-3)">Boletos emitidos até jan/2027</span>';
+
+// ----- cards de atenção -----
+const atrasados = DADOS.alunos.filter((a) => a.situacao === 'inadimplente');
+document.getElementById('cards-atencao').innerHTML = atrasados
+  .map((a) => {
+    const vencidas = a.bills.filter((b) => b.status === 'pending' && new Date(b.venc + 'T23:59:59-03:00') < HOJE);
+    const linhas = vencidas
+      .map((b) => '<li><span>Venceu em ' + dataBR(b.venc) + '</span>' +
+        (INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">' + brl(b.valor) + ' ↗</a>' : '<b>' + brl(b.valor) + '</b>') + '</li>')
+      .join('');
+    return '<article class="card-atencao"><h3>' + a.nome + '</h3>' +
+      '<p class="resumo-linha">' + vencidas.length + ' parcela' + (vencidas.length > 1 ? 's' : '') + ' em aberto · ' +
+      brl(a.valor_vencido) + ' · ' + a.atraso_dias + ' dias de atraso' +
+      (a.pagas === 0 ? ' · <strong>nunca pagou nenhuma parcela</strong>' : ' · ' + a.pagas + ' parcelas pagas antes') + '</p>' +
+      '<ul>' + linhas + '</ul></article>';
+  })
+  .join('');
+
+
+// ----- central de cobrança (só na versão interna) -----
+function copiar(texto, botao, rotuloOriginal) {
+  const feito = () => {
+    botao.textContent = 'Copiado';
+    botao.classList.add('feito');
+    setTimeout(() => { botao.textContent = rotuloOriginal; botao.classList.remove('feito'); }, 1800);
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(texto).then(feito).catch(() => feito());
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = texto; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    ta.remove(); feito();
+  }
+}
+
+function mensagemWhats(nome, parcelas) {
+  const primeiro = nome.trim().split(/\s+/)[0];
+  const total = parcelas.reduce((s, p) => s + p.valor, 0);
+  const abre = parcelas.length === 1
+    ? (parcelas[0].atrasado
+        ? 'consta em aberto a parcela da sua formatura no valor de ' + brl(parcelas[0].valor) + ', que venceu em ' + dataBR(parcelas[0].venc) + '.'
+        : 'segue o boleto da sua parcela da formatura no valor de ' + brl(parcelas[0].valor) + ', com vencimento em ' + dataBR(parcelas[0].venc) + '.')
+    : 'constam ' + parcelas.length + ' parcelas em aberto no seu contrato da formatura, somando ' + brl(total) + ':';
+  const itens = parcelas.length === 1
+    ? '\n\nLink para pagamento: ' + parcelas[0].url + (parcelas[0].linha ? '\nLinha digitável: ' + parcelas[0].linha : '')
+    : parcelas.map((p, i) => '\n\n' + (i + 1) + ') ' + brl(p.valor) + ' — ' + (p.atrasado ? 'venceu em ' : 'vence em ') + dataBR(p.venc) + '\n' + p.url).join('');
+  const frase = abre.charAt(0).toUpperCase() + abre.slice(1);
+  return 'Oi, ' + primeiro + '! Aqui é da Indaiá Eventos — turma Biomedicina e Nutrição 2028/2.\n\n' + frase + itens +
+    '\n\nSe o pagamento já foi feito, é só desconsiderar e nos enviar o comprovante. Qualquer dúvida, estamos por aqui!';
+}
+
+if (DADOS.cobrancas) {
+  const prontos = DADOS.cobrancas.filter((c) => c.emitido);
+  const agendados = DADOS.cobrancas.filter((c) => !c.emitido).sort((a, b) => (a.billing_at || '').localeCompare(b.billing_at || '') || a.aluno.localeCompare(b.aluno));
+
+  // agrupa por aluno: quem tem várias parcelas em aberto recebe UMA mensagem com todos os links
+  const porAluno = [];
+  for (const c of prontos) {
+    let g = porAluno.find((x) => x.aluno === c.aluno);
+    if (!g) { g = { aluno: c.aluno, telefone: c.telefone, parcelas: [] }; porAluno.push(g); }
+    g.parcelas.push(c);
+  }
+  for (const g of porAluno) {
+    g.parcelas.sort((a, b) => a.venc.localeCompare(b.venc));
+    g.total = g.parcelas.reduce((s, p) => s + p.valor, 0);
+    g.temAtraso = g.parcelas.some((p) => p.atrasado);
+  }
+  porAluno.sort((a, b) => (b.temAtraso - a.temAtraso) || b.parcelas.length - a.parcelas.length || a.aluno.localeCompare(b.aluno));
+
+  document.getElementById('rot-prontos').textContent =
+    'Boleto já emitido — pode enviar agora (' + prontos.length + ' parcelas, ' + porAluno.length + ' formandos)';
+  document.getElementById('rot-agendados').textContent = 'Boleto ainda não emitido (' + agendados.length + ')';
+
+  document.getElementById('cob-prontos').innerHTML = porAluno
+    .map((g, gi) => {
+      const tel = (g.telefone || '').replace(/\D/g, '');
+      const whats = tel ? 'https://wa.me/55' + tel + '?text=' + encodeURIComponent(mensagemWhats(g.aluno, g.parcelas)) : null;
+      const resumo = g.parcelas.length + (g.parcelas.length > 1 ? ' parcelas em aberto · ' : ' parcela em aberto · ') + brl(g.total);
+      const linhas = g.parcelas
+        .map((p, pi) => {
+          const quando = p.atrasado
+            ? '<span style="color:var(--crit-text);font-weight:650">venceu ' + dataBR(p.venc) + '</span>'
+            : 'vence ' + dataBR(p.venc);
+          return '<div class="parcela-cob">' +
+            '<span class="quanto">' + brl(p.valor) + '</span>' +
+            '<span class="quando">' + quando + '</span>' +
+            '<span class="acoes">' +
+            '<button type="button" class="acao" data-copiar="link" data-g="' + gi + '" data-p="' + pi + '">Copiar link</button>' +
+            (p.linha ? '<button type="button" class="acao" data-copiar="linha" data-g="' + gi + '" data-p="' + pi + '">Copiar cód. de barras</button>' : '') +
+            '<a class="acao" href="' + (p.pdf || p.url) + '" target="_blank" rel="noopener">Abrir boleto</a>' +
+            '</span>' +
+            (p.linha ? '<span class="linha-dig">' + p.linha + '</span>' : '') +
+            '</div>';
+        })
+        .join('');
+      return '<div class="cob' + (g.temAtraso ? ' atraso' : '') + '">' +
+        '<span class="quem">' + g.aluno + '</span>' +
+        '<span class="info"><span class="quando">' + resumo + '</span></span>' +
+        '<span class="acoes">' +
+        (whats
+          ? '<a class="acao principal" href="' + whats + '" target="_blank" rel="noopener">Enviar no WhatsApp' + (g.parcelas.length > 1 ? ' (' + g.parcelas.length + ' links)' : '') + '</a>'
+          : '<span class="acao" style="opacity:.6">sem telefone cadastrado</span>') +
+        '</span>' +
+        '<div class="parcelas-cob">' + linhas + '</div>' +
+        '</div>';
+    })
+    .join('');
+
+  document.getElementById('cob-prontos').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-copiar]');
+    if (!b) return;
+    const p = porAluno[Number(b.dataset.g)].parcelas[Number(b.dataset.p)];
+    copiar(b.dataset.copiar === 'link' ? p.url : p.linha, b, b.textContent);
+  });
+
+  document.getElementById('cob-agendados').innerHTML = agendados
+    .map((c) => '<div class="cob">' +
+      '<span class="quem">' + c.aluno + '</span>' +
+      '<span class="info"><span class="quanto">' + brl(c.valor) + '</span><span class="quando">Vence ' + dataBR(c.venc) + '</span></span>' +
+      '<span class="aguardando">boleto disponível a partir de<br><strong style="color:var(--ink-2);font-family:var(--mono)">' + dataBR(c.billing_at) + '</strong></span>' +
+      '</div>')
+    .join('');
+}
+
+
+// ----- tabela -----
+let filtro = 'todos';
+let busca = '';
+let ordem = { col: 'nome', dir: 'asc' };
+
+function linhaAluno(a, i) {
+  const pill = a.situacao === 'adimplente'
+    ? '<span class="pill ok"><span class="ponto"></span>Em dia</span>'
+    : '<span class="pill mal"><span class="ponto"></span>Em atraso ' + a.atraso_dias + 'd</span>';
+  return (
+    '<tr class="linha-aluno" data-i="' + i + '" tabindex="0" role="button" aria-expanded="false">' +
+    '<td class="nome">' + a.nome + '<span class="sub">' + a.contrato_parcelas + 'x ' + brl(a.mensalidade) + ' · total ' + brl(a.contrato_total) + '</span></td>' +
+    '<td class="situacao">' + pill + '</td>' +
+    '<td class="num col-oculta-mobile">' + a.pagas + ' / ' + a.contrato_parcelas + '</td>' +
+    '<td class="num col-oculta-mobile">' + brl(a.mensalidade) + '</td>' +
+    '<td class="num celula-recebido" data-rot="Recebido">' + brl(a.valor_pago) + '</td>' +
+    '<td class="col-oculta-mobile"><span class="progresso"><span class="trilha"><span class="preenchido" style="width:' + Math.min(a.pct_pago, 100) + '%"></span></span><span class="pct">' + a.pct_pago.toFixed(1) + '%</span></span></td>' +
+    '<td class="num celula-vencido" data-rot="Vencido" style="color:' + (a.valor_vencido ? 'var(--crit-text)' : 'var(--ink-3)') + ';font-weight:' + (a.valor_vencido ? '650' : '400') + '">' + (a.valor_vencido ? brl(a.valor_vencido) : '—') + '</td>' +
+    '<td class="num col-oculta-mobile">' + dataBR(a.proxima_venc) + '</td>' +
+    '</tr>'
+  );
+}
+
+function linhaDetalhe(a, i) {
+  const parcelas = a.bills
+    .map((b) => {
+      const venceu = new Date(b.venc + 'T23:59:59-03:00') < HOJE;
+      const cls = b.status === 'paid' ? 'paga' : venceu ? 'vencida' : 'aberta';
+      const est = b.status === 'paid' ? 'Paga ' + dataBR(b.pago_em).slice(0, 5) : venceu ? 'Vencida' : b.status === 'scheduled' ? 'Agendada' : 'A vencer';
+      const link = INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">boleto ↗</a>' : '';
+      return '<div class="parcela ' + cls + '"><span class="data">' + dataBR(b.venc) + '</span><span class="val">' + brl(b.valor) + '</span><span class="est">' + est + '</span>' + link + '</div>';
+    })
+    .join('');
+  const contato = INTERNO
+    ? '<div class="contato-linha"><span>CPF ' + (a.cpf || '—') + '</span><span>' + (a.telefone || '—') + '</span><span>' + (a.email || '—') + '</span>' +
+      (a.canceladas ? '<span style="color:var(--ink-3)">' + a.canceladas + ' boleto(s) cancelado(s)/reemitido(s)</span>' : '') + '</div>'
+    : '';
+  return (
+    '<tr class="detalhe" data-detalhe="' + i + '" hidden><td colspan="8"><div class="caixa">' +
+    contato +
+    '<div class="contato-linha"><span style="font-family:var(--sans)">' + a.boletos_emitidos + ' boletos emitidos · último em ' + dataBR(a.ultimo_boleto) +
+    ' · faltam ' + a.parcelas_restantes + ' parcelas do contrato · saldo ' + brl(a.saldo) + '</span></div>' +
+    (INTERNO && a.series_multiplas
+      ? '<div class="contato-linha" style="color:var(--crit-text)"><span style="font-family:var(--sans)">⚠ Duas séries de cobrança neste contrato (' + a.series.join(' + ') + ') — conferir com o financeiro se é aditivo ou renegociação.</span></div>'
+      : '') +
+    '<div class="parcelas">' + parcelas + '</div></div></td></tr>'
+  );
+}
+
+function ordenar(lista) {
+  const c = ordem.col, s = ordem.dir === 'asc' ? 1 : -1;
+  return [...lista].sort((a, b) => {
+    let x = a[c], y = b[c];
+    if (c === 'situacao') { x = a.valor_vencido; y = b.valor_vencido; }
+    if (typeof x === 'string' || x === null) return s * String(x ?? '').localeCompare(String(y ?? ''), 'pt-BR');
+    return s * ((x ?? 0) - (y ?? 0));
+  });
+}
+
+function render() {
+  const lista = ordenar(
+    DADOS.alunos.filter((a) => (filtro === 'todos' || a.situacao === filtro) && a.nome.toLowerCase().includes(busca)),
+  );
+  const corpo = document.getElementById('corpo-tabela');
+  corpo.innerHTML = lista.map((a) => linhaAluno(a, DADOS.alunos.indexOf(a)) + linhaDetalhe(a, DADOS.alunos.indexOf(a))).join('');
+  document.getElementById('vazio').hidden = lista.length > 0;
+}
+
+document.querySelectorAll('.chip').forEach((c) =>
+  c.addEventListener('click', () => {
+    filtro = c.dataset.filtro;
+    document.querySelectorAll('.chip').forEach((o) => o.setAttribute('aria-pressed', String(o === c)));
+    render();
+  }),
+);
+document.getElementById('busca').addEventListener('input', (e) => {
+  busca = e.target.value.toLowerCase().trim();
+  render();
+});
+document.querySelectorAll('thead th[data-col]').forEach((th) =>
+  th.querySelector('button').addEventListener('click', () => {
+    const col = th.dataset.col;
+    ordem = { col, dir: ordem.col === col && ordem.dir === 'asc' ? 'desc' : 'asc' };
+    document.querySelectorAll('thead th').forEach((o) => o.removeAttribute('aria-sort'));
+    th.setAttribute('aria-sort', ordem.dir === 'asc' ? 'ascending' : 'descending');
+    render();
+  }),
+);
+
+function alternar(tr) {
+  const det = document.querySelector('[data-detalhe="' + tr.dataset.i + '"]');
+  if (!det) return;
+  det.hidden = !det.hidden;
+  tr.setAttribute('aria-expanded', String(!det.hidden));
+}
+document.getElementById('corpo-tabela').addEventListener('click', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && !e.target.closest('a')) alternar(tr);
+});
+document.getElementById('corpo-tabela').addEventListener('keydown', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); alternar(tr); }
+});
+
+render();
+</script>
+<style>
+#alternar-tema {
+  position: fixed; top: 14px; right: 14px; z-index: 30;
+  font: inherit; font-size: 12.5px; font-weight: 550; padding: 7px 13px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  cursor: pointer; box-shadow: var(--shadow);
+}
+#alternar-tema:hover { border-color: var(--accent); color: var(--accent); }
+@media print { #alternar-tema { display: none; } }
+</style>
+<script>
+(function () {
+  var raiz = document.documentElement;
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.id = 'alternar-tema';
+  var escuro = function () {
+    var t = raiz.getAttribute('data-theme');
+    return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  var rotular = function () { b.textContent = escuro() ? '☀ Tema claro' : '☾ Tema escuro'; };
+  b.addEventListener('click', function () {
+    raiz.setAttribute('data-theme', escuro() ? 'light' : 'dark');
+    rotular();
+  });
+  rotular();
+  document.body.appendChild(b);
+})();
+</script>
+</body>
+</html>
