@@ -12,7 +12,9 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # false, e não true: com a fila do Actions lenta, cancel-in-progress derruba o deploy
+  # que estava esperando a vez em vez de só evitar dois publicando junto.
+  cancel-in-progress: false
 
 jobs:
   publicar:
