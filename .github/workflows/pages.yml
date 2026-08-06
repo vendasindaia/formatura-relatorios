@@ -28,3 +28,7 @@ jobs:
           path: .
       - id: deploy
         uses: actions/deploy-pages@v4
+        with:
+          # O Pages tem passado bem dos 10 min padrão para confirmar o deploy e o
+          # action cancela o deployment ao estourar. 30 min evita cancelar um deploy que ia dar certo.
+          timeout: 1800000
