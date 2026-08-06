@@ -6,6 +6,10 @@ Cada relatório fica numa pasta de nome aleatório e a raiz não lista nenhum de
 
 Os arquivos são gerados fora deste repositório (scripts que leem o CRM e a Vindi); aqui fica só o resultado.
 
+## Publicados
+
+- **Painel de atendimento** (todas as turmas, uso interno da equipe): `painel-formaturas-950a899effc6d60a/`
+
 ## Turmas publicadas
 
 - 7506 — Biomedicina e Nutrição 2028/2 (Censupeg): versão interno em `f7506-interno-2b323b89fdadbfca/`
