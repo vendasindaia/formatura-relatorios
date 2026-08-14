@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Relatório financeiro — Formatura 7508 (interno)</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --ink: #131722;
+  --ink-2: #4c5566;
+  --ink-3: #79839a;
+  --line: #dee3ed;
+  --line-strong: #c6cddc;
+  --accent: #22406f;
+  --accent-soft: #e7ecf7;
+  --gold: #9a7a2c;
+  --good-mark: #0ca30c;
+  --good-text: #046604;
+  --good-soft: #e4f5e4;
+  --crit-mark: #d03b3b;
+  --crit-text: #a52121;
+  --crit-soft: #fbe8e8;
+  --warn-mark: #fab219;
+  --shadow: 0 1px 2px rgba(19, 23, 34, .05), 0 8px 24px -18px rgba(19, 23, 34, .35);
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg: #0f121a;
+    --surface: #161a23;
+    --surface-2: #1d232f;
+    --ink: #f0f3f8;
+    --ink-2: #b2bbcc;
+    --ink-3: #7d879a;
+    --line: #29303e;
+    --line-strong: #3a4353;
+    --accent: #93b4ea;
+    --accent-soft: #1a2540;
+    --gold: #cfa956;
+    --good-mark: #21b521;
+    --good-text: #5fd35f;
+    --good-soft: #122a12;
+    --crit-mark: #e05555;
+    --crit-text: #f08b8b;
+    --crit-soft: #2d1414;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f121a;
+  --surface: #161a23;
+  --surface-2: #1d232f;
+  --ink: #f0f3f8;
+  --ink-2: #b2bbcc;
+  --ink-3: #7d879a;
+  --line: #29303e;
+  --line-strong: #3a4353;
+  --accent: #93b4ea;
+  --accent-soft: #1a2540;
+  --gold: #cfa956;
+  --good-mark: #21b521;
+  --good-text: #5fd35f;
+  --good-soft: #122a12;
+  --crit-mark: #e05555;
+  --crit-text: #f08b8b;
+  --crit-soft: #2d1414;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 40px 24px 96px; display: flex; flex-direction: column; gap: 34px; }
+@media (max-width: 640px) { .wrap { padding: 24px 14px 64px; gap: 26px; } }
+
+/* ---------- cabeçalho ---------- */
+.cabecalho { display: flex; flex-direction: column; gap: 18px; }
+.eyebrow {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); opacity: .5; }
+h1 {
+  font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.1; margin: 0; letter-spacing: -.015em; text-wrap: balance;
+}
+.subtitulo { color: var(--ink-2); font-size: 16px; max-width: 62ch; margin: 0; }
+.meta-evento {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+}
+.meta-evento div { background: var(--surface); padding: 12px 14px; }
+.meta-evento dt { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 3px; font-weight: 600; }
+.meta-evento dd { margin: 0; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.meta-evento dd.mono { font-family: var(--mono); font-size: 13.5px; letter-spacing: .02em; }
+
+/* ---------- seletor de curso ---------- */
+.seletor-curso {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 14px 18px; box-shadow: var(--shadow);
+}
+.seletor-curso .rot {
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); font-weight: 650;
+}
+.chips-curso { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-curso {
+  font: inherit; font-size: 13.5px; font-weight: 550; padding: 7px 15px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.chip-curso b {
+  font-family: var(--mono); font-size: 12px; font-weight: 650; background: var(--surface-2);
+  color: var(--ink-2); padding: 1px 7px; border-radius: 999px;
+}
+.chip-curso:hover { border-color: var(--accent); color: var(--accent); }
+.chip-curso[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.chip-curso[aria-pressed="true"] b { background: rgba(255, 255, 255, .22); color: var(--surface); }
+:root[data-theme="dark"] .chip-curso[aria-pressed="true"],
+:root:where(:not([data-theme="light"])) .chip-curso[aria-pressed="true"] { color: #0f121a; }
+:root[data-theme="dark"] .chip-curso[aria-pressed="true"] b,
+:root:where(:not([data-theme="light"])) .chip-curso[aria-pressed="true"] b { background: rgba(15, 18, 26, .18); color: #0f121a; }
+
+.faixa-recorte {
+  display: none; align-items: center; gap: 10px; margin-top: 4px;
+  border-left: 3px solid var(--accent); background: var(--accent-soft);
+  padding: 10px 16px; border-radius: 0 10px 10px 0; font-size: 14px; color: var(--ink);
+}
+.faixa-recorte.ativa { display: flex; }
+.faixa-recorte strong { font-weight: 650; }
+.faixa-recorte .contagem { color: var(--ink-2); font-size: 13px; }
+
+.chip-curso.conjunto { border-style: dashed; }
+.chip-curso.conjunto::after { content: "⚠"; font-size: 11px; opacity: .75; }
+.seletor-curso .acao-ajuste { margin-left: auto; }
+
+/* ---------- painel de separação de curso ---------- */
+.ajuste-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 8px; }
+.ajuste-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; background: var(--surface);
+}
+.ajuste-item.pendente { border-color: color-mix(in srgb, var(--warn-mark) 55%, var(--line)); background: color-mix(in srgb, var(--warn-mark) 7%, var(--surface)); }
+.ajuste-item .quem { font-size: 13.5px; font-weight: 550; }
+.ajuste-item select {
+  font: inherit; font-size: 12.5px; padding: 5px 8px; border-radius: 7px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); max-width: 190px;
+}
+.ajuste-acoes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; }
+.ajuste-resumo { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+
+.etiqueta-curso {
+  display: inline-block; font-size: 10.5px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase;
+  background: var(--surface-2); color: var(--ink-3); border: 1px solid var(--line);
+  padding: 1px 7px; border-radius: 5px; margin-left: 8px; vertical-align: 1px; white-space: nowrap;
+}
+
+/* ---------- KPIs ---------- */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 4px;
+}
+.kpi .rot { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+.kpi .num { font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi .pe { font-size: 12.5px; color: var(--ink-3); }
+.kpi.ok .num { color: var(--good-text); }
+.kpi.alerta { border-color: color-mix(in srgb, var(--crit-mark) 45%, var(--line)); }
+.kpi.alerta .num { color: var(--crit-text); }
+
+/* ---------- blocos ---------- */
+.bloco { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.bloco > header { padding: 18px 22px 0; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+.bloco h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.bloco .dica { font-size: 13px; color: var(--ink-3); margin: 2px 0 0; }
+.bloco > .corpo { padding: 18px 22px 22px; }
+@media (max-width: 640px) { .bloco > header { padding: 16px 14px 0; } .bloco > .corpo { padding: 14px; } }
+
+/* ---------- barra de arrecadação ---------- */
+.barra-total { display: flex; gap: 2px; height: 34px; border-radius: 6px; overflow: hidden; background: var(--surface-2); margin: 14px 0 12px; }
+.barra-total span { display: block; height: 100%; }
+.seg-pago { background: var(--good-mark); border-radius: 4px 0 0 4px; }
+.seg-vencido { background: var(--crit-mark); }
+.seg-aberto { background: color-mix(in srgb, var(--ink-3) 26%, var(--surface-2)); border-radius: 0 4px 4px 0; }
+.legenda { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: 13px; color: var(--ink-2); }
+.legenda .item { display: flex; align-items: center; gap: 8px; }
+.legenda .marca { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.legenda b { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+
+/* ---------- gráfico mensal ---------- */
+.grafico { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; align-items: end; height: 190px; margin: 8px 0 10px; }
+.col { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; position: relative; }
+.col .pilha { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; }
+.col i { display: block; border-radius: 2px; min-height: 2px; }
+.col i:first-child { border-radius: 4px 4px 2px 2px; }
+.col i:last-child { border-radius: 2px 2px 4px 4px; }
+.col .rot-mes { font-size: 10.5px; color: var(--ink-3); text-align: center; margin-top: 8px; font-family: var(--mono); letter-spacing: -.02em; }
+.col:hover .tip, .col:focus-within .tip { opacity: 1; transform: translate(-50%, -6px); pointer-events: auto; }
+.tip {
+  position: absolute; bottom: 100%; left: 50%; transform: translate(-50%, 2px);
+  background: var(--ink); color: var(--bg); font-size: 12px; line-height: 1.45; padding: 8px 10px;
+  border-radius: 8px; white-space: nowrap; opacity: 0; transition: opacity .13s ease, transform .13s ease;
+  pointer-events: none; z-index: 5; box-shadow: 0 6px 18px -8px rgba(0,0,0,.5);
+}
+.tip b { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+
+/* ---------- atenção ---------- */
+.cards-atencao { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.card-atencao { border: 1px solid color-mix(in srgb, var(--crit-mark) 35%, var(--line)); background: var(--crit-soft); border-radius: 12px; padding: 16px 18px; }
+.card-atencao h3 { margin: 0 0 2px; font-size: 16.5px; font-weight: 650; }
+.card-atencao .resumo-linha { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+.card-atencao ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.card-atencao li { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; padding: 6px 0; border-top: 1px solid color-mix(in srgb, var(--crit-mark) 18%, transparent); }
+.card-atencao li span:first-child { color: var(--ink-2); }
+.card-atencao li b, .card-atencao li a { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--crit-text); }
+.card-atencao a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- controles ---------- */
+.controles { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 14px 22px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+@media (max-width: 640px) { .controles { padding: 12px 14px; } }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 6px 13px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .chip[aria-pressed="true"], :root:where(:not([data-theme="light"])) .chip[aria-pressed="true"] { color: #0f121a; }
+.busca { flex: 1; min-width: 170px; }
+.busca input {
+  width: 100%; font: inherit; font-size: 13.5px; padding: 7px 12px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+}
+.btn-print {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 7px 14px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip:hover, .btn-print:hover { border-color: var(--accent); color: var(--accent); }
+.chip[aria-pressed="true"]:hover { color: var(--surface); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- tabela ---------- */
+.tabela-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead th {
+  text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+  font-weight: 650; padding: 12px 14px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; background: var(--surface);
+}
+thead th.num, td.num { text-align: right; }
+thead th button {
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none;
+  border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+}
+thead th button::after { content: "↕"; opacity: .35; font-size: 11px; }
+thead th[aria-sort="ascending"] button::after { content: "↑"; opacity: 1; }
+thead th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; }
+thead th[aria-sort] button { color: var(--accent); }
+tbody tr { border-bottom: 1px solid var(--line); }
+tbody tr.linha-aluno { cursor: pointer; }
+tbody tr.linha-aluno:hover { background: var(--surface-2); }
+tbody td { padding: 11px 14px; vertical-align: middle; }
+td.nome { font-weight: 600; min-width: 190px; }
+td.nome .sub { display: block; font-weight: 400; font-size: 12px; color: var(--ink-3); font-family: var(--mono); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 650; padding: 3px 10px 3px 8px; border-radius: 999px; white-space: nowrap; }
+.pill.ok { background: var(--good-soft); color: var(--good-text); }
+.pill.mal { background: var(--crit-soft); color: var(--crit-text); }
+.pill .ponto { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pill.ok .ponto { background: var(--good-mark); }
+.pill.mal .ponto { background: var(--crit-mark); }
+.progresso { display: flex; align-items: center; gap: 8px; min-width: 118px; }
+.progresso .trilha { flex: 1; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.progresso .preenchido { display: block; height: 100%; background: var(--good-mark); border-radius: 3px; }
+.progresso .pct { font-family: var(--mono); font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; width: 42px; text-align: right; }
+tr.detalhe > td { padding: 0; background: var(--surface-2); }
+tr.detalhe .caixa { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+.parcelas { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 8px; }
+.parcela { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; display: flex; flex-direction: column; gap: 2px; }
+.parcela .data { font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela .val { font-family: var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela .est { font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+.parcela.paga { border-left: 3px solid var(--good-mark); }
+.parcela.paga .est { color: var(--good-text); }
+.parcela.vencida { border-left: 3px solid var(--crit-mark); background: var(--crit-soft); }
+.parcela.vencida .est { color: var(--crit-text); }
+.parcela.aberta { border-left: 3px solid var(--line-strong); }
+.parcela.aberta .est { color: var(--ink-3); }
+.parcela a { color: var(--accent); font-size: 11.5px; text-decoration: underline; text-underline-offset: 2px; }
+.contato-linha { font-size: 13px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.contato-linha span { font-family: var(--mono); font-size: 12.5px; }
+.vazio { padding: 28px; text-align: center; color: var(--ink-3); font-size: 14px; }
+
+/* ---------- central de cobrança ---------- */
+.cobrancas { display: flex; flex-direction: column; gap: 8px; }
+.cob {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3px 20px;
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; background: var(--surface);
+}
+.cob.atraso { border-color: color-mix(in srgb, var(--crit-mark) 40%, var(--line)); background: var(--crit-soft); }
+.cob .quem { grid-column: 1; font-weight: 600; font-size: 14.5px; }
+.cob .info { grid-column: 1; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .quanto { font-family: var(--mono); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .acoes { grid-column: 2; grid-row: 1 / 3; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-self: center; max-width: 430px; }
+.acao {
+  font: inherit; font-size: 12.5px; font-weight: 550; padding: 5px 11px; border-radius: 7px; cursor: pointer;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+}
+.acao:hover { border-color: var(--accent); color: var(--accent); }
+.acao.principal { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal, :root:where(:not([data-theme="light"])) .acao.principal { color: #0f121a; }
+.acao.principal:hover { filter: brightness(1.08); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal:hover, :root:where(:not([data-theme="light"])) .acao.principal:hover { color: #0f121a; }
+.acao.feito { border-color: var(--good-mark); color: var(--good-text); }
+.cob .aguardando { grid-column: 2; grid-row: 1 / 3; font-size: 12.5px; color: var(--ink-3); text-align: right; align-self: center; }
+.parcelas-cob { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1px; margin-top: 10px; }
+.parcela-cob {
+  display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 4px 14px;
+  padding: 8px 0; border-top: 1px dashed var(--line-strong);
+}
+.parcela-cob .quanto { font-family: var(--mono); font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela-cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela-cob .acoes { grid-column: 3; grid-row: 1; justify-content: flex-end; }
+.parcela-cob .linha-dig { grid-column: 1 / -1; border: 0; margin: 2px 0 0; padding: 0; }
+.linha-dig { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .01em; word-break: break-all; }
+@media (max-width: 860px) {
+  .parcela-cob { grid-template-columns: auto 1fr; }
+  .parcela-cob .acoes { grid-column: 1 / -1; grid-row: auto; justify-content: flex-start; margin-top: 6px; }
+}
+@media (max-width: 860px) {
+  .cob { grid-template-columns: 1fr; }
+  .cob .acoes { grid-column: 1; grid-row: auto; justify-content: flex-start; max-width: none; margin-top: 8px; }
+  .cob .aguardando { grid-column: 1; grid-row: auto; text-align: left; margin-top: 4px; }
+}
+.sub-secao { font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 650; margin: 18px 0 8px; }
+.sub-secao:first-child { margin-top: 0; }
+
+/* ---------- notas ---------- */
+.notas { font-size: 13.5px; color: var(--ink-2); display: flex; flex-direction: column; gap: 10px; }
+.notas h3 { font-family: var(--serif); font-size: 17px; margin: 0 0 2px; color: var(--ink); font-weight: 600; }
+.notas ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 7px; }
+.notas code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.aviso { border-left: 3px solid var(--warn-mark); background: color-mix(in srgb, var(--warn-mark) 9%, var(--surface)); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13.5px; }
+.aviso b { color: var(--ink); }
+.rodape { font-size: 12.5px; color: var(--ink-3); text-align: center; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 760px) {
+  thead { display: none; }
+  tbody tr.linha-aluno { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 12px 14px; }
+  tbody tr.linha-aluno td { padding: 0; border: 0; }
+  td.nome { grid-column: 1; grid-row: 1; }
+  td.situacao { grid-column: 2; grid-row: 1; text-align: right; align-self: start; }
+  tbody td.col-oculta-mobile { display: none; }
+  td.celula-recebido { grid-column: 1; grid-row: 2; }
+  td.celula-vencido { grid-column: 2; grid-row: 2; }
+  td.celula-recebido, td.celula-vencido { text-align: left !important; display: flex; gap: 7px; align-items: baseline; }
+  td.celula-recebido::before, td.celula-vencido::before {
+    content: attr(data-rot); font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink-3); font-weight: 600;
+  }
+}
+@media print {
+  body { background: #fff; }
+  .wrap { padding: 0; gap: 20px; max-width: none; }
+  .controles, .btn-print, .tip, .acao[data-copiar], .acao.principal { display: none !important; }
+  .bloco, .kpi { box-shadow: none; }
+  .kpi, .card-atencao, .cob, .parcela-cob { break-inside: avoid; }
+  .bloco { break-inside: auto; }
+  .bloco > header { break-after: avoid; }
+  thead { display: table-header-group; }
+  tbody tr { break-inside: avoid; }
+  tr.detalhe { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="cabecalho">
+    <p class="eyebrow">Indaiá Eventos · Grandes Formaturas</p>
+    <h1 id="titulo-pagina"></h1>
+    <p class="subtitulo">Posição de adesões e pagamentos dos formandos contratados, cruzando o contrato coletivo do CRM com as cobranças efetivas na Vindi. Apuração em <strong>6 de agosto de 2026</strong>.</p>
+    <dl class="meta-evento">
+      <div><dt>Evento</dt><dd class="mono">7508 · E08104</dd></div>
+      <div><dt>Instituição</dt><dd id="meta-instituicao"></dd></div>
+      <div><dt>Data do baile</dt><dd class="mono">11/09/2029</dd></div>
+      <div><dt>Local</dt><dd>Joinville</dd></div>
+      <div><dt>Consultora</dt><dd>Camyla Cecchin</dd></div>
+    </dl>
+    <div class="faixa-recorte" id="faixa-recorte"></div>
+  </header>
+
+  <section class="seletor-curso">
+    <span class="rot">Curso</span>
+    <div class="chips-curso" id="chips-curso" role="group" aria-label="Filtrar por curso"></div>
+    <button type="button" class="acao acao-ajuste" id="btn-ajuste" aria-expanded="false">Separar cursos</button>
+  </section>
+  <section class="bloco" id="bloco-ajuste" hidden>
+    <header><div><h2>Separar os cursos</h2><p class="dica">Quando a planilha traz mais de um curso sob o mesmo rótulo, defina aqui quem é de qual — o seletor passa a separá-los.</p></div></header>
+    <div class="corpo">
+      <p class="ajuste-resumo" id="ajuste-resumo"></p>
+      <div class="ajuste-lista" id="ajuste-lista"></div>
+      <div class="ajuste-acoes">
+        <button type="button" class="acao principal" id="btn-copiar-ajuste">Copiar classificação</button>
+        <button type="button" class="acao" id="btn-limpar-ajuste">Descartar tudo</button>
+        <span class="dica" style="margin:0">Fica salvo neste navegador. Para valer também no relatório da comissão, copie e mande para o time de sistemas fixar.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="kpis">
+    <div class="kpi"><span class="rot">Formandos contratados</span><span class="num" id="kpi-formandos"></span><span class="pe" id="kpi-formandos-pe"></span></div>
+    <div class="kpi ok"><span class="rot">Em dia</span><span class="num" id="kpi-emdia"></span><span class="pe" id="kpi-emdia-pe"></span></div>
+    <div class="kpi alerta"><span class="rot">Em atraso</span><span class="num" id="kpi-atraso"></span><span class="pe" id="kpi-atraso-pe"></span></div>
+    <div class="kpi"><span class="rot">Já recebido</span><span class="num" id="kpi-pago"></span><span class="pe">de <span id="kpi-contratado"></span> contratados</span></div>
+    <div class="kpi alerta"><span class="rot">Vencido em aberto</span><span class="num" id="kpi-vencido"></span><span class="pe" id="kpi-vencido-pe"></span></div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Situação da arrecadação</h2><p class="dica" id="dica-arrecadacao">Total contratado e quanto disso já entrou.</p></div></header>
+    <div class="corpo">
+      <div class="barra-total" id="barra-total" role="img" aria-label="Distribuição do valor contratado entre recebido, vencido em aberto e a receber"></div>
+      <div class="legenda" id="legenda-total"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Precisam de atenção</h2><p class="dica">Formandos com parcela vencida e não paga até 06/08/2026.</p></div></header>
+    <div class="corpo"><div class="cards-atencao" id="cards-atencao"></div></div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Links de pagamento para enviar</h2><p class="dica">Parcelas em aberto vencidas ou com vencimento até 31/08/2026. Copie o link, a linha digitável ou abra o WhatsApp com a mensagem pronta.</p></div></header>
+    <div class="corpo">
+      <p class="sub-secao" id="rot-prontos"></p>
+      <div class="cobrancas" id="cob-prontos"></div>
+      <p class="sub-secao" id="rot-agendados"></p>
+      <p class="dica" style="margin:-4px 0 10px">A Vindi emite o boleto 10 dias antes do vencimento — antes disso o link não abre para pagamento. As datas abaixo são o dia em que cada boleto fica disponível.</p>
+      <div class="cobrancas" id="cob-agendados"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Recebimento mês a mês</h2><p class="dica">Parcelas com vencimento em cada mês — pagas, vencidas em aberto e a vencer.</p></div></header>
+    <div class="corpo">
+      <div class="grafico" id="grafico"></div>
+      <div class="legenda" id="legenda-meses"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2 id="titulo-lista">Todos os formandos</h2><p class="dica">Clique em um nome para ver as parcelas e o link do boleto.</p></div></header>
+    <div class="controles">
+      <div class="chips" role="group" aria-label="Filtrar por situação">
+        <button class="chip" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button class="chip" data-filtro="adimplente" aria-pressed="false">Em dia</button>
+        <button class="chip" data-filtro="inadimplente" aria-pressed="false">Em atraso</button>
+      </div>
+      <div class="busca"><input type="search" id="busca" placeholder="Buscar formando…" aria-label="Buscar formando pelo nome"></div>
+      <button class="btn-print" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+    <div class="tabela-scroll">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th scope="col" data-col="nome" aria-sort="ascending"><button type="button">Formando</button></th>
+            <th scope="col" class="situacao" data-col="situacao"><button type="button">Situação</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="pagas"><button type="button">Parcelas pagas</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="mensalidade"><button type="button">Parcela</button></th>
+            <th scope="col" class="num" data-col="valor_pago"><button type="button">Recebido</button></th>
+            <th scope="col" class="col-oculta-mobile" data-col="pct_pago"><button type="button">% do contrato</button></th>
+            <th scope="col" class="num" data-col="valor_vencido"><button type="button">Vencido</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="proxima_venc"><button type="button">Próx. vencimento</button></th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela"></tbody>
+      </table>
+    </div>
+    <div class="vazio" id="vazio" hidden>Nenhum formando encontrado com esse filtro.</div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Como ler este relatório</h2></div></header>
+    <div class="corpo notas">
+      
+      <div class="aviso">
+        <b>O curso não vem do CRM.</b> No CRM a turma inteira está gravada como
+        <code>BIOMEDICINA (CENSUPEG)-  2029/1</code> — o migrador das adesões copiou o curso da primeira linha da planilha
+        para todos os 10. O curso de cada formando aqui foi lido direto da planilha
+        <b>BD Formaturas</b> (coluna Curso/Turma), que é preenchida linha a linha.
+      </div>
+      
+      
+      <ul><li>Origem dos dados: adesões da turma no CRM (<code>ORC-2026-01357</code>) cruzadas com as cobranças reais na Vindi — conta WINDI COBRANCAS, clientes "(E08104) Nome".</li>
+       <li><b>Adimplente</b> = nenhum boleto vencido em aberto até 06/08/2026. <b>Inadimplente</b> = pelo menos um boleto vencido e não pago.</li>
+       <li>Pagamentos feitos por fora da Vindi (PIX, dinheiro, cartão na mão) não aparecem aqui e podem gerar falso atraso.</li>
+       <li>Boleto agendado só vira link pagável 10 dias antes do vencimento; antes disso a página mostra a data em que ele fica disponível.</li></ul>
+      <p class="rodape">Indaiá Eventos · Grandes Formaturas · turma 7508 · gerado em 06/08/2026 · uso interno — contém dados pessoais dos formandos</p>
+    </div>
+  </section>
+</div>
+
+<script>
+const DADOS = {"resumo":{"evento":{"cod_planilha":"7508","codigo_crm":"E08104","orcamento":"ORC-2026-01357","data_evento":"2029-09-11","cidade":"Joinville","espaco":null,"consultora":"Camyla Cecchin","semestre":"2029/1","instituicoes":["Anhanguera","Censupeg"]},"cursos":[{"nome":"DIREITO","instituicao":"Anhanguera","qtd":7},{"nome":"BIOMEDICINA","instituicao":"Censupeg","qtd":3}],"apuracao":"2026-08-06"},"alunos":[{"nome":"Andressa Íris de Castro","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-08-10","mensalidade":189.39,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":189.39,"saldo":6900,"pct_pago":0,"parcelas_restantes":38,"boletos_emitidos":5,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-08-10","valor":189.39,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380092?token=ee23523d-5f50-42f7-887e-74bb9b9b2723","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-10","valor":189.39,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380093?token=339239d8-b466-406d-be26-aabdcdcf7b6b","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-10","valor":189.39,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380095?token=9ac0ddfb-5139-4db3-ac1c-effa1509bc64","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-10","valor":189.39,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380096?token=a85f05e7-0abf-419e-91a4-8e3edfb475c7","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-10","valor":189.39,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380097?token=942c10e2-aa9e-47ac-a308-1a08b6de09e5","item":"E08104 - PAR FORMATURA"}],"cpf":"031.406.649-74","email":"andressairisdecastro@gmail.com","telefone":"47996344059"},{"nome":"Cleide Aparecida da Silva Pereira","curso":"BIOMEDICINA","curso_origem":"BIOMEDICINA","instituicao":"Censupeg","contrato_total":7055,"contrato_parcelas":39,"primeira_parcela":"2026-05-10","mensalidade":61.93,"pagas":4,"valor_pago":599.77,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":179.28,"saldo":6455.23,"pct_pago":8.5,"parcelas_restantes":35,"boletos_emitidos":50,"ultimo_boleto":"2029-03-10","situacao":"adimplente","bills":[{"venc":"2026-05-10","valor":179.28,"status":"paid","pago_em":"2026-05-06","url":"https://app.vindi.com.br/customer/bills/497749232?token=2dad5dfa-bd2f-40ce-a18d-d80304cd15f7","item":"E08104 - PAR FORMATURA"},{"venc":"2026-06-10","valor":179.28,"status":"paid","pago_em":"2026-06-01","url":"https://app.vindi.com.br/customer/bills/497749252?token=4a2d90f0-eee7-4657-b960-e474eabc7d1f","item":"E08104 - PAR FORMATURA"},{"venc":"2026-07-10","valor":179.28,"status":"paid","pago_em":"2026-07-13","url":"https://app.vindi.com.br/customer/bills/497749254?token=9bb303d7-d53c-4012-9d35-20639a32f96d","item":"E08104 - PAR FORMATURA"},{"venc":"2026-08-10","valor":179.28,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497749255?token=e4c54e04-b55f-43cb-b7f6-fda67a50c5fc","item":"E08104 - PAR FORMATURA"},{"venc":"2026-08-10","valor":61.93,"status":"paid","pago_em":"2026-08-03","url":"https://app.vindi.com.br/customer/bills/526914188?token=31e09fae-3159-437a-9098-1b489f248a5b","item":"E08104 - Formatura  Masterclass"},{"venc":"2026-08-15","valor":52.9,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934276?token=1382cf9c-b31b-4cc3-ba33-1361e7676487","item":"E08104 - Link Digital Family Day"},{"venc":"2026-09-10","valor":179.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497749256?token=51ab7cc6-ce73-447a-bcbe-c51825540414","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914189?token=1f97ebd8-210e-4bfc-a522-848be31d8b1b","item":"E08104 - Formatura  Masterclass"},{"venc":"2026-09-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934277?token=51f3d1e5-16e1-4cd5-9f6e-21232c31a2d8","item":"E08104 - Link Digital Family Day"},{"venc":"2026-10-10","valor":179.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497749259?token=22b7cefa-1568-4d55-9561-b833be625bcd","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914190?token=71796477-760a-4952-902d-8a27ea683f8a","item":"E08104 - Formatura  Masterclass"},{"venc":"2026-10-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934278?token=192e9866-ed54-4efa-9b2d-4309291fb652","item":"E08104 - Link Digital Family Day"},{"venc":"2026-11-10","valor":179.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497749260?token=404070c0-965f-4f57-8116-f948e108708f","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914191?token=7a625e43-d1ee-43f9-95c4-28ca3ceaf204","item":"E08104 - Formatura  Masterclass"},{"venc":"2026-11-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934279?token=e9a4d024-f9e1-4ef5-84ee-e5d51f3b1166","item":"E08104 - Link Digital Family Day"},{"venc":"2026-12-10","valor":179.28,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497749262?token=8aa68e83-8de8-42a3-82a0-18eb2728e595","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914193?token=c3564196-5959-4bd9-9fff-107646afc2c5","item":"E08104 - Formatura  Masterclass"},{"venc":"2026-12-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934281?token=505dc432-5b94-476b-9443-f809cd769cc7","item":"E08104 - Link Digital Family Day"},{"venc":"2027-01-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914195?token=c83d0fa9-a01e-4030-9a42-73144a9bc390","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-01-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934282?token=facd3130-f63d-4e56-b891-18e65f9aad3e","item":"E08104 - Link Digital Family Day"},{"venc":"2027-02-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914196?token=3393e276-ef7d-4f15-9a57-6f1ddacb05e5","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-02-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934283?token=6ea961a7-7039-412b-8c58-5b3013d10d46","item":"E08104 - Link Digital Family Day"},{"venc":"2027-03-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914197?token=4edd3ddc-2ff6-4228-b51f-2504f492ad1d","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-03-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934284?token=fdcd56b0-741b-4e3f-862e-6b795f74adeb","item":"E08104 - Link Digital Family Day"},{"venc":"2027-04-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914199?token=2544191d-1a29-4561-82f7-18c984a37966","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-04-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934286?token=ed84ad04-ab7d-419a-a50a-02bb2306a5b4","item":"E08104 - Link Digital Family Day"},{"venc":"2027-05-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914200?token=d4d07cb6-7275-4a8b-8044-72940e963ae8","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-05-15","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526934288?token=ac8a20dc-0f4c-40fb-86fb-709da6381813","item":"E08104 - Link Digital Family Day"},{"venc":"2027-06-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914201?token=72a434c9-cedf-44f5-97ba-257f455530a9","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-07-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914202?token=054e5ed1-3cc0-442a-ba90-085e429a892e","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-08-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914344?token=94667934-5262-4d38-8890-d707220e0f3b","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-09-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914348?token=04f1abeb-1773-4e42-839a-c3587f0661e2","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-10-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914350?token=0f4ded09-cee0-4309-82d5-f1eb97286a2d","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-11-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914351?token=6ead243b-fcbb-48cf-a58e-65e0b48efd99","item":"E08104 - Formatura  Masterclass"},{"venc":"2027-12-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914352?token=848ec39e-2884-4d2c-88d9-c8c304c48ac1","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-01-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914354?token=f7a4d0b8-be14-4854-8cfc-412b58139a74","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-02-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914355?token=a2e4f3d6-22b4-4ef1-ada2-fa8d327efba0","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-03-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914356?token=98e633bf-09c7-48c8-af09-5bc483a42b69","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-04-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914357?token=70e82d74-7bf3-453c-be07-69653110508f","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-05-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914358?token=343925b0-7e55-4a59-a740-77b18b4fe984","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-06-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914360?token=3af21ec7-9a53-41e0-9f1d-2492c243cc85","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-07-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914362?token=7f67e934-0d4c-408f-bdbc-74ae667a56f1","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-08-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914537?token=08749d88-7fe2-4a5c-a112-cf97b0922c08","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-09-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914538?token=55881ae5-c744-4157-9538-06957ad085b8","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-10-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914540?token=d07119ee-a893-4ee8-8314-320712214fae","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-11-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914541?token=2d7811d5-c938-45ff-9b36-88831d1015c0","item":"E08104 - Formatura  Masterclass"},{"venc":"2028-12-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914542?token=6586f01d-8ff2-439d-869b-83b848351a59","item":"E08104 - Formatura  Masterclass"},{"venc":"2029-01-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914543?token=d6530815-43e1-468b-97f5-cbdce428a58c","item":"E08104 - Formatura  Masterclass"},{"venc":"2029-02-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914544?token=f290e28f-8a2e-45b9-9390-f06c65597539","item":"E08104 - Formatura  Masterclass"},{"venc":"2029-03-10","valor":61.93,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526914545?token=43e8b56b-78f1-4fdb-bec6-9ba8f9789664","item":"E08104 - Formatura  Masterclass"}],"cpf":"046.314.189-07","email":"cleide050583@gmail.com","telefone":"47999023362"},{"nome":"Elaine Cristina Camillo Ribeiro","curso":"BIOMEDICINA","curso_origem":"BIOMEDICINA","instituicao":"Censupeg","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-05-20","mensalidade":50.13,"pagas":3,"valor_pago":526.2,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":52.9,"saldo":6373.8,"pct_pago":7.6,"parcelas_restantes":35,"boletos_emitidos":50,"ultimo_boleto":"2029-03-10","situacao":"adimplente","bills":[{"venc":"2026-05-15","valor":175.4,"status":"paid","pago_em":"2026-05-14","url":"https://app.vindi.com.br/customer/bills/497745644?token=a32302e9-3851-4112-a3e6-411300df3564","item":"E08104 - PAR FORMATURA"},{"venc":"2026-06-15","valor":175.4,"status":"paid","pago_em":"2026-06-12","url":"https://app.vindi.com.br/customer/bills/497745657?token=2c445f6a-e8ed-4335-8de0-8fbe6c44c6ce","item":"E08104 - PAR FORMATURA"},{"venc":"2026-07-15","valor":175.4,"status":"paid","pago_em":"2026-07-09","url":"https://app.vindi.com.br/customer/bills/497745660?token=791352df-04d9-4901-832f-2ae1633e18ab","item":"E08104 - PAR FORMATURA"},{"venc":"2026-08-10","valor":52.9,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457284?token=e93eb718-3b2a-4d32-bf4b-11729a96940a","item":"E08104 - Adesão Formatura"},{"venc":"2026-08-10","valor":50.13,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922385?token=27a9100c-ed4f-4497-ac1a-0172d7635034","item":"E08104 - Formatura Essential"},{"venc":"2026-08-15","valor":175.4,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497745661?token=802c84d8-193e-4de3-a74a-20e1bb5c380a","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457285?token=10144d9b-d35e-414e-bb75-7c1513a4ab5c","item":"E08104 - Adesão Formatura"},{"venc":"2026-09-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922386?token=396979a4-a7dc-4b85-9128-fa0e6a1e76ce","item":"E08104 - Formatura Essential"},{"venc":"2026-09-15","valor":175.4,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497745662?token=739156fc-4fd0-4660-b628-b6b47e7fa2b7","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457286?token=a0489006-99e0-4589-9e23-719a8723ceb0","item":"E08104 - Adesão Formatura"},{"venc":"2026-10-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922387?token=0c5645fb-27a1-4104-8d19-361afaf9a078","item":"E08104 - Formatura Essential"},{"venc":"2026-10-15","valor":175.4,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497745663?token=702b54ce-92d6-40b8-bce6-f1181dbc3b6f","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457287?token=46369439-143f-4c0b-9a5a-d63ceed59eec","item":"E08104 - Adesão Formatura"},{"venc":"2026-11-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922388?token=dbf613bf-27e4-4103-b132-8f79cbeba0ee","item":"E08104 - Formatura Essential"},{"venc":"2026-11-15","valor":175.4,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497745668?token=22cfae3a-2226-49a0-88a5-960fd7f90c4a","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457289?token=997ffe31-4c21-4dc9-b313-7044f650db56","item":"E08104 - Adesão Formatura"},{"venc":"2026-12-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922389?token=63dd6bf8-4dae-4e13-8174-f13691e4f54f","item":"E08104 - Formatura Essential"},{"venc":"2026-12-15","valor":175.4,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/497745671?token=38cdb6a6-95fa-4dbe-861f-25e8800b1c44","item":"E08104 - PAR FORMATURA"},{"venc":"2027-01-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457290?token=5d5795a3-11d9-4a79-935d-e382ae35ee31","item":"E08104 - Adesão Formatura"},{"venc":"2027-01-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922392?token=0782e63e-893b-4b70-9fa6-a74485107054","item":"E08104 - Formatura Essential"},{"venc":"2027-02-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457292?token=68d35bac-67f8-4d78-89b3-54dd5afb025d","item":"E08104 - Adesão Formatura"},{"venc":"2027-02-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922394?token=941b4924-f6e0-468f-ba9a-6e8468934c20","item":"E08104 - Formatura Essential"},{"venc":"2027-03-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457293?token=a03ab690-c4c1-4abb-9d89-80820d1b58d6","item":"E08104 - Adesão Formatura"},{"venc":"2027-03-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922395?token=48145a81-5321-4f71-84c5-863530fb4532","item":"E08104 - Formatura Essential"},{"venc":"2027-04-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457294?token=58277639-dd50-4cec-8050-d0425d770a5a","item":"E08104 - Adesão Formatura"},{"venc":"2027-04-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922397?token=e86253a3-aeb0-4568-a9e2-703a3ca6237f","item":"E08104 - Formatura Essential"},{"venc":"2027-05-10","valor":52.9,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/520457295?token=9fafa831-c889-4ea7-9955-6cda8571dd54","item":"E08104 - Adesão Formatura"},{"venc":"2027-05-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922398?token=0df42413-f4ed-429e-afa8-fbdd3ed65124","item":"E08104 - Formatura Essential"},{"venc":"2027-06-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922400?token=72f813f2-8935-41d8-bb0a-a0a9a2e485c9","item":"E08104 - Formatura Essential"},{"venc":"2027-07-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922401?token=ff82b9c0-83b8-482c-aaa3-b4559b8cf65c","item":"E08104 - Formatura Essential"},{"venc":"2027-08-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922594?token=ac871798-23a9-4ade-822d-449807184be7","item":"E08104 - Formatura Essential"},{"venc":"2027-09-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922595?token=c4d2bf05-8e64-4bce-ae82-419fdc825f33","item":"E08104 - Formatura Essential"},{"venc":"2027-10-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922596?token=280f1f54-eaf4-4b6a-b8db-7a7b594a25a8","item":"E08104 - Formatura Essential"},{"venc":"2027-11-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922597?token=314bf71a-1318-46aa-a0c5-b86132cd3464","item":"E08104 - Formatura Essential"},{"venc":"2027-12-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922598?token=74357261-3b21-4396-ac6d-16c54cb2e7d5","item":"E08104 - Formatura Essential"},{"venc":"2028-01-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922599?token=1978d006-d2fd-43ad-af1a-5fd66fa42c72","item":"E08104 - Formatura Essential"},{"venc":"2028-02-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922600?token=aec5a229-9115-4b9c-9e6c-3cd875ef54bf","item":"E08104 - Formatura Essential"},{"venc":"2028-03-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922601?token=f93c8a00-8123-462e-96ba-5c4f8030c2a1","item":"E08104 - Formatura Essential"},{"venc":"2028-04-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922602?token=ca291a4c-40e5-4b46-8cdd-5d3c53155ac6","item":"E08104 - Formatura Essential"},{"venc":"2028-05-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922603?token=c2515171-935d-4e0c-abcb-56404082bff5","item":"E08104 - Formatura Essential"},{"venc":"2028-06-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922604?token=b1e3d613-d627-4811-a4e0-889da7a414dd","item":"E08104 - Formatura Essential"},{"venc":"2028-07-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922605?token=f359f56f-c62a-4330-9c94-b7bbc08340c3","item":"E08104 - Formatura Essential"},{"venc":"2028-08-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922869?token=806c42d7-7503-4a5e-8c04-36dc576dad2a","item":"E08104 - Formatura Essential"},{"venc":"2028-09-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922870?token=591d01a4-4f1c-44ab-bd35-edbdee14b890","item":"E08104 - Formatura Essential"},{"venc":"2028-10-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922871?token=33c7c92f-a46a-43fb-8de7-1be29c7e5eb1","item":"E08104 - Formatura Essential"},{"venc":"2028-11-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922872?token=9ff45fdf-890d-4fb4-8e49-f7bb2f2169ca","item":"E08104 - Formatura Essential"},{"venc":"2028-12-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922873?token=933365d5-1558-4235-83c1-723adb2083ad","item":"E08104 - Formatura Essential"},{"venc":"2029-01-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922874?token=410ae243-8539-41b7-ada6-64917ee9dd07","item":"E08104 - Formatura Essential"},{"venc":"2029-02-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922875?token=d9bc51f4-279f-46f2-896d-b7f45e52150b","item":"E08104 - Formatura Essential"},{"venc":"2029-03-10","valor":50.13,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/526922876?token=de41cf0d-0ef1-4083-afe6-81cbc870ab25","item":"E08104 - Formatura Essential"}],"cpf":"054.451.139-57","email":"nanibira@gmail.com","telefone":"47988769167"},{"nome":"Fabiana Cristina onorato da Silva Monteiro","curso":"BIOMEDICINA","curso_origem":"BIOMEDICINA","instituicao":"Censupeg","contrato_total":6900,"contrato_parcelas":39,"primeira_parcela":"2026-06-28","mensalidade":179.82,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":2,"valor_vencido":359.64,"atraso_dias":24,"proxima_venc":"2026-08-28","proxima_valor":179.82,"saldo":6900,"pct_pago":0,"parcelas_restantes":39,"boletos_emitidos":7,"ultimo_boleto":"2026-12-28","situacao":"inadimplente","bills":[{"venc":"2026-07-13","valor":179.82,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507350304?token=30d8e7d7-7fdd-4604-9554-d8208faf67d3","item":"E08104 - PAR FORMATURA"},{"venc":"2026-07-28","valor":179.82,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507350314?token=6fa2ee14-8c63-4348-98d2-5ab0fae5cb8b","item":"E08104 - PAR FORMATURA"},{"venc":"2026-08-28","valor":179.82,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507350324?token=f360abd9-7c00-41e2-b680-287ff467ede2","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-28","valor":179.82,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507350333?token=2b9a861f-e013-4515-9e63-67fac020cca9","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-28","valor":179.82,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507350339?token=6addd389-5561-473b-b6e1-c5a5c54f9772","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-28","valor":179.82,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507350346?token=a33a7353-e9c7-441b-b309-be1e47c801ed","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-28","valor":179.82,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/507350351?token=99a7c06c-748f-4aaf-9e0a-fa78014b9e5e","item":"E08104 - PAR FORMATURA"}],"cpf":"001.107.622-40","email":"fabiana3monteiro@gmail.com","telefone":"47989028402"},{"nome":"Gislaine da Silva","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-08-07","mensalidade":189.39,"pagas":1,"valor_pago":189.39,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":189.39,"saldo":6710.61,"pct_pago":2.7,"parcelas_restantes":37,"boletos_emitidos":5,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-08-10","valor":189.39,"status":"paid","pago_em":"2026-08-03","url":"https://app.vindi.com.br/customer/bills/517778226?token=69604909-9c60-4bb9-8b81-9962c199327d","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778227?token=79bb43c6-4e94-4ae1-897d-163ca417b05e","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778228?token=1450ad05-ada5-44df-a22f-22cc8f3b0484","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778229?token=bf748c5b-6764-4355-82e5-ef959e2b5db4","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778231?token=1d6d6ad5-b51b-41db-b9a6-a05c7a3a5267","item":"E08104 - PAR FORMATURA"}],"cpf":"064.782.489-25","email":"gislainedasilva28@gmail.com","telefone":"47992361053"},{"nome":"Isadora Lima Pinheiro Lopes","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":7055,"contrato_parcelas":39,"primeira_parcela":"2026-07-10","mensalidade":188.56,"pagas":2,"valor_pago":377.12,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":188.56,"saldo":6677.88,"pct_pago":5.3,"parcelas_restantes":37,"boletos_emitidos":6,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-07-10","valor":188.56,"status":"paid","pago_em":"2026-07-02","url":"https://app.vindi.com.br/customer/bills/517378660?token=b792ce13-fa23-4d58-8abf-011d0bb9bc37","item":"E08104 - PAR FORMATURA"},{"venc":"2026-08-10","valor":188.56,"status":"paid","pago_em":"2026-08-03","url":"https://app.vindi.com.br/customer/bills/517378675?token=cd641c76-0e4c-4ef0-a4ac-85f623b74aeb","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-10","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517378677?token=55d25821-b582-4d3e-82f8-9ba8367e4ece","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-10","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517378678?token=6b74224e-2cb0-4196-a907-95696e033a6b","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-10","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517378680?token=d472eab9-0c67-461b-9992-d855eb8d4ce5","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-10","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517378681?token=2fd97efe-a51a-4f67-ad54-08a06e0423fa","item":"E08104 - PAR FORMATURA"}],"cpf":"117.378.829-81","email":"isadorapinheiro536@gmail.com","telefone":"47999835715"},{"nome":"Leyane Ester Guerres Teles","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":7055,"contrato_parcelas":38,"primeira_parcela":"2026-07-15","mensalidade":188.56,"pagas":1,"valor_pago":188.56,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":188.56,"saldo":6866.44,"pct_pago":2.7,"parcelas_restantes":37,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":188.56,"status":"paid","pago_em":"2026-07-13","url":"https://app.vindi.com.br/customer/bills/517777946?token=613f47a0-3064-4d15-912d-017612c21e40","item":"E08104 - PAR FORMATURA"},{"venc":"2026-08-15","valor":188.56,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517777948?token=e8cdc7db-241f-42f7-8919-557aa1424870","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517777951?token=0f464fc4-8b73-4106-9e10-df61aa43f228","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517777952?token=368954ab-9768-4802-8c4a-9e3ca7a462ca","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517777954?token=844d08c7-8c0c-4bbf-b3a9-59e693d929c6","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517777955?token=ab7f7f89-f550-4dc5-b06f-0a9f5a4d71f6","item":"E08104 - PAR FORMATURA"}],"cpf":"132.735.199-40","email":"leyaneteles@gmail.com","telefone":"47991459644"},{"nome":"Raquel Oliveira","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-08-05","mensalidade":189.39,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":189.39,"saldo":6900,"pct_pago":0,"parcelas_restantes":38,"boletos_emitidos":5,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-08-10","valor":189.39,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380524?token=e401e661-4ab7-4ac4-a16c-6ec3e87413b6","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380525?token=eb353588-1152-4be9-b1ae-5ac064bd7ae8","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380526?token=4bf18215-15a5-4e02-a205-db8ad55c0afe","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380527?token=e9f0fc8a-3b8d-4d0e-9e87-040036628daf","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-10","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517380528?token=13a1e328-c094-4a6a-b950-730b4e8e4cb4","item":"E08104 - PAR FORMATURA"}],"cpf":"017.393.209-64","email":"rh.raqueloliveira@gmail.com","telefone":"27999498555"},{"nome":"Samuel da Silva Miranda","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":37,"primeira_parcela":"2026-08-15","mensalidade":189.39,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":189.39,"saldo":6900,"pct_pago":0,"parcelas_restantes":37,"boletos_emitidos":5,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-08-15","valor":189.39,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778400?token=3bea97a6-7de7-4e61-96bf-54dcbd828a83","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-15","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778401?token=3832b43a-7127-454e-9431-997dfc43f014","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-15","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778403?token=86130052-9803-4e0d-93b3-fc48e6b3a7a3","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-15","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778405?token=189818e3-2aeb-4ce2-bc9c-60d4e3193a1b","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-15","valor":189.39,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517778406?token=034ed0f4-22aa-401c-a910-7467618e10c3","item":"E08104 - PAR FORMATURA"}],"cpf":"102.373.112-67","email":"s.m_10@icloud.com","telefone":"47997430541"},{"nome":"Sofia Amália de Souza","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":7055,"contrato_parcelas":38,"primeira_parcela":"2026-07-15","mensalidade":188.56,"pagas":1,"valor_pago":188.56,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":188.56,"saldo":6866.44,"pct_pago":2.7,"parcelas_restantes":37,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":188.56,"status":"paid","pago_em":"2026-07-16","url":"https://app.vindi.com.br/customer/bills/517370078?token=d938fe31-80a4-4de3-a527-0f8c03dd3679","item":"E08104 - PAR FORMATURA"},{"venc":"2026-08-15","valor":188.56,"status":"pending","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517370079?token=1716230b-2dba-4a47-bc57-257fdfb408f7","item":"E08104 - PAR FORMATURA"},{"venc":"2026-09-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517370081?token=d5a53561-29d9-4a5e-b9cf-77bbdd35b163","item":"E08104 - PAR FORMATURA"},{"venc":"2026-10-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517370083?token=150ec6c3-bbe3-4426-b333-a0270c45a950","item":"E08104 - PAR FORMATURA"},{"venc":"2026-11-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517370084?token=67f089e2-9be4-4b88-a908-14e8bb68b197","item":"E08104 - PAR FORMATURA"},{"venc":"2026-12-15","valor":188.56,"status":"scheduled","pago_em":null,"url":"https://app.vindi.com.br/customer/bills/517370086?token=86b2d62e-b16f-4e02-beea-08e59cee6ddd","item":"E08104 - PAR FORMATURA"}],"cpf":"136.439.109-08","email":"sofiasouza4276@gmail.com","telefone":"47999718661"}],"meses":[{"mes":"2026-05","pago":354.68,"vencido":0,"aberto":0},{"mes":"2026-06","pago":354.68,"vencido":0,"aberto":0},{"mes":"2026-07","pago":920.36,"vencido":359.64,"aberto":0},{"mes":"2026-08","pago":439.88,"vencido":0,"aberto":1635.72},{"mes":"2026-09","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2026-10","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2026-11","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2026-12","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2027-01","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-02","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-03","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-04","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-05","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-06","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-07","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-08","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-09","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-10","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-11","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-12","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-01","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-02","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-03","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-04","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-05","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-06","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-07","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-08","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-09","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-10","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-11","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-12","pago":0,"vencido":0,"aberto":112.06},{"mes":"2029-01","pago":0,"vencido":0,"aberto":112.06},{"mes":"2029-02","pago":0,"vencido":0,"aberto":112.06},{"mes":"2029-03","pago":0,"vencido":0,"aberto":112.06}],"cobrancas":[{"aluno":"Andressa Íris de Castro","telefone":"47996344059","curso":"DIREITO","venc":"2026-08-10","valor":189.39,"atrasado":false,"emitido":true,"billing_at":"2026-08-01","url":"https://app.vindi.com.br/customer/bills/517380092?token=ee23523d-5f50-42f7-887e-74bb9b9b2723","pdf":"https://intermediador.yapay.com.br/orders/billet/731f2c288d2eaacedb0f0d5bfaa20a12","linha":"34191099661596351293285334580009115340000018939"},{"aluno":"Cleide Aparecida da Silva Pereira","telefone":"47999023362","curso":"BIOMEDICINA","venc":"2026-08-10","valor":179.28,"atrasado":false,"emitido":true,"billing_at":"2026-08-01","url":"https://app.vindi.com.br/customer/bills/497749255?token=e4c54e04-b55f-43cb-b7f6-fda67a50c5fc","pdf":"https://intermediador.yapay.com.br/orders/billet/7f950d31983f949aafec036b2b11e7d3","linha":"34191099661594976293285334580009115340000017928"},{"aluno":"Cleide Aparecida da Silva Pereira","telefone":"47999023362","curso":"BIOMEDICINA","venc":"2026-08-15","valor":52.9,"atrasado":false,"emitido":true,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/526934276?token=1382cf9c-b31b-4cc3-ba33-1361e7676487","pdf":"https://intermediador.yapay.com.br/orders/billet/377d0b9368562867ec7eb390811b75b7","linha":"34191099667881047293285334580009315390000005290"},{"aluno":"Elaine Cristina Camillo Ribeiro","telefone":"47988769167","curso":"BIOMEDICINA","venc":"2026-08-10","valor":52.9,"atrasado":false,"emitido":true,"billing_at":"2026-07-31","url":"https://app.vindi.com.br/customer/bills/520457284?token=e93eb718-3b2a-4d32-bf4b-11729a96940a","pdf":"https://intermediador.yapay.com.br/orders/billet/0ae8a21a7d84080fbcf20af28e620eb9","linha":"34191099660247097293285334580009315340000005290"},{"aluno":"Elaine Cristina Camillo Ribeiro","telefone":"47988769167","curso":"BIOMEDICINA","venc":"2026-08-10","valor":50.13,"atrasado":false,"emitido":true,"billing_at":"2026-07-30","url":"https://app.vindi.com.br/customer/bills/526922385?token=27a9100c-ed4f-4497-ac1a-0172d7635034","pdf":"https://intermediador.yapay.com.br/orders/billet/1571a751f3a1608d42739eb2141efcf0","linha":"34191099588620479293085334580009515340000005013"},{"aluno":"Elaine Cristina Camillo Ribeiro","telefone":"47988769167","curso":"BIOMEDICINA","venc":"2026-08-15","valor":175.4,"atrasado":false,"emitido":true,"billing_at":"2026-08-04","url":"https://app.vindi.com.br/customer/bills/497745661?token=802c84d8-193e-4de3-a74a-20e1bb5c380a","pdf":"https://intermediador.yapay.com.br/orders/billet/086490ece94a6a5c1fda39590e52afa8","linha":"34191099665910657293285334580009115390000017540"},{"aluno":"Fabiana Cristina onorato da Silva Monteiro","telefone":"47989028402","curso":"BIOMEDICINA","venc":"2026-07-13","valor":179.82,"atrasado":true,"emitido":true,"billing_at":"2026-06-18","url":"https://app.vindi.com.br/customer/bills/507350304?token=30d8e7d7-7fdd-4604-9554-d8208faf67d3","pdf":"https://intermediador.yapay.com.br/orders/billet/3147d0d67ed00ddb9fb5e80039a797d8","linha":"34191099333496136293585334580009515060000017982"},{"aluno":"Fabiana Cristina onorato da Silva Monteiro","telefone":"47989028402","curso":"BIOMEDICINA","venc":"2026-07-28","valor":179.82,"atrasado":true,"emitido":true,"billing_at":"2026-07-18","url":"https://app.vindi.com.br/customer/bills/507350314?token=6fa2ee14-8c63-4348-98d2-5ab0fae5cb8b","pdf":"https://intermediador.yapay.com.br/orders/billet/257944e4fcddc84d1dca2015c8747295","linha":"34191099333498546293585334580009315210000017982"},{"aluno":"Fabiana Cristina onorato da Silva Monteiro","telefone":"47989028402","curso":"BIOMEDICINA","venc":"2026-08-28","valor":179.82,"atrasado":false,"emitido":false,"billing_at":"2026-08-18","url":"https://app.vindi.com.br/customer/bills/507350324?token=f360abd9-7c00-41e2-b680-287ff467ede2","pdf":null,"linha":null},{"aluno":"Leyane Ester Guerres Teles","telefone":"47991459644","curso":"DIREITO","venc":"2026-08-15","valor":188.56,"atrasado":false,"emitido":true,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/517777948?token=e8cdc7db-241f-42f7-8919-557aa1424870","pdf":"https://intermediador.yapay.com.br/orders/billet/ee4691f473c322dac73cda13221885de","linha":"34191099667880593293285334580009115390000018856"},{"aluno":"Raquel Oliveira","telefone":"27999498555","curso":"DIREITO","venc":"2026-08-10","valor":189.39,"atrasado":false,"emitido":true,"billing_at":"2026-08-01","url":"https://app.vindi.com.br/customer/bills/517380524?token=e401e661-4ab7-4ac4-a16c-6ec3e87413b6","pdf":"https://intermediador.yapay.com.br/orders/billet/6a8e802a3fca51880d36be7b04efe7b4","linha":"34191099661596377293285334580009915340000018939"},{"aluno":"Samuel da Silva Miranda","telefone":"47997430541","curso":"DIREITO","venc":"2026-08-15","valor":189.39,"atrasado":false,"emitido":true,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/517778400?token=3bea97a6-7de7-4e61-96bf-54dcbd828a83","pdf":"https://intermediador.yapay.com.br/orders/billet/369816cd222f7eb078b80570ece94b1d","linha":"34191099667880643293285334580009415390000018939"},{"aluno":"Sofia Amália de Souza","telefone":"47999718661","curso":"DIREITO","venc":"2026-08-15","valor":188.56,"atrasado":false,"emitido":true,"billing_at":"2026-08-05","url":"https://app.vindi.com.br/customer/bills/517370079?token=1716230b-2dba-4a47-bc57-257fdfb408f7","pdf":"https://intermediador.yapay.com.br/orders/billet/6740fc02e9752c3703453c4a9a3b8764","linha":"34191099667880577293285334580009115390000018856"}]};
+const INTERNO = true;
+const HOJE = new Date('2026-08-06T00:00:00-03:00');
+const TOTAL_TURMA = DADOS.alunos.length;
+const SEMESTRE = "2029/1";
+const COD_TURMA = "7508";
+
+const brl = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const brlCurto = (n) => 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const dataBR = (s) => s ? s.slice(8, 10) + '/' + s.slice(5, 7) + '/' + s.slice(0, 4) : '—';
+const mesBR = (s) => ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'][Number(s.slice(5,7)) - 1] + '/' + s.slice(2, 4);
+const venceu = (b) => new Date(b.venc + 'T23:59:59-03:00') < HOJE;
+const soma = (arr, f) => Math.round(arr.reduce((s, x) => s + f(x), 0) * 100) / 100;
+
+const MINUSCULAS = ['e', 'de', 'da', 'do', 'das', 'dos', 'em', 'a', 'o', '&'];
+function titulo(s) {
+  return String(s || '').toLowerCase().split(/\s+/)
+    .map((p, i) => (i > 0 && MINUSCULAS.includes(p) ? p : p.charAt(0).toUpperCase() + p.slice(1))).join(' ');
+}
+
+let curso = 'todos';
+let filtroSituacao = 'todos';
+let busca = '';
+let ordem = { col: 'nome', dir: 'asc' };
+
+const CHAVE_AJUSTES = 'indaia-cursos-' + COD_TURMA;
+let ajustes = {};
+try { ajustes = JSON.parse(localStorage.getItem(CHAVE_AJUSTES) || '{}') || {}; } catch (e) { ajustes = {}; }
+const salvarAjustes = () => { try { localStorage.setItem(CHAVE_AJUSTES, JSON.stringify(ajustes)); } catch (e) {} };
+
+const cursoDe = (a) => ajustes[a.nome] || a.curso;
+const ehConjunto = (nome) => / E /.test(nome);
+
+function cursosDaTurma() {
+  const mapa = new Map();
+  for (const a of DADOS.alunos) {
+    const c = cursoDe(a);
+    if (!mapa.has(c)) mapa.set(c, { nome: c, instituicao: a.instituicao || null, qtd: 0 });
+    mapa.get(c).qtd++;
+  }
+  return [...mapa.values()].sort((a, b) => b.qtd - a.qtd || a.nome.localeCompare(b.nome, 'pt-BR'));
+}
+const daSelecao = () => (curso === 'todos' ? DADOS.alunos : DADOS.alunos.filter((a) => cursoDe(a) === curso));
+
+function agregar(lista) {
+  const atrasos = lista.filter((a) => a.atraso_dias > 0).map((a) => a.atraso_dias);
+  return {
+    formandos: lista.length,
+    adimplentes: lista.filter((a) => a.situacao === 'adimplente').length,
+    inadimplentes: lista.filter((a) => a.situacao === 'inadimplente').length,
+    semCobranca: lista.filter((a) => a.situacao === 'sem_cobranca').length,
+    contratado: soma(lista, (a) => a.contrato_total),
+    pago: soma(lista, (a) => a.valor_pago),
+    vencido: soma(lista, (a) => a.valor_vencido),
+    boletosVencidos: lista.reduce((s, a) => s + a.vencidas, 0),
+    atrasoMax: atrasos.length ? Math.max(...atrasos) : 0,
+  };
+}
+
+function porMesCliente(lista) {
+  const mapa = {};
+  for (const a of lista)
+    for (const b of a.bills) {
+      const m = b.venc.slice(0, 7);
+      mapa[m] = mapa[m] || { mes: m, pago: 0, vencido: 0, aberto: 0 };
+      if (b.status === 'paid') mapa[m].pago += b.valor;
+      else if (venceu(b)) mapa[m].vencido += b.valor;
+      else mapa[m].aberto += b.valor;
+    }
+  return Object.values(mapa).sort((a, b) => a.mes.localeCompare(b.mes)).slice(0, 14);
+}
+
+function pintarChipsCurso() {
+  const lista = cursosDaTurma();
+  if (curso !== 'todos' && !lista.some((c) => c.nome === curso)) curso = 'todos';
+  document.getElementById('chips-curso').innerHTML =
+    '<button type="button" class="chip-curso" data-curso="todos" aria-pressed="' + (curso === 'todos') + '">Todos os cursos <b>' + TOTAL_TURMA + '</b></button>' +
+    lista.map((c) => '<button type="button" class="chip-curso' + (ehConjunto(c.nome) ? ' conjunto' : '') + '" data-curso="' +
+      c.nome.replace(/"/g, '&quot;') + '" aria-pressed="' + (curso === c.nome) + '"' +
+      (ehConjunto(c.nome) ? ' title="Rótulo conjunto na planilha — use &quot;Separar cursos&quot; para dividir"' : '') +
+      '>' + titulo(c.nome) + ' <b>' + c.qtd + '</b></button>').join('');
+}
+
+document.getElementById('chips-curso').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip-curso');
+  if (!b) return;
+  curso = b.dataset.curso;
+  document.querySelectorAll('.chip-curso').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+  render();
+});
+
+const infoCurso = (nome) => cursosDaTurma().find((c) => c.nome === nome) || null;
+
+function pintarRecorte(ag) {
+  const faixa = document.getElementById('faixa-recorte');
+  const h1 = document.getElementById('titulo-pagina');
+  const inst = document.getElementById('meta-instituicao');
+  const lista = document.getElementById('titulo-lista');
+  const dica = document.getElementById('dica-arrecadacao');
+  if (curso === 'todos') {
+    faixa.classList.remove('ativa');
+    faixa.innerHTML = '';
+    h1.textContent = 'Formatura ' + SEMESTRE + ' — ' + cursosDaTurma().map((c) => titulo(c.nome)).join(' + ');
+    inst.textContent = [...new Set(cursosDaTurma().map((c) => c.instituicao).filter(Boolean))].join(' · ') || '—';
+    lista.textContent = 'Todos os formandos';
+    dica.textContent = 'Total contratado pela turma e quanto disso já entrou.';
+    return;
+  }
+  const info = infoCurso(curso);
+  faixa.classList.add('ativa');
+  faixa.innerHTML = '<strong>Recorte: ' + titulo(curso) + (info && info.instituicao ? ' · ' + info.instituicao : '') + '</strong>' +
+    '<span class="contagem">' + ag.formandos + ' de ' + TOTAL_TURMA + ' formandos da turma · os números abaixo consideram só este curso</span>';
+  h1.textContent = titulo(curso) + ' — Formatura ' + SEMESTRE;
+  inst.textContent = info && info.instituicao ? info.instituicao : '—';
+  lista.textContent = 'Formandos de ' + titulo(curso);
+  dica.textContent = 'Total contratado pelos formandos de ' + titulo(curso) + ' e quanto disso já entrou.';
+}
+
+function pintarKpis(ag) {
+  const pct = ag.formandos ? Math.round((ag.adimplentes / ag.formandos) * 100) : 0;
+  document.getElementById('kpi-formandos').textContent = ag.formandos;
+  document.getElementById('kpi-formandos-pe').textContent = curso === 'todos' ? 'na turma ' + COD_TURMA : 'de ' + TOTAL_TURMA + ' da turma inteira';
+  document.getElementById('kpi-emdia').textContent = ag.adimplentes;
+  document.getElementById('kpi-emdia-pe').textContent = pct + '% ' + (curso === 'todos' ? 'da turma' : 'do curso') + (ag.semCobranca ? ' · ' + ag.semCobranca + ' sem cobrança' : '');
+  document.getElementById('kpi-atraso').textContent = ag.inadimplentes;
+  document.getElementById('kpi-atraso-pe').textContent = ag.boletosVencidos + ' parcelas vencidas';
+  document.getElementById('kpi-pago').textContent = brlCurto(ag.pago);
+  document.getElementById('kpi-contratado').textContent = brlCurto(ag.contratado);
+  document.getElementById('kpi-vencido').textContent = brl(ag.vencido);
+  document.getElementById('kpi-vencido-pe').textContent = ag.atrasoMax ? 'maior atraso: ' + ag.atrasoMax + ' dias' : 'nenhuma parcela vencida';
+  const semAtraso = ag.inadimplentes === 0;
+  for (const id of ['kpi-atraso', 'kpi-vencido']) {
+    document.getElementById(id).closest('.kpi').classList.toggle('alerta', !semAtraso);
+    document.getElementById(id).closest('.kpi').classList.toggle('ok', semAtraso);
+  }
+}
+
+function pintarBarra(ag) {
+  const aReceber = Math.round((ag.contratado - ag.pago - ag.vencido) * 100) / 100;
+  const segmentos = [
+    { cls: 'seg-pago', rot: 'Já recebido', valor: ag.pago, cor: 'var(--good-mark)' },
+    { cls: 'seg-vencido', rot: 'Vencido em aberto', valor: ag.vencido, cor: 'var(--crit-mark)' },
+    { cls: 'seg-aberto', rot: 'A receber', valor: aReceber, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+  ];
+  const pct = (v) => (ag.contratado ? (v / ag.contratado) * 100 : 0);
+  document.getElementById('barra-total').innerHTML = segmentos
+    .map((s) => '<span class="' + s.cls + '" style="width:' + Math.max(pct(s.valor), 0.4) + '%"></span>').join('');
+  document.getElementById('legenda-total').innerHTML = segmentos
+    .map((s) => '<span class="item"><span class="marca" style="background:' + s.cor + '"></span>' + s.rot +
+      ' <b>' + brl(s.valor) + '</b> <span style="color:var(--ink-3)">(' + pct(s.valor).toFixed(1) + '%)</span></span>').join('');
+}
+
+function pintarGrafico(lista) {
+  const meses = porMesCliente(lista);
+  const maxMes = Math.max(...meses.map((m) => m.pago + m.vencido + m.aberto), 1);
+  document.getElementById('grafico').innerHTML = meses.map((m) => {
+    const partes = [
+      { v: m.aberto, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+      { v: m.vencido, cor: 'var(--crit-mark)' },
+      { v: m.pago, cor: 'var(--good-mark)' },
+    ].filter((p) => p.v > 0);
+    const barras = partes.map((p) => '<i style="background:' + p.cor + ';height:' + (p.v / maxMes) * 100 + '%"></i>').join('');
+    const tot = m.pago + m.vencido + m.aberto;
+    const tip = '<span class="tip">' + mesBR(m.mes) + '<br>Pago <b>' + brl(m.pago) + '</b>' +
+      (m.vencido ? '<br>Vencido <b>' + brl(m.vencido) + '</b>' : '') +
+      (m.aberto ? '<br>A vencer <b>' + brl(m.aberto) + '</b>' : '') +
+      '<br>Total <b>' + brl(tot) + '</b></span>';
+    return '<div class="col" tabindex="0">' + tip + '<div class="pilha">' + barras + '</div><span class="rot-mes">' + mesBR(m.mes) + '</span></div>';
+  }).join('');
+}
+
+document.getElementById('legenda-meses').innerHTML =
+  '<span class="item"><span class="marca" style="background:var(--good-mark)"></span>Pago</span>' +
+  '<span class="item"><span class="marca" style="background:var(--crit-mark)"></span>Vencido em aberto</span>' +
+  '<span class="item"><span class="marca" style="background:color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))"></span>A vencer</span>';
+
+function pintarAtencao(lista) {
+  const atrasados = lista.filter((a) => a.situacao === 'inadimplente');
+  const semCob = lista.filter((a) => a.situacao === 'sem_cobranca');
+  const alvo = document.getElementById('cards-atencao');
+  if (!atrasados.length && !semCob.length) {
+    alvo.innerHTML = '<p class="vazio" style="padding:8px 0">Nenhum formando ' +
+      (curso === 'todos' ? 'da turma' : 'de ' + titulo(curso)) + ' com parcela vencida em aberto.</p>';
+    return;
+  }
+  alvo.innerHTML = atrasados.map((a) => {
+    const vencidas = a.bills.filter((b) => b.status === 'pending' && venceu(b));
+    const linhas = vencidas.map((b) => '<li><span>Venceu em ' + dataBR(b.venc) + '</span>' +
+      (INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">' + brl(b.valor) + ' ↗</a>' : '<b>' + brl(b.valor) + '</b>') + '</li>').join('');
+    return '<article class="card-atencao"><h3>' + a.nome + '</h3>' +
+      '<p class="resumo-linha">' + titulo(cursoDe(a)) + ' · ' + vencidas.length + ' parcela' + (vencidas.length > 1 ? 's' : '') +
+      ' em aberto · ' + brl(a.valor_vencido) + ' · ' + a.atraso_dias + ' dias de atraso' +
+      (a.pagas === 0 ? ' · <strong>nunca pagou nenhuma parcela</strong>' : ' · ' + a.pagas + ' parcelas pagas antes') + '</p>' +
+      '<ul>' + linhas + '</ul></article>';
+  }).join('') +
+  semCob.map((a) => '<article class="card-atencao" style="border-color:color-mix(in srgb, var(--warn-mark) 55%, var(--line));background:color-mix(in srgb, var(--warn-mark) 9%, var(--surface))">' +
+    '<h3>' + a.nome + '</h3><p class="resumo-linha">' + titulo(cursoDe(a)) +
+    ' · <strong>sem nenhum boleto gerado na Vindi</strong> — a cobrança precisa ser criada antes de qualquer contato.</p></article>').join('');
+}
+
+
+function opcoesDeCurso() {
+  const set = new Set();
+  for (const a of DADOS.alunos) {
+    set.add(a.curso_origem);
+    if (ehConjunto(a.curso_origem)) a.curso_origem.split(/ E /).forEach((p) => set.add(p.trim()));
+  }
+  for (const v of Object.values(ajustes)) set.add(v);
+  return [...set].filter(Boolean).sort((a, b) => a.localeCompare(b, 'pt-BR'));
+}
+
+function resumoAjuste() {
+  const pendentes = DADOS.alunos.filter((a) => ehConjunto(cursoDe(a)));
+  document.getElementById('ajuste-resumo').innerHTML = pendentes.length
+    ? '<strong>' + pendentes.length + ' formandos</strong> ainda estão no rótulo conjunto "' + titulo(pendentes[0].curso) + '". Escolha o curso de cada um — o seletor lá em cima se atualiza na hora.'
+    : 'Todos os ' + TOTAL_TURMA + ' formandos estão com curso definido.';
+}
+
+function pintarAjuste() {
+  resumoAjuste();
+  const opcoes = opcoesDeCurso();
+  document.getElementById('ajuste-lista').innerHTML = DADOS.alunos.map((a) => {
+    const atual = cursoDe(a);
+    const sel = opcoes.map((o) => '<option value="' + o.replace(/"/g, '&quot;') + '"' + (o === atual ? ' selected' : '') + '>' + titulo(o) + '</option>').join('');
+    return '<label class="ajuste-item' + (ehConjunto(atual) ? ' pendente' : '') + '">' +
+      '<span class="quem">' + a.nome + '</span>' +
+      '<select data-aluno="' + a.nome.replace(/"/g, '&quot;') + '" aria-label="Curso de ' + a.nome.replace(/"/g, '&quot;') + '">' + sel + '</select></label>';
+  }).join('');
+}
+
+document.getElementById('btn-ajuste').addEventListener('click', () => {
+  const bloco = document.getElementById('bloco-ajuste');
+  const btn = document.getElementById('btn-ajuste');
+  bloco.hidden = !bloco.hidden;
+  btn.setAttribute('aria-expanded', String(!bloco.hidden));
+  btn.textContent = bloco.hidden ? 'Separar cursos' : 'Fechar';
+  if (!bloco.hidden) bloco.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+document.getElementById('ajuste-lista').addEventListener('change', (e) => {
+  const sel = e.target.closest('select[data-aluno]');
+  if (!sel) return;
+  const aluno = DADOS.alunos.find((a) => a.nome === sel.dataset.aluno);
+  if (sel.value === aluno.curso_origem) delete ajustes[sel.dataset.aluno];
+  else ajustes[sel.dataset.aluno] = sel.value;
+  salvarAjustes();
+  sel.closest('.ajuste-item').classList.toggle('pendente', ehConjunto(sel.value));
+  resumoAjuste();
+  render(false);
+});
+document.getElementById('btn-limpar-ajuste').addEventListener('click', () => { ajustes = {}; salvarAjustes(); render(); });
+document.getElementById('btn-copiar-ajuste').addEventListener('click', (e) => copiar(JSON.stringify(ajustes, null, 2), e.target, 'Copiar classificação'));
+
+function copiar(texto, botao, rotuloOriginal) {
+  const feito = () => {
+    botao.textContent = 'Copiado';
+    botao.classList.add('feito');
+    setTimeout(() => { botao.textContent = rotuloOriginal; botao.classList.remove('feito'); }, 1800);
+  };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(texto).then(feito).catch(() => feito());
+  else {
+    const ta = document.createElement('textarea');
+    ta.value = texto; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    ta.remove(); feito();
+  }
+}
+
+/** 37 dos 144 telefones já vêm com o 55 na frente; prefixar de novo quebra o wa.me. */
+function paraWhats(tel) {
+  const t = (tel || '').replace(/\D/g, '');
+  if (!t) return null;
+  if (t.length >= 12 && t.startsWith('55')) return t;
+  if (t.length === 10 || t.length === 11) return '55' + t;
+  return null;
+}
+
+function mensagemWhats(nome, parcelas, cursoDoAluno) {
+  const primeiro = nome.trim().split(/\s+/)[0];
+  const turma = titulo(cursoDoAluno || '') + ' ' + SEMESTRE;
+  const total = parcelas.reduce((s, p) => s + p.valor, 0);
+  const abre = parcelas.length === 1
+    ? (parcelas[0].atrasado
+        ? 'consta em aberto a parcela da sua formatura no valor de ' + brl(parcelas[0].valor) + ', que venceu em ' + dataBR(parcelas[0].venc) + '.'
+        : 'segue o boleto da sua parcela da formatura no valor de ' + brl(parcelas[0].valor) + ', com vencimento em ' + dataBR(parcelas[0].venc) + '.')
+    : 'constam ' + parcelas.length + ' parcelas em aberto no seu contrato da formatura, somando ' + brl(total) + ':';
+  const itens = parcelas.length === 1
+    ? '\n\nLink para pagamento: ' + parcelas[0].url + (parcelas[0].linha ? '\nLinha digitável: ' + parcelas[0].linha : '')
+    : parcelas.map((p, i) => '\n\n' + (i + 1) + ') ' + brl(p.valor) + ' — ' + (p.atrasado ? 'venceu em ' : 'vence em ') + dataBR(p.venc) + '\n' + p.url).join('');
+  const frase = abre.charAt(0).toUpperCase() + abre.slice(1);
+  return 'Oi, ' + primeiro + '! Aqui é da Indaiá Eventos — turma ' + turma + '.\n\n' + frase + itens +
+    '\n\nSe o pagamento já foi feito, é só desconsiderar e nos enviar o comprovante. Qualquer dúvida, estamos por aqui!';
+}
+
+let grupos = [];
+
+function pintarCobrancas(lista) {
+  const nomes = new Set(lista.map((a) => a.nome));
+  const doRecorte = DADOS.cobrancas.filter((c) => nomes.has(c.aluno));
+  const prontos = doRecorte.filter((c) => c.emitido);
+  const agendados = doRecorte.filter((c) => !c.emitido)
+    .sort((a, b) => (a.billing_at || '').localeCompare(b.billing_at || '') || a.aluno.localeCompare(b.aluno));
+
+  grupos = [];
+  for (const c of prontos) {
+    let g = grupos.find((x) => x.aluno === c.aluno);
+    if (!g) { g = { aluno: c.aluno, telefone: c.telefone, curso: c.curso, parcelas: [] }; grupos.push(g); }
+    g.parcelas.push(c);
+  }
+  for (const g of grupos) {
+    g.parcelas.sort((a, b) => a.venc.localeCompare(b.venc));
+    g.total = g.parcelas.reduce((s, p) => s + p.valor, 0);
+    g.temAtraso = g.parcelas.some((p) => p.atrasado);
+  }
+  grupos.sort((a, b) => (b.temAtraso - a.temAtraso) || b.parcelas.length - a.parcelas.length || a.aluno.localeCompare(b.aluno));
+
+  document.getElementById('rot-prontos').textContent =
+    'Boleto já emitido — pode enviar agora (' + prontos.length + ' parcelas, ' + grupos.length + ' formandos)';
+  document.getElementById('rot-agendados').textContent = 'Boleto ainda não emitido (' + agendados.length + ')';
+
+  document.getElementById('cob-prontos').innerHTML = grupos.length
+    ? grupos.map((g, gi) => {
+        const tel = paraWhats(g.telefone);
+        const whats = tel ? 'https://wa.me/' + tel + '?text=' + encodeURIComponent(mensagemWhats(g.aluno, g.parcelas, g.curso)) : null;
+        const resumo = g.parcelas.length + (g.parcelas.length > 1 ? ' parcelas em aberto · ' : ' parcela em aberto · ') + brl(g.total);
+        const linhas = g.parcelas.map((p, pi) => {
+          const quando = p.atrasado
+            ? '<span style="color:var(--crit-text);font-weight:650">venceu ' + dataBR(p.venc) + '</span>'
+            : 'vence ' + dataBR(p.venc);
+          return '<div class="parcela-cob">' +
+            '<span class="quanto">' + brl(p.valor) + '</span><span class="quando">' + quando + '</span>' +
+            '<span class="acoes">' +
+            '<button type="button" class="acao" data-copiar="link" data-g="' + gi + '" data-p="' + pi + '">Copiar link</button>' +
+            (p.linha ? '<button type="button" class="acao" data-copiar="linha" data-g="' + gi + '" data-p="' + pi + '">Copiar cód. de barras</button>' : '') +
+            '<a class="acao" href="' + (p.pdf || p.url) + '" target="_blank" rel="noopener">Abrir boleto</a>' +
+            '</span>' + (p.linha ? '<span class="linha-dig">' + p.linha + '</span>' : '') + '</div>';
+        }).join('');
+        return '<div class="cob' + (g.temAtraso ? ' atraso' : '') + '">' +
+          '<span class="quem">' + g.aluno + '</span>' +
+          '<span class="info"><span class="quando">' + resumo + '</span></span>' +
+          '<span class="acoes">' +
+          (whats ? '<a class="acao principal" href="' + whats + '" target="_blank" rel="noopener">Enviar no WhatsApp' + (g.parcelas.length > 1 ? ' (' + g.parcelas.length + ' links)' : '') + '</a>'
+                 : '<span class="acao" style="opacity:.6">sem telefone cadastrado</span>') +
+          '</span><div class="parcelas-cob">' + linhas + '</div></div>';
+      }).join('')
+    : '<p class="vazio" style="padding:8px 0">Nenhuma parcela em aberto com boleto emitido neste recorte.</p>';
+
+  document.getElementById('cob-agendados').innerHTML = agendados.length
+    ? agendados.map((c) => '<div class="cob">' +
+        '<span class="quem">' + c.aluno + '</span>' +
+        '<span class="info"><span class="quanto">' + brl(c.valor) + '</span><span class="quando">Vence ' + dataBR(c.venc) + '</span></span>' +
+        '<span class="aguardando">boleto disponível a partir de<br><strong style="color:var(--ink-2);font-family:var(--mono)">' + dataBR(c.billing_at) + '</strong></span>' +
+        '</div>').join('')
+    : '<p class="vazio" style="padding:8px 0">Nenhum boleto pendente de emissão neste recorte.</p>';
+}
+
+document.getElementById('cob-prontos').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-copiar]');
+  if (!b) return;
+  const p = grupos[Number(b.dataset.g)].parcelas[Number(b.dataset.p)];
+  copiar(b.dataset.copiar === 'link' ? p.url : p.linha, b, b.textContent);
+});
+
+
+function linhaAluno(a, i) {
+  const pill = a.situacao === 'sem_cobranca'
+    ? '<span class="pill mal" style="background:var(--surface-2);color:var(--ink-2)"><span class="ponto" style="background:var(--warn-mark)"></span>Sem cobrança</span>'
+    : a.situacao === 'adimplente'
+      ? '<span class="pill ok"><span class="ponto"></span>Em dia</span>'
+      : '<span class="pill mal"><span class="ponto"></span>Em atraso ' + a.atraso_dias + 'd</span>';
+  const etiqueta = curso === 'todos' ? '<span class="etiqueta-curso">' + titulo(cursoDe(a)) + '</span>' : '';
+  return (
+    '<tr class="linha-aluno" data-i="' + i + '" tabindex="0" role="button" aria-expanded="false">' +
+    '<td class="nome">' + a.nome + etiqueta + '<span class="sub">' + a.contrato_parcelas + 'x ' + brl(a.mensalidade) + ' · total ' + brl(a.contrato_total) + '</span></td>' +
+    '<td class="situacao">' + pill + '</td>' +
+    '<td class="num col-oculta-mobile">' + a.pagas + ' / ' + a.contrato_parcelas + '</td>' +
+    '<td class="num col-oculta-mobile">' + brl(a.mensalidade) + '</td>' +
+    '<td class="num celula-recebido" data-rot="Recebido">' + brl(a.valor_pago) + '</td>' +
+    '<td class="col-oculta-mobile"><span class="progresso"><span class="trilha"><span class="preenchido" style="width:' + Math.min(a.pct_pago, 100) + '%"></span></span><span class="pct">' + a.pct_pago.toFixed(1) + '%</span></span></td>' +
+    '<td class="num celula-vencido" data-rot="Vencido" style="color:' + (a.valor_vencido ? 'var(--crit-text)' : 'var(--ink-3)') + ';font-weight:' + (a.valor_vencido ? '650' : '400') + '">' + (a.valor_vencido ? brl(a.valor_vencido) : '—') + '</td>' +
+    '<td class="num col-oculta-mobile">' + dataBR(a.proxima_venc) + '</td>' +
+    '</tr>'
+  );
+}
+
+function linhaDetalhe(a, i) {
+  const parcelas = a.bills.map((b) => {
+    const cls = b.status === 'paid' ? 'paga' : venceu(b) ? 'vencida' : 'aberta';
+    const est = b.status === 'paid' ? 'Paga ' + dataBR(b.pago_em).slice(0, 5) : venceu(b) ? 'Vencida' : b.status === 'scheduled' ? 'Agendada' : 'A vencer';
+    const link = INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">boleto ↗</a>' : '';
+    return '<div class="parcela ' + cls + '"><span class="data">' + dataBR(b.venc) + '</span><span class="val">' + brl(b.valor) + '</span><span class="est">' + est + '</span>' + link + '</div>';
+  }).join('');
+  const contato = INTERNO
+    ? '<div class="contato-linha"><span>CPF ' + (a.cpf || '—') + '</span><span>' + (a.telefone || '—') + '</span><span>' + (a.email || '—') + '</span></div>'
+    : '';
+  return (
+    '<tr class="detalhe" data-detalhe="' + i + '" hidden><td colspan="8"><div class="caixa">' + contato +
+    '<div class="contato-linha"><span style="font-family:var(--sans)">' + titulo(cursoDe(a)) + ' · ' + a.boletos_emitidos + ' boletos emitidos · ' +
+    (a.ultimo_boleto ? 'último em ' + dataBR(a.ultimo_boleto) + ' · ' : '') + 'faltam ' + a.parcelas_restantes + ' parcelas do contrato · saldo ' + brl(a.saldo) + '</span></div>' +
+    (a.bills.length ? '<div class="parcelas">' + parcelas + '</div>' : '<div class="contato-linha" style="color:var(--crit-text)"><span style="font-family:var(--sans)">Nenhum boleto gerado na Vindi.</span></div>') +
+    '</div></td></tr>'
+  );
+}
+
+function ordenar(lista) {
+  const c = ordem.col, s = ordem.dir === 'asc' ? 1 : -1;
+  return [...lista].sort((a, b) => {
+    let x = a[c], y = b[c];
+    if (c === 'situacao') { x = a.valor_vencido; y = b.valor_vencido; }
+    if (typeof x === 'string' || x === null) return s * String(x ?? '').localeCompare(String(y ?? ''), 'pt-BR');
+    return s * ((x ?? 0) - (y ?? 0));
+  });
+}
+
+function pintarTabela(lista) {
+  const ag = agregar(lista);
+  const chips = document.querySelectorAll('.chip[data-filtro]');
+  chips[0].textContent = 'Todos (' + ag.formandos + ')';
+  chips[1].textContent = 'Em dia (' + ag.adimplentes + ')';
+  chips[2].textContent = 'Em atraso (' + ag.inadimplentes + ')';
+  const visiveis = ordenar(lista.filter((a) => (filtroSituacao === 'todos' || a.situacao === filtroSituacao) && a.nome.toLowerCase().includes(busca)));
+  document.getElementById('corpo-tabela').innerHTML = visiveis
+    .map((a) => { const i = DADOS.alunos.indexOf(a); return linhaAluno(a, i) + linhaDetalhe(a, i); }).join('');
+  document.getElementById('vazio').hidden = visiveis.length > 0;
+}
+
+document.querySelectorAll('.chip[data-filtro]').forEach((c) =>
+  c.addEventListener('click', () => {
+    filtroSituacao = c.dataset.filtro;
+    document.querySelectorAll('.chip[data-filtro]').forEach((o) => o.setAttribute('aria-pressed', String(o === c)));
+    render();
+  }));
+document.getElementById('busca').addEventListener('input', (e) => { busca = e.target.value.toLowerCase().trim(); render(); });
+document.querySelectorAll('thead th[data-col]').forEach((th) =>
+  th.querySelector('button').addEventListener('click', () => {
+    const col = th.dataset.col;
+    ordem = { col, dir: ordem.col === col && ordem.dir === 'asc' ? 'desc' : 'asc' };
+    document.querySelectorAll('thead th').forEach((o) => o.removeAttribute('aria-sort'));
+    th.setAttribute('aria-sort', ordem.dir === 'asc' ? 'ascending' : 'descending');
+    render();
+  }));
+
+function alternar(tr) {
+  const det = document.querySelector('[data-detalhe="' + tr.dataset.i + '"]');
+  if (!det) return;
+  det.hidden = !det.hidden;
+  tr.setAttribute('aria-expanded', String(!det.hidden));
+}
+document.getElementById('corpo-tabela').addEventListener('click', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && !e.target.closest('a')) alternar(tr);
+});
+document.getElementById('corpo-tabela').addEventListener('keydown', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); alternar(tr); }
+});
+
+function render(recriarAjuste) {
+  pintarChipsCurso();
+  if (recriarAjuste !== false) pintarAjuste();
+  const lista = daSelecao();
+  const ag = agregar(lista);
+  pintarRecorte(ag);
+  pintarKpis(ag);
+  pintarBarra(ag);
+  pintarAtencao(lista);
+  pintarGrafico(lista);
+  pintarCobrancas(lista);
+  pintarTabela(lista);
+}
+
+render();
+</script>
+<style>
+#alternar-tema { position: fixed; bottom: 16px; right: 16px; z-index: 30; font: inherit; font-size: 12.5px; font-weight: 550;
+  padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface);
+  color: var(--ink-2); cursor: pointer; box-shadow: var(--shadow); }
+#alternar-tema:hover { border-color: var(--accent); color: var(--accent); }
+@media print { #alternar-tema { display: none; } }
+</style>
+<script>
+(function () {
+  var raiz = document.documentElement;
+  var b = document.createElement('button');
+  b.type = 'button'; b.id = 'alternar-tema';
+  var escuro = function () { var t = raiz.getAttribute('data-theme'); return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches; };
+  var rotular = function () { b.textContent = escuro() ? '☀ Tema claro' : '☾ Tema escuro'; };
+  b.addEventListener('click', function () { raiz.setAttribute('data-theme', escuro() ? 'light' : 'dark'); rotular(); });
+  rotular();
+  document.body.appendChild(b);
+})();
+</script>
+
+</body>
+</html>

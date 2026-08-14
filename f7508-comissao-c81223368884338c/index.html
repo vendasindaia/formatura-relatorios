@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="referrer" content="no-referrer">
+<title>Relatório financeiro — Formatura 2029/1</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --ink: #131722;
+  --ink-2: #4c5566;
+  --ink-3: #79839a;
+  --line: #dee3ed;
+  --line-strong: #c6cddc;
+  --accent: #22406f;
+  --accent-soft: #e7ecf7;
+  --gold: #9a7a2c;
+  --good-mark: #0ca30c;
+  --good-text: #046604;
+  --good-soft: #e4f5e4;
+  --crit-mark: #d03b3b;
+  --crit-text: #a52121;
+  --crit-soft: #fbe8e8;
+  --warn-mark: #fab219;
+  --shadow: 0 1px 2px rgba(19, 23, 34, .05), 0 8px 24px -18px rgba(19, 23, 34, .35);
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg: #0f121a;
+    --surface: #161a23;
+    --surface-2: #1d232f;
+    --ink: #f0f3f8;
+    --ink-2: #b2bbcc;
+    --ink-3: #7d879a;
+    --line: #29303e;
+    --line-strong: #3a4353;
+    --accent: #93b4ea;
+    --accent-soft: #1a2540;
+    --gold: #cfa956;
+    --good-mark: #21b521;
+    --good-text: #5fd35f;
+    --good-soft: #122a12;
+    --crit-mark: #e05555;
+    --crit-text: #f08b8b;
+    --crit-soft: #2d1414;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f121a;
+  --surface: #161a23;
+  --surface-2: #1d232f;
+  --ink: #f0f3f8;
+  --ink-2: #b2bbcc;
+  --ink-3: #7d879a;
+  --line: #29303e;
+  --line-strong: #3a4353;
+  --accent: #93b4ea;
+  --accent-soft: #1a2540;
+  --gold: #cfa956;
+  --good-mark: #21b521;
+  --good-text: #5fd35f;
+  --good-soft: #122a12;
+  --crit-mark: #e05555;
+  --crit-text: #f08b8b;
+  --crit-soft: #2d1414;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -20px rgba(0, 0, 0, .8);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 40px 24px 96px; display: flex; flex-direction: column; gap: 34px; }
+@media (max-width: 640px) { .wrap { padding: 24px 14px 64px; gap: 26px; } }
+
+/* ---------- cabeçalho ---------- */
+.cabecalho { display: flex; flex-direction: column; gap: 18px; }
+.eyebrow {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); opacity: .5; }
+h1 {
+  font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.1; margin: 0; letter-spacing: -.015em; text-wrap: balance;
+}
+.subtitulo { color: var(--ink-2); font-size: 16px; max-width: 62ch; margin: 0; }
+.meta-evento {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+}
+.meta-evento div { background: var(--surface); padding: 12px 14px; }
+.meta-evento dt { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 3px; font-weight: 600; }
+.meta-evento dd { margin: 0; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.meta-evento dd.mono { font-family: var(--mono); font-size: 13.5px; letter-spacing: .02em; }
+
+/* ---------- seletor de curso ---------- */
+.seletor-curso {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 14px 18px; box-shadow: var(--shadow);
+}
+.seletor-curso .rot {
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); font-weight: 650;
+}
+.chips-curso { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-curso {
+  font: inherit; font-size: 13.5px; font-weight: 550; padding: 7px 15px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.chip-curso b {
+  font-family: var(--mono); font-size: 12px; font-weight: 650; background: var(--surface-2);
+  color: var(--ink-2); padding: 1px 7px; border-radius: 999px;
+}
+.chip-curso:hover { border-color: var(--accent); color: var(--accent); }
+.chip-curso[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.chip-curso[aria-pressed="true"] b { background: rgba(255, 255, 255, .22); color: var(--surface); }
+:root[data-theme="dark"] .chip-curso[aria-pressed="true"],
+:root:where(:not([data-theme="light"])) .chip-curso[aria-pressed="true"] { color: #0f121a; }
+:root[data-theme="dark"] .chip-curso[aria-pressed="true"] b,
+:root:where(:not([data-theme="light"])) .chip-curso[aria-pressed="true"] b { background: rgba(15, 18, 26, .18); color: #0f121a; }
+
+.faixa-recorte {
+  display: none; align-items: center; gap: 10px; margin-top: 4px;
+  border-left: 3px solid var(--accent); background: var(--accent-soft);
+  padding: 10px 16px; border-radius: 0 10px 10px 0; font-size: 14px; color: var(--ink);
+}
+.faixa-recorte.ativa { display: flex; }
+.faixa-recorte strong { font-weight: 650; }
+.faixa-recorte .contagem { color: var(--ink-2); font-size: 13px; }
+
+.chip-curso.conjunto { border-style: dashed; }
+.chip-curso.conjunto::after { content: "⚠"; font-size: 11px; opacity: .75; }
+.seletor-curso .acao-ajuste { margin-left: auto; }
+
+/* ---------- painel de separação de curso ---------- */
+.ajuste-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 8px; }
+.ajuste-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border: 1px solid var(--line); border-radius: 9px; padding: 8px 12px; background: var(--surface);
+}
+.ajuste-item.pendente { border-color: color-mix(in srgb, var(--warn-mark) 55%, var(--line)); background: color-mix(in srgb, var(--warn-mark) 7%, var(--surface)); }
+.ajuste-item .quem { font-size: 13.5px; font-weight: 550; }
+.ajuste-item select {
+  font: inherit; font-size: 12.5px; padding: 5px 8px; border-radius: 7px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); max-width: 190px;
+}
+.ajuste-acoes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 14px; }
+.ajuste-resumo { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+
+.etiqueta-curso {
+  display: inline-block; font-size: 10.5px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase;
+  background: var(--surface-2); color: var(--ink-3); border: 1px solid var(--line);
+  padding: 1px 7px; border-radius: 5px; margin-left: 8px; vertical-align: 1px; white-space: nowrap;
+}
+
+/* ---------- KPIs ---------- */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
+.kpi {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 4px;
+}
+.kpi .rot { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+.kpi .num { font-family: var(--mono); font-size: 26px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.kpi .pe { font-size: 12.5px; color: var(--ink-3); }
+.kpi.ok .num { color: var(--good-text); }
+.kpi.alerta { border-color: color-mix(in srgb, var(--crit-mark) 45%, var(--line)); }
+.kpi.alerta .num { color: var(--crit-text); }
+
+/* ---------- blocos ---------- */
+.bloco { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.bloco > header { padding: 18px 22px 0; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+.bloco h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.bloco .dica { font-size: 13px; color: var(--ink-3); margin: 2px 0 0; }
+.bloco > .corpo { padding: 18px 22px 22px; }
+@media (max-width: 640px) { .bloco > header { padding: 16px 14px 0; } .bloco > .corpo { padding: 14px; } }
+
+/* ---------- barra de arrecadação ---------- */
+.barra-total { display: flex; gap: 2px; height: 34px; border-radius: 6px; overflow: hidden; background: var(--surface-2); margin: 14px 0 12px; }
+.barra-total span { display: block; height: 100%; }
+.seg-pago { background: var(--good-mark); border-radius: 4px 0 0 4px; }
+.seg-vencido { background: var(--crit-mark); }
+.seg-aberto { background: color-mix(in srgb, var(--ink-3) 26%, var(--surface-2)); border-radius: 0 4px 4px 0; }
+.legenda { display: flex; flex-wrap: wrap; gap: 16px 24px; font-size: 13px; color: var(--ink-2); }
+.legenda .item { display: flex; align-items: center; gap: 8px; }
+.legenda .marca { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.legenda b { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 600; }
+
+/* ---------- gráfico mensal ---------- */
+.grafico { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; align-items: end; height: 190px; margin: 8px 0 10px; }
+.col { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; position: relative; }
+.col .pilha { display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; height: 100%; }
+.col i { display: block; border-radius: 2px; min-height: 2px; }
+.col i:first-child { border-radius: 4px 4px 2px 2px; }
+.col i:last-child { border-radius: 2px 2px 4px 4px; }
+.col .rot-mes { font-size: 10.5px; color: var(--ink-3); text-align: center; margin-top: 8px; font-family: var(--mono); letter-spacing: -.02em; }
+.col:hover .tip, .col:focus-within .tip { opacity: 1; transform: translate(-50%, -6px); pointer-events: auto; }
+.tip {
+  position: absolute; bottom: 100%; left: 50%; transform: translate(-50%, 2px);
+  background: var(--ink); color: var(--bg); font-size: 12px; line-height: 1.45; padding: 8px 10px;
+  border-radius: 8px; white-space: nowrap; opacity: 0; transition: opacity .13s ease, transform .13s ease;
+  pointer-events: none; z-index: 5; box-shadow: 0 6px 18px -8px rgba(0,0,0,.5);
+}
+.tip b { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+
+/* ---------- atenção ---------- */
+.cards-atencao { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.card-atencao { border: 1px solid color-mix(in srgb, var(--crit-mark) 35%, var(--line)); background: var(--crit-soft); border-radius: 12px; padding: 16px 18px; }
+.card-atencao h3 { margin: 0 0 2px; font-size: 16.5px; font-weight: 650; }
+.card-atencao .resumo-linha { font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+.card-atencao ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.card-atencao li { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; padding: 6px 0; border-top: 1px solid color-mix(in srgb, var(--crit-mark) 18%, transparent); }
+.card-atencao li span:first-child { color: var(--ink-2); }
+.card-atencao li b, .card-atencao li a { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--crit-text); }
+.card-atencao a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- controles ---------- */
+.controles { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 14px 22px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
+@media (max-width: 640px) { .controles { padding: 12px 14px; } }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 6px 13px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .chip[aria-pressed="true"], :root:where(:not([data-theme="light"])) .chip[aria-pressed="true"] { color: #0f121a; }
+.busca { flex: 1; min-width: 170px; }
+.busca input {
+  width: 100%; font: inherit; font-size: 13.5px; padding: 7px 12px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+}
+.btn-print {
+  font: inherit; font-size: 13px; font-weight: 550; padding: 7px 14px; border-radius: 8px;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2); cursor: pointer;
+}
+.chip:hover, .btn-print:hover { border-color: var(--accent); color: var(--accent); }
+.chip[aria-pressed="true"]:hover { color: var(--surface); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+/* ---------- tabela ---------- */
+.tabela-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead th {
+  text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+  font-weight: 650; padding: 12px 14px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; background: var(--surface);
+}
+thead th.num, td.num { text-align: right; }
+thead th button {
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none;
+  border: 0; padding: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+}
+thead th button::after { content: "↕"; opacity: .35; font-size: 11px; }
+thead th[aria-sort="ascending"] button::after { content: "↑"; opacity: 1; }
+thead th[aria-sort="descending"] button::after { content: "↓"; opacity: 1; }
+thead th[aria-sort] button { color: var(--accent); }
+tbody tr { border-bottom: 1px solid var(--line); }
+tbody tr.linha-aluno { cursor: pointer; }
+tbody tr.linha-aluno:hover { background: var(--surface-2); }
+tbody td { padding: 11px 14px; vertical-align: middle; }
+td.nome { font-weight: 600; min-width: 190px; }
+td.nome .sub { display: block; font-weight: 400; font-size: 12px; color: var(--ink-3); font-family: var(--mono); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 650; padding: 3px 10px 3px 8px; border-radius: 999px; white-space: nowrap; }
+.pill.ok { background: var(--good-soft); color: var(--good-text); }
+.pill.mal { background: var(--crit-soft); color: var(--crit-text); }
+.pill .ponto { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pill.ok .ponto { background: var(--good-mark); }
+.pill.mal .ponto { background: var(--crit-mark); }
+.progresso { display: flex; align-items: center; gap: 8px; min-width: 118px; }
+.progresso .trilha { flex: 1; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.progresso .preenchido { display: block; height: 100%; background: var(--good-mark); border-radius: 3px; }
+.progresso .pct { font-family: var(--mono); font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; width: 42px; text-align: right; }
+tr.detalhe > td { padding: 0; background: var(--surface-2); }
+tr.detalhe .caixa { padding: 16px 18px; display: flex; flex-direction: column; gap: 12px; }
+.parcelas { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 8px; }
+.parcela { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; display: flex; flex-direction: column; gap: 2px; }
+.parcela .data { font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela .val { font-family: var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela .est { font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+.parcela.paga { border-left: 3px solid var(--good-mark); }
+.parcela.paga .est { color: var(--good-text); }
+.parcela.vencida { border-left: 3px solid var(--crit-mark); background: var(--crit-soft); }
+.parcela.vencida .est { color: var(--crit-text); }
+.parcela.aberta { border-left: 3px solid var(--line-strong); }
+.parcela.aberta .est { color: var(--ink-3); }
+.parcela a { color: var(--accent); font-size: 11.5px; text-decoration: underline; text-underline-offset: 2px; }
+.contato-linha { font-size: 13px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.contato-linha span { font-family: var(--mono); font-size: 12.5px; }
+.vazio { padding: 28px; text-align: center; color: var(--ink-3); font-size: 14px; }
+
+/* ---------- central de cobrança ---------- */
+.cobrancas { display: flex; flex-direction: column; gap: 8px; }
+.cob {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3px 20px;
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; background: var(--surface);
+}
+.cob.atraso { border-color: color-mix(in srgb, var(--crit-mark) 40%, var(--line)); background: var(--crit-soft); }
+.cob .quem { grid-column: 1; font-weight: 600; font-size: 14.5px; }
+.cob .info { grid-column: 1; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .quanto { font-family: var(--mono); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cob .acoes { grid-column: 2; grid-row: 1 / 3; display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-self: center; max-width: 430px; }
+.acao {
+  font: inherit; font-size: 12.5px; font-weight: 550; padding: 5px 11px; border-radius: 7px; cursor: pointer;
+  border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink-2);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap;
+}
+.acao:hover { border-color: var(--accent); color: var(--accent); }
+.acao.principal { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal, :root:where(:not([data-theme="light"])) .acao.principal { color: #0f121a; }
+.acao.principal:hover { filter: brightness(1.08); color: var(--surface); }
+:root[data-theme="dark"] .acao.principal:hover, :root:where(:not([data-theme="light"])) .acao.principal:hover { color: #0f121a; }
+.acao.feito { border-color: var(--good-mark); color: var(--good-text); }
+.cob .aguardando { grid-column: 2; grid-row: 1 / 3; font-size: 12.5px; color: var(--ink-3); text-align: right; align-self: center; }
+.parcelas-cob { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 1px; margin-top: 10px; }
+.parcela-cob {
+  display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 4px 14px;
+  padding: 8px 0; border-top: 1px dashed var(--line-strong);
+}
+.parcela-cob .quanto { font-family: var(--mono); font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.parcela-cob .quando { font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.parcela-cob .acoes { grid-column: 3; grid-row: 1; justify-content: flex-end; }
+.parcela-cob .linha-dig { grid-column: 1 / -1; border: 0; margin: 2px 0 0; padding: 0; }
+.linha-dig { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .01em; word-break: break-all; }
+@media (max-width: 860px) {
+  .parcela-cob { grid-template-columns: auto 1fr; }
+  .parcela-cob .acoes { grid-column: 1 / -1; grid-row: auto; justify-content: flex-start; margin-top: 6px; }
+}
+@media (max-width: 860px) {
+  .cob { grid-template-columns: 1fr; }
+  .cob .acoes { grid-column: 1; grid-row: auto; justify-content: flex-start; max-width: none; margin-top: 8px; }
+  .cob .aguardando { grid-column: 1; grid-row: auto; text-align: left; margin-top: 4px; }
+}
+.sub-secao { font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); font-weight: 650; margin: 18px 0 8px; }
+.sub-secao:first-child { margin-top: 0; }
+
+/* ---------- notas ---------- */
+.notas { font-size: 13.5px; color: var(--ink-2); display: flex; flex-direction: column; gap: 10px; }
+.notas h3 { font-family: var(--serif); font-size: 17px; margin: 0 0 2px; color: var(--ink); font-weight: 600; }
+.notas ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 7px; }
+.notas code { font-family: var(--mono); font-size: 12.5px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+.aviso { border-left: 3px solid var(--warn-mark); background: color-mix(in srgb, var(--warn-mark) 9%, var(--surface)); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 13.5px; }
+.aviso b { color: var(--ink); }
+.rodape { font-size: 12.5px; color: var(--ink-3); text-align: center; border-top: 1px solid var(--line); padding-top: 18px; }
+
+@media (max-width: 760px) {
+  thead { display: none; }
+  tbody tr.linha-aluno { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 12px 14px; }
+  tbody tr.linha-aluno td { padding: 0; border: 0; }
+  td.nome { grid-column: 1; grid-row: 1; }
+  td.situacao { grid-column: 2; grid-row: 1; text-align: right; align-self: start; }
+  tbody td.col-oculta-mobile { display: none; }
+  td.celula-recebido { grid-column: 1; grid-row: 2; }
+  td.celula-vencido { grid-column: 2; grid-row: 2; }
+  td.celula-recebido, td.celula-vencido { text-align: left !important; display: flex; gap: 7px; align-items: baseline; }
+  td.celula-recebido::before, td.celula-vencido::before {
+    content: attr(data-rot); font-family: var(--sans); font-size: 10.5px; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink-3); font-weight: 600;
+  }
+}
+@media print {
+  body { background: #fff; }
+  .wrap { padding: 0; gap: 20px; max-width: none; }
+  .controles, .btn-print, .tip, .acao[data-copiar], .acao.principal { display: none !important; }
+  .bloco, .kpi { box-shadow: none; }
+  .kpi, .card-atencao, .cob, .parcela-cob { break-inside: avoid; }
+  .bloco { break-inside: auto; }
+  .bloco > header { break-after: avoid; }
+  thead { display: table-header-group; }
+  tbody tr { break-inside: avoid; }
+  tr.detalhe { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="cabecalho">
+    <p class="eyebrow">Indaiá Eventos · Grandes Formaturas</p>
+    <h1 id="titulo-pagina"></h1>
+    <p class="subtitulo">Posição de contratos e pagamentos dos formandos, para acompanhamento da comissão. Apuração em <strong>6 de agosto de 2026</strong>.</p>
+    <dl class="meta-evento">
+      <div><dt>Evento</dt><dd class="mono">7508 · E08104</dd></div>
+      <div><dt>Instituição</dt><dd id="meta-instituicao"></dd></div>
+      <div><dt>Data do baile</dt><dd class="mono">11/09/2029</dd></div>
+      <div><dt>Local</dt><dd>Joinville</dd></div>
+      <div><dt>Consultora</dt><dd>Camyla Cecchin</dd></div>
+    </dl>
+    <div class="faixa-recorte" id="faixa-recorte"></div>
+  </header>
+
+  <section class="seletor-curso">
+    <span class="rot">Curso</span>
+    <div class="chips-curso" id="chips-curso" role="group" aria-label="Filtrar por curso"></div>
+    
+  </section>
+  
+
+  <section class="kpis">
+    <div class="kpi"><span class="rot">Formandos contratados</span><span class="num" id="kpi-formandos"></span><span class="pe" id="kpi-formandos-pe"></span></div>
+    <div class="kpi ok"><span class="rot">Em dia</span><span class="num" id="kpi-emdia"></span><span class="pe" id="kpi-emdia-pe"></span></div>
+    <div class="kpi alerta"><span class="rot">Em atraso</span><span class="num" id="kpi-atraso"></span><span class="pe" id="kpi-atraso-pe"></span></div>
+    <div class="kpi"><span class="rot">Já recebido</span><span class="num" id="kpi-pago"></span><span class="pe">de <span id="kpi-contratado"></span> contratados</span></div>
+    <div class="kpi alerta"><span class="rot">Vencido em aberto</span><span class="num" id="kpi-vencido"></span><span class="pe" id="kpi-vencido-pe"></span></div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Situação da arrecadação</h2><p class="dica" id="dica-arrecadacao">Total contratado e quanto disso já entrou.</p></div></header>
+    <div class="corpo">
+      <div class="barra-total" id="barra-total" role="img" aria-label="Distribuição do valor contratado entre recebido, vencido em aberto e a receber"></div>
+      <div class="legenda" id="legenda-total"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Precisam de atenção</h2><p class="dica">Formandos com parcela vencida e não paga até 06/08/2026.</p></div></header>
+    <div class="corpo"><div class="cards-atencao" id="cards-atencao"></div></div>
+  </section>
+
+  
+
+  <section class="bloco">
+    <header><div><h2>Recebimento mês a mês</h2><p class="dica">Parcelas com vencimento em cada mês — pagas, vencidas em aberto e a vencer.</p></div></header>
+    <div class="corpo">
+      <div class="grafico" id="grafico"></div>
+      <div class="legenda" id="legenda-meses"></div>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2 id="titulo-lista">Todos os formandos</h2><p class="dica">Clique em um nome para ver as parcelas.</p></div></header>
+    <div class="controles">
+      <div class="chips" role="group" aria-label="Filtrar por situação">
+        <button class="chip" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button class="chip" data-filtro="adimplente" aria-pressed="false">Em dia</button>
+        <button class="chip" data-filtro="inadimplente" aria-pressed="false">Em atraso</button>
+      </div>
+      <div class="busca"><input type="search" id="busca" placeholder="Buscar formando…" aria-label="Buscar formando pelo nome"></div>
+      <button class="btn-print" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+    <div class="tabela-scroll">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th scope="col" data-col="nome" aria-sort="ascending"><button type="button">Formando</button></th>
+            <th scope="col" class="situacao" data-col="situacao"><button type="button">Situação</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="pagas"><button type="button">Parcelas pagas</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="mensalidade"><button type="button">Parcela</button></th>
+            <th scope="col" class="num" data-col="valor_pago"><button type="button">Recebido</button></th>
+            <th scope="col" class="col-oculta-mobile" data-col="pct_pago"><button type="button">% do contrato</button></th>
+            <th scope="col" class="num" data-col="valor_vencido"><button type="button">Vencido</button></th>
+            <th scope="col" class="num col-oculta-mobile" data-col="proxima_venc"><button type="button">Próx. vencimento</button></th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela"></tbody>
+      </table>
+    </div>
+    <div class="vazio" id="vazio" hidden>Nenhum formando encontrado com esse filtro.</div>
+  </section>
+
+  <section class="bloco">
+    <header><div><h2>Como ler este relatório</h2></div></header>
+    <div class="corpo notas">
+      
+      <ul><li>Situação apurada em 06/08/2026 a partir das cobranças emitidas pela Indaiá Eventos.</li>
+       <li><b>Em dia</b> = nenhuma parcela vencida em aberto. <b>Em atraso</b> = pelo menos uma parcela vencida e não paga.</li>
+       <li>A formatura é conjunta: use o seletor de curso no topo para ver só um deles.</li>
+       <li>Os boletos das próximas parcelas são enviados por e-mail conforme o vencimento de cada contrato.</li>
+       <li>Pagamento feito nos últimos dias pode ainda não constar — se houver divergência, fale com a consultora da turma.</li></ul>
+      <p class="rodape">Indaiá Eventos · Grandes Formaturas · turma 7508 · gerado em 06/08/2026</p>
+    </div>
+  </section>
+</div>
+
+<script>
+const DADOS = {"resumo":{"evento":{"cod_planilha":"7508","codigo_crm":"E08104","orcamento":"ORC-2026-01357","data_evento":"2029-09-11","cidade":"Joinville","espaco":null,"consultora":"Camyla Cecchin","semestre":"2029/1","instituicoes":["Anhanguera","Censupeg"]},"cursos":[{"nome":"DIREITO","instituicao":"Anhanguera","qtd":7},{"nome":"BIOMEDICINA","instituicao":"Censupeg","qtd":3}],"apuracao":"2026-08-06"},"alunos":[{"nome":"Andressa Íris de Castro","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-08-10","mensalidade":189.39,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":189.39,"saldo":6900,"pct_pago":0,"parcelas_restantes":38,"boletos_emitidos":5,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-08-10","valor":189.39,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":189.39,"status":"pending","pago_em":null},{"venc":"2026-10-10","valor":189.39,"status":"pending","pago_em":null},{"venc":"2026-11-10","valor":189.39,"status":"pending","pago_em":null},{"venc":"2026-12-10","valor":189.39,"status":"pending","pago_em":null}]},{"nome":"Cleide Aparecida da Silva Pereira","curso":"BIOMEDICINA","curso_origem":"BIOMEDICINA","instituicao":"Censupeg","contrato_total":7055,"contrato_parcelas":39,"primeira_parcela":"2026-05-10","mensalidade":61.93,"pagas":4,"valor_pago":599.77,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":179.28,"saldo":6455.23,"pct_pago":8.5,"parcelas_restantes":35,"boletos_emitidos":50,"ultimo_boleto":"2029-03-10","situacao":"adimplente","bills":[{"venc":"2026-05-10","valor":179.28,"status":"paid","pago_em":"2026-05-06"},{"venc":"2026-06-10","valor":179.28,"status":"paid","pago_em":"2026-06-01"},{"venc":"2026-07-10","valor":179.28,"status":"paid","pago_em":"2026-07-13"},{"venc":"2026-08-10","valor":179.28,"status":"pending","pago_em":null},{"venc":"2026-08-10","valor":61.93,"status":"paid","pago_em":"2026-08-03"},{"venc":"2026-08-15","valor":52.9,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":179.28,"status":"scheduled","pago_em":null},{"venc":"2026-09-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":179.28,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":179.28,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":179.28,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-01-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-01-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-02-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-02-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-03-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-03-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-04-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-04-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-05-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-05-15","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-06-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-07-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-08-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-09-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-10-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-11-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2027-12-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-01-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-02-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-03-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-04-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-05-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-06-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-07-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-08-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-09-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-10-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-11-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2028-12-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2029-01-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2029-02-10","valor":61.93,"status":"scheduled","pago_em":null},{"venc":"2029-03-10","valor":61.93,"status":"scheduled","pago_em":null}]},{"nome":"Elaine Cristina Camillo Ribeiro","curso":"BIOMEDICINA","curso_origem":"BIOMEDICINA","instituicao":"Censupeg","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-05-20","mensalidade":50.13,"pagas":3,"valor_pago":526.2,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":52.9,"saldo":6373.8,"pct_pago":7.6,"parcelas_restantes":35,"boletos_emitidos":50,"ultimo_boleto":"2029-03-10","situacao":"adimplente","bills":[{"venc":"2026-05-15","valor":175.4,"status":"paid","pago_em":"2026-05-14"},{"venc":"2026-06-15","valor":175.4,"status":"paid","pago_em":"2026-06-12"},{"venc":"2026-07-15","valor":175.4,"status":"paid","pago_em":"2026-07-09"},{"venc":"2026-08-10","valor":52.9,"status":"pending","pago_em":null},{"venc":"2026-08-10","valor":50.13,"status":"pending","pago_em":null},{"venc":"2026-08-15","valor":175.4,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2026-09-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2026-09-15","valor":175.4,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":175.4,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":175.4,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":175.4,"status":"scheduled","pago_em":null},{"venc":"2027-01-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-01-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-02-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-02-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-03-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-03-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-04-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-04-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-05-10","valor":52.9,"status":"scheduled","pago_em":null},{"venc":"2027-05-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-06-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-07-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-08-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-09-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-10-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-11-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2027-12-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-01-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-02-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-03-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-04-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-05-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-06-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-07-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-08-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-09-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-10-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-11-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2028-12-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2029-01-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2029-02-10","valor":50.13,"status":"scheduled","pago_em":null},{"venc":"2029-03-10","valor":50.13,"status":"scheduled","pago_em":null}]},{"nome":"Fabiana Cristina onorato da Silva Monteiro","curso":"BIOMEDICINA","curso_origem":"BIOMEDICINA","instituicao":"Censupeg","contrato_total":6900,"contrato_parcelas":39,"primeira_parcela":"2026-06-28","mensalidade":179.82,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":2,"valor_vencido":359.64,"atraso_dias":24,"proxima_venc":"2026-08-28","proxima_valor":179.82,"saldo":6900,"pct_pago":0,"parcelas_restantes":39,"boletos_emitidos":7,"ultimo_boleto":"2026-12-28","situacao":"inadimplente","bills":[{"venc":"2026-07-13","valor":179.82,"status":"pending","pago_em":null},{"venc":"2026-07-28","valor":179.82,"status":"pending","pago_em":null},{"venc":"2026-08-28","valor":179.82,"status":"scheduled","pago_em":null},{"venc":"2026-09-28","valor":179.82,"status":"scheduled","pago_em":null},{"venc":"2026-10-28","valor":179.82,"status":"scheduled","pago_em":null},{"venc":"2026-11-28","valor":179.82,"status":"scheduled","pago_em":null},{"venc":"2026-12-28","valor":179.82,"status":"scheduled","pago_em":null}]},{"nome":"Gislaine da Silva","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-08-07","mensalidade":189.39,"pagas":1,"valor_pago":189.39,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":189.39,"saldo":6710.61,"pct_pago":2.7,"parcelas_restantes":37,"boletos_emitidos":5,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-08-10","valor":189.39,"status":"paid","pago_em":"2026-08-03"},{"venc":"2026-09-10","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":189.39,"status":"scheduled","pago_em":null}]},{"nome":"Isadora Lima Pinheiro Lopes","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":7055,"contrato_parcelas":39,"primeira_parcela":"2026-07-10","mensalidade":188.56,"pagas":2,"valor_pago":377.12,"ultima_paga":"2026-08-10","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-09-10","proxima_valor":188.56,"saldo":6677.88,"pct_pago":5.3,"parcelas_restantes":37,"boletos_emitidos":6,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-07-10","valor":188.56,"status":"paid","pago_em":"2026-07-02"},{"venc":"2026-08-10","valor":188.56,"status":"paid","pago_em":"2026-08-03"},{"venc":"2026-09-10","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":188.56,"status":"scheduled","pago_em":null}]},{"nome":"Leyane Ester Guerres Teles","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":7055,"contrato_parcelas":38,"primeira_parcela":"2026-07-15","mensalidade":188.56,"pagas":1,"valor_pago":188.56,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":188.56,"saldo":6866.44,"pct_pago":2.7,"parcelas_restantes":37,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":188.56,"status":"paid","pago_em":"2026-07-13"},{"venc":"2026-08-15","valor":188.56,"status":"pending","pago_em":null},{"venc":"2026-09-15","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":188.56,"status":"scheduled","pago_em":null}]},{"nome":"Raquel Oliveira","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":38,"primeira_parcela":"2026-08-05","mensalidade":189.39,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-10","proxima_valor":189.39,"saldo":6900,"pct_pago":0,"parcelas_restantes":38,"boletos_emitidos":5,"ultimo_boleto":"2026-12-10","situacao":"adimplente","bills":[{"venc":"2026-08-10","valor":189.39,"status":"pending","pago_em":null},{"venc":"2026-09-10","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-10-10","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-11-10","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-12-10","valor":189.39,"status":"scheduled","pago_em":null}]},{"nome":"Samuel da Silva Miranda","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":6900,"contrato_parcelas":37,"primeira_parcela":"2026-08-15","mensalidade":189.39,"pagas":0,"valor_pago":0,"ultima_paga":null,"vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":189.39,"saldo":6900,"pct_pago":0,"parcelas_restantes":37,"boletos_emitidos":5,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-08-15","valor":189.39,"status":"pending","pago_em":null},{"venc":"2026-09-15","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":189.39,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":189.39,"status":"scheduled","pago_em":null}]},{"nome":"Sofia Amália de Souza","curso":"DIREITO","curso_origem":"DIREITO","instituicao":"Anhanguera","contrato_total":7055,"contrato_parcelas":38,"primeira_parcela":"2026-07-15","mensalidade":188.56,"pagas":1,"valor_pago":188.56,"ultima_paga":"2026-07-15","vencidas":0,"valor_vencido":0,"atraso_dias":0,"proxima_venc":"2026-08-15","proxima_valor":188.56,"saldo":6866.44,"pct_pago":2.7,"parcelas_restantes":37,"boletos_emitidos":6,"ultimo_boleto":"2026-12-15","situacao":"adimplente","bills":[{"venc":"2026-07-15","valor":188.56,"status":"paid","pago_em":"2026-07-16"},{"venc":"2026-08-15","valor":188.56,"status":"pending","pago_em":null},{"venc":"2026-09-15","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-10-15","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-11-15","valor":188.56,"status":"scheduled","pago_em":null},{"venc":"2026-12-15","valor":188.56,"status":"scheduled","pago_em":null}]}],"meses":[{"mes":"2026-05","pago":354.68,"vencido":0,"aberto":0},{"mes":"2026-06","pago":354.68,"vencido":0,"aberto":0},{"mes":"2026-07","pago":920.36,"vencido":359.64,"aberto":0},{"mes":"2026-08","pago":439.88,"vencido":0,"aberto":1635.72},{"mes":"2026-09","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2026-10","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2026-11","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2026-12","pago":0,"vencido":0,"aberto":2075.6},{"mes":"2027-01","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-02","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-03","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-04","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-05","pago":0,"vencido":0,"aberto":217.86},{"mes":"2027-06","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-07","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-08","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-09","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-10","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-11","pago":0,"vencido":0,"aberto":112.06},{"mes":"2027-12","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-01","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-02","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-03","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-04","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-05","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-06","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-07","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-08","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-09","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-10","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-11","pago":0,"vencido":0,"aberto":112.06},{"mes":"2028-12","pago":0,"vencido":0,"aberto":112.06},{"mes":"2029-01","pago":0,"vencido":0,"aberto":112.06},{"mes":"2029-02","pago":0,"vencido":0,"aberto":112.06},{"mes":"2029-03","pago":0,"vencido":0,"aberto":112.06}]};
+const INTERNO = false;
+const HOJE = new Date('2026-08-06T00:00:00-03:00');
+const TOTAL_TURMA = DADOS.alunos.length;
+const SEMESTRE = "2029/1";
+const COD_TURMA = "7508";
+
+const brl = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const brlCurto = (n) => 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const dataBR = (s) => s ? s.slice(8, 10) + '/' + s.slice(5, 7) + '/' + s.slice(0, 4) : '—';
+const mesBR = (s) => ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'][Number(s.slice(5,7)) - 1] + '/' + s.slice(2, 4);
+const venceu = (b) => new Date(b.venc + 'T23:59:59-03:00') < HOJE;
+const soma = (arr, f) => Math.round(arr.reduce((s, x) => s + f(x), 0) * 100) / 100;
+
+const MINUSCULAS = ['e', 'de', 'da', 'do', 'das', 'dos', 'em', 'a', 'o', '&'];
+function titulo(s) {
+  return String(s || '').toLowerCase().split(/\s+/)
+    .map((p, i) => (i > 0 && MINUSCULAS.includes(p) ? p : p.charAt(0).toUpperCase() + p.slice(1))).join(' ');
+}
+
+let curso = 'todos';
+let filtroSituacao = 'todos';
+let busca = '';
+let ordem = { col: 'nome', dir: 'asc' };
+
+const CHAVE_AJUSTES = 'indaia-cursos-' + COD_TURMA;
+let ajustes = {};
+try { ajustes = JSON.parse(localStorage.getItem(CHAVE_AJUSTES) || '{}') || {}; } catch (e) { ajustes = {}; }
+const salvarAjustes = () => { try { localStorage.setItem(CHAVE_AJUSTES, JSON.stringify(ajustes)); } catch (e) {} };
+
+const cursoDe = (a) => ajustes[a.nome] || a.curso;
+const ehConjunto = (nome) => / E /.test(nome);
+
+function cursosDaTurma() {
+  const mapa = new Map();
+  for (const a of DADOS.alunos) {
+    const c = cursoDe(a);
+    if (!mapa.has(c)) mapa.set(c, { nome: c, instituicao: a.instituicao || null, qtd: 0 });
+    mapa.get(c).qtd++;
+  }
+  return [...mapa.values()].sort((a, b) => b.qtd - a.qtd || a.nome.localeCompare(b.nome, 'pt-BR'));
+}
+const daSelecao = () => (curso === 'todos' ? DADOS.alunos : DADOS.alunos.filter((a) => cursoDe(a) === curso));
+
+function agregar(lista) {
+  const atrasos = lista.filter((a) => a.atraso_dias > 0).map((a) => a.atraso_dias);
+  return {
+    formandos: lista.length,
+    adimplentes: lista.filter((a) => a.situacao === 'adimplente').length,
+    inadimplentes: lista.filter((a) => a.situacao === 'inadimplente').length,
+    semCobranca: lista.filter((a) => a.situacao === 'sem_cobranca').length,
+    contratado: soma(lista, (a) => a.contrato_total),
+    pago: soma(lista, (a) => a.valor_pago),
+    vencido: soma(lista, (a) => a.valor_vencido),
+    boletosVencidos: lista.reduce((s, a) => s + a.vencidas, 0),
+    atrasoMax: atrasos.length ? Math.max(...atrasos) : 0,
+  };
+}
+
+function porMesCliente(lista) {
+  const mapa = {};
+  for (const a of lista)
+    for (const b of a.bills) {
+      const m = b.venc.slice(0, 7);
+      mapa[m] = mapa[m] || { mes: m, pago: 0, vencido: 0, aberto: 0 };
+      if (b.status === 'paid') mapa[m].pago += b.valor;
+      else if (venceu(b)) mapa[m].vencido += b.valor;
+      else mapa[m].aberto += b.valor;
+    }
+  return Object.values(mapa).sort((a, b) => a.mes.localeCompare(b.mes)).slice(0, 14);
+}
+
+function pintarChipsCurso() {
+  const lista = cursosDaTurma();
+  if (curso !== 'todos' && !lista.some((c) => c.nome === curso)) curso = 'todos';
+  document.getElementById('chips-curso').innerHTML =
+    '<button type="button" class="chip-curso" data-curso="todos" aria-pressed="' + (curso === 'todos') + '">Todos os cursos <b>' + TOTAL_TURMA + '</b></button>' +
+    lista.map((c) => '<button type="button" class="chip-curso' + (ehConjunto(c.nome) ? ' conjunto' : '') + '" data-curso="' +
+      c.nome.replace(/"/g, '&quot;') + '" aria-pressed="' + (curso === c.nome) + '"' +
+      (ehConjunto(c.nome) ? ' title="Rótulo conjunto na planilha — use &quot;Separar cursos&quot; para dividir"' : '') +
+      '>' + titulo(c.nome) + ' <b>' + c.qtd + '</b></button>').join('');
+}
+
+document.getElementById('chips-curso').addEventListener('click', (e) => {
+  const b = e.target.closest('.chip-curso');
+  if (!b) return;
+  curso = b.dataset.curso;
+  document.querySelectorAll('.chip-curso').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+  render();
+});
+
+const infoCurso = (nome) => cursosDaTurma().find((c) => c.nome === nome) || null;
+
+function pintarRecorte(ag) {
+  const faixa = document.getElementById('faixa-recorte');
+  const h1 = document.getElementById('titulo-pagina');
+  const inst = document.getElementById('meta-instituicao');
+  const lista = document.getElementById('titulo-lista');
+  const dica = document.getElementById('dica-arrecadacao');
+  if (curso === 'todos') {
+    faixa.classList.remove('ativa');
+    faixa.innerHTML = '';
+    h1.textContent = 'Formatura ' + SEMESTRE + ' — ' + cursosDaTurma().map((c) => titulo(c.nome)).join(' + ');
+    inst.textContent = [...new Set(cursosDaTurma().map((c) => c.instituicao).filter(Boolean))].join(' · ') || '—';
+    lista.textContent = 'Todos os formandos';
+    dica.textContent = 'Total contratado pela turma e quanto disso já entrou.';
+    return;
+  }
+  const info = infoCurso(curso);
+  faixa.classList.add('ativa');
+  faixa.innerHTML = '<strong>Recorte: ' + titulo(curso) + (info && info.instituicao ? ' · ' + info.instituicao : '') + '</strong>' +
+    '<span class="contagem">' + ag.formandos + ' de ' + TOTAL_TURMA + ' formandos da turma · os números abaixo consideram só este curso</span>';
+  h1.textContent = titulo(curso) + ' — Formatura ' + SEMESTRE;
+  inst.textContent = info && info.instituicao ? info.instituicao : '—';
+  lista.textContent = 'Formandos de ' + titulo(curso);
+  dica.textContent = 'Total contratado pelos formandos de ' + titulo(curso) + ' e quanto disso já entrou.';
+}
+
+function pintarKpis(ag) {
+  const pct = ag.formandos ? Math.round((ag.adimplentes / ag.formandos) * 100) : 0;
+  document.getElementById('kpi-formandos').textContent = ag.formandos;
+  document.getElementById('kpi-formandos-pe').textContent = curso === 'todos' ? 'na turma ' + COD_TURMA : 'de ' + TOTAL_TURMA + ' da turma inteira';
+  document.getElementById('kpi-emdia').textContent = ag.adimplentes;
+  document.getElementById('kpi-emdia-pe').textContent = pct + '% ' + (curso === 'todos' ? 'da turma' : 'do curso') + (ag.semCobranca ? ' · ' + ag.semCobranca + ' sem cobrança' : '');
+  document.getElementById('kpi-atraso').textContent = ag.inadimplentes;
+  document.getElementById('kpi-atraso-pe').textContent = ag.boletosVencidos + ' parcelas vencidas';
+  document.getElementById('kpi-pago').textContent = brlCurto(ag.pago);
+  document.getElementById('kpi-contratado').textContent = brlCurto(ag.contratado);
+  document.getElementById('kpi-vencido').textContent = brl(ag.vencido);
+  document.getElementById('kpi-vencido-pe').textContent = ag.atrasoMax ? 'maior atraso: ' + ag.atrasoMax + ' dias' : 'nenhuma parcela vencida';
+  const semAtraso = ag.inadimplentes === 0;
+  for (const id of ['kpi-atraso', 'kpi-vencido']) {
+    document.getElementById(id).closest('.kpi').classList.toggle('alerta', !semAtraso);
+    document.getElementById(id).closest('.kpi').classList.toggle('ok', semAtraso);
+  }
+}
+
+function pintarBarra(ag) {
+  const aReceber = Math.round((ag.contratado - ag.pago - ag.vencido) * 100) / 100;
+  const segmentos = [
+    { cls: 'seg-pago', rot: 'Já recebido', valor: ag.pago, cor: 'var(--good-mark)' },
+    { cls: 'seg-vencido', rot: 'Vencido em aberto', valor: ag.vencido, cor: 'var(--crit-mark)' },
+    { cls: 'seg-aberto', rot: 'A receber', valor: aReceber, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+  ];
+  const pct = (v) => (ag.contratado ? (v / ag.contratado) * 100 : 0);
+  document.getElementById('barra-total').innerHTML = segmentos
+    .map((s) => '<span class="' + s.cls + '" style="width:' + Math.max(pct(s.valor), 0.4) + '%"></span>').join('');
+  document.getElementById('legenda-total').innerHTML = segmentos
+    .map((s) => '<span class="item"><span class="marca" style="background:' + s.cor + '"></span>' + s.rot +
+      ' <b>' + brl(s.valor) + '</b> <span style="color:var(--ink-3)">(' + pct(s.valor).toFixed(1) + '%)</span></span>').join('');
+}
+
+function pintarGrafico(lista) {
+  const meses = porMesCliente(lista);
+  const maxMes = Math.max(...meses.map((m) => m.pago + m.vencido + m.aberto), 1);
+  document.getElementById('grafico').innerHTML = meses.map((m) => {
+    const partes = [
+      { v: m.aberto, cor: 'color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))' },
+      { v: m.vencido, cor: 'var(--crit-mark)' },
+      { v: m.pago, cor: 'var(--good-mark)' },
+    ].filter((p) => p.v > 0);
+    const barras = partes.map((p) => '<i style="background:' + p.cor + ';height:' + (p.v / maxMes) * 100 + '%"></i>').join('');
+    const tot = m.pago + m.vencido + m.aberto;
+    const tip = '<span class="tip">' + mesBR(m.mes) + '<br>Pago <b>' + brl(m.pago) + '</b>' +
+      (m.vencido ? '<br>Vencido <b>' + brl(m.vencido) + '</b>' : '') +
+      (m.aberto ? '<br>A vencer <b>' + brl(m.aberto) + '</b>' : '') +
+      '<br>Total <b>' + brl(tot) + '</b></span>';
+    return '<div class="col" tabindex="0">' + tip + '<div class="pilha">' + barras + '</div><span class="rot-mes">' + mesBR(m.mes) + '</span></div>';
+  }).join('');
+}
+
+document.getElementById('legenda-meses').innerHTML =
+  '<span class="item"><span class="marca" style="background:var(--good-mark)"></span>Pago</span>' +
+  '<span class="item"><span class="marca" style="background:var(--crit-mark)"></span>Vencido em aberto</span>' +
+  '<span class="item"><span class="marca" style="background:color-mix(in srgb, var(--ink-3) 26%, var(--surface-2))"></span>A vencer</span>';
+
+function pintarAtencao(lista) {
+  const atrasados = lista.filter((a) => a.situacao === 'inadimplente');
+  const semCob = lista.filter((a) => a.situacao === 'sem_cobranca');
+  const alvo = document.getElementById('cards-atencao');
+  if (!atrasados.length && !semCob.length) {
+    alvo.innerHTML = '<p class="vazio" style="padding:8px 0">Nenhum formando ' +
+      (curso === 'todos' ? 'da turma' : 'de ' + titulo(curso)) + ' com parcela vencida em aberto.</p>';
+    return;
+  }
+  alvo.innerHTML = atrasados.map((a) => {
+    const vencidas = a.bills.filter((b) => b.status === 'pending' && venceu(b));
+    const linhas = vencidas.map((b) => '<li><span>Venceu em ' + dataBR(b.venc) + '</span>' +
+      (INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">' + brl(b.valor) + ' ↗</a>' : '<b>' + brl(b.valor) + '</b>') + '</li>').join('');
+    return '<article class="card-atencao"><h3>' + a.nome + '</h3>' +
+      '<p class="resumo-linha">' + titulo(cursoDe(a)) + ' · ' + vencidas.length + ' parcela' + (vencidas.length > 1 ? 's' : '') +
+      ' em aberto · ' + brl(a.valor_vencido) + ' · ' + a.atraso_dias + ' dias de atraso' +
+      (a.pagas === 0 ? ' · <strong>nunca pagou nenhuma parcela</strong>' : ' · ' + a.pagas + ' parcelas pagas antes') + '</p>' +
+      '<ul>' + linhas + '</ul></article>';
+  }).join('') +
+  semCob.map((a) => '<article class="card-atencao" style="border-color:color-mix(in srgb, var(--warn-mark) 55%, var(--line));background:color-mix(in srgb, var(--warn-mark) 9%, var(--surface))">' +
+    '<h3>' + a.nome + '</h3><p class="resumo-linha">' + titulo(cursoDe(a)) +
+    ' · <strong>sem nenhum boleto gerado na Vindi</strong> — a cobrança precisa ser criada antes de qualquer contato.</p></article>').join('');
+}
+
+
+
+function linhaAluno(a, i) {
+  const pill = a.situacao === 'sem_cobranca'
+    ? '<span class="pill mal" style="background:var(--surface-2);color:var(--ink-2)"><span class="ponto" style="background:var(--warn-mark)"></span>Sem cobrança</span>'
+    : a.situacao === 'adimplente'
+      ? '<span class="pill ok"><span class="ponto"></span>Em dia</span>'
+      : '<span class="pill mal"><span class="ponto"></span>Em atraso ' + a.atraso_dias + 'd</span>';
+  const etiqueta = curso === 'todos' ? '<span class="etiqueta-curso">' + titulo(cursoDe(a)) + '</span>' : '';
+  return (
+    '<tr class="linha-aluno" data-i="' + i + '" tabindex="0" role="button" aria-expanded="false">' +
+    '<td class="nome">' + a.nome + etiqueta + '<span class="sub">' + a.contrato_parcelas + 'x ' + brl(a.mensalidade) + ' · total ' + brl(a.contrato_total) + '</span></td>' +
+    '<td class="situacao">' + pill + '</td>' +
+    '<td class="num col-oculta-mobile">' + a.pagas + ' / ' + a.contrato_parcelas + '</td>' +
+    '<td class="num col-oculta-mobile">' + brl(a.mensalidade) + '</td>' +
+    '<td class="num celula-recebido" data-rot="Recebido">' + brl(a.valor_pago) + '</td>' +
+    '<td class="col-oculta-mobile"><span class="progresso"><span class="trilha"><span class="preenchido" style="width:' + Math.min(a.pct_pago, 100) + '%"></span></span><span class="pct">' + a.pct_pago.toFixed(1) + '%</span></span></td>' +
+    '<td class="num celula-vencido" data-rot="Vencido" style="color:' + (a.valor_vencido ? 'var(--crit-text)' : 'var(--ink-3)') + ';font-weight:' + (a.valor_vencido ? '650' : '400') + '">' + (a.valor_vencido ? brl(a.valor_vencido) : '—') + '</td>' +
+    '<td class="num col-oculta-mobile">' + dataBR(a.proxima_venc) + '</td>' +
+    '</tr>'
+  );
+}
+
+function linhaDetalhe(a, i) {
+  const parcelas = a.bills.map((b) => {
+    const cls = b.status === 'paid' ? 'paga' : venceu(b) ? 'vencida' : 'aberta';
+    const est = b.status === 'paid' ? 'Paga ' + dataBR(b.pago_em).slice(0, 5) : venceu(b) ? 'Vencida' : b.status === 'scheduled' ? 'Agendada' : 'A vencer';
+    const link = INTERNO && b.url ? '<a href="' + b.url + '" target="_blank" rel="noopener">boleto ↗</a>' : '';
+    return '<div class="parcela ' + cls + '"><span class="data">' + dataBR(b.venc) + '</span><span class="val">' + brl(b.valor) + '</span><span class="est">' + est + '</span>' + link + '</div>';
+  }).join('');
+  const contato = INTERNO
+    ? '<div class="contato-linha"><span>CPF ' + (a.cpf || '—') + '</span><span>' + (a.telefone || '—') + '</span><span>' + (a.email || '—') + '</span></div>'
+    : '';
+  return (
+    '<tr class="detalhe" data-detalhe="' + i + '" hidden><td colspan="8"><div class="caixa">' + contato +
+    '<div class="contato-linha"><span style="font-family:var(--sans)">' + titulo(cursoDe(a)) + ' · ' + a.boletos_emitidos + ' boletos emitidos · ' +
+    (a.ultimo_boleto ? 'último em ' + dataBR(a.ultimo_boleto) + ' · ' : '') + 'faltam ' + a.parcelas_restantes + ' parcelas do contrato · saldo ' + brl(a.saldo) + '</span></div>' +
+    (a.bills.length ? '<div class="parcelas">' + parcelas + '</div>' : '<div class="contato-linha" style="color:var(--crit-text)"><span style="font-family:var(--sans)">Nenhum boleto gerado na Vindi.</span></div>') +
+    '</div></td></tr>'
+  );
+}
+
+function ordenar(lista) {
+  const c = ordem.col, s = ordem.dir === 'asc' ? 1 : -1;
+  return [...lista].sort((a, b) => {
+    let x = a[c], y = b[c];
+    if (c === 'situacao') { x = a.valor_vencido; y = b.valor_vencido; }
+    if (typeof x === 'string' || x === null) return s * String(x ?? '').localeCompare(String(y ?? ''), 'pt-BR');
+    return s * ((x ?? 0) - (y ?? 0));
+  });
+}
+
+function pintarTabela(lista) {
+  const ag = agregar(lista);
+  const chips = document.querySelectorAll('.chip[data-filtro]');
+  chips[0].textContent = 'Todos (' + ag.formandos + ')';
+  chips[1].textContent = 'Em dia (' + ag.adimplentes + ')';
+  chips[2].textContent = 'Em atraso (' + ag.inadimplentes + ')';
+  const visiveis = ordenar(lista.filter((a) => (filtroSituacao === 'todos' || a.situacao === filtroSituacao) && a.nome.toLowerCase().includes(busca)));
+  document.getElementById('corpo-tabela').innerHTML = visiveis
+    .map((a) => { const i = DADOS.alunos.indexOf(a); return linhaAluno(a, i) + linhaDetalhe(a, i); }).join('');
+  document.getElementById('vazio').hidden = visiveis.length > 0;
+}
+
+document.querySelectorAll('.chip[data-filtro]').forEach((c) =>
+  c.addEventListener('click', () => {
+    filtroSituacao = c.dataset.filtro;
+    document.querySelectorAll('.chip[data-filtro]').forEach((o) => o.setAttribute('aria-pressed', String(o === c)));
+    render();
+  }));
+document.getElementById('busca').addEventListener('input', (e) => { busca = e.target.value.toLowerCase().trim(); render(); });
+document.querySelectorAll('thead th[data-col]').forEach((th) =>
+  th.querySelector('button').addEventListener('click', () => {
+    const col = th.dataset.col;
+    ordem = { col, dir: ordem.col === col && ordem.dir === 'asc' ? 'desc' : 'asc' };
+    document.querySelectorAll('thead th').forEach((o) => o.removeAttribute('aria-sort'));
+    th.setAttribute('aria-sort', ordem.dir === 'asc' ? 'ascending' : 'descending');
+    render();
+  }));
+
+function alternar(tr) {
+  const det = document.querySelector('[data-detalhe="' + tr.dataset.i + '"]');
+  if (!det) return;
+  det.hidden = !det.hidden;
+  tr.setAttribute('aria-expanded', String(!det.hidden));
+}
+document.getElementById('corpo-tabela').addEventListener('click', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && !e.target.closest('a')) alternar(tr);
+});
+document.getElementById('corpo-tabela').addEventListener('keydown', (e) => {
+  const tr = e.target.closest('.linha-aluno');
+  if (tr && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); alternar(tr); }
+});
+
+function render(recriarAjuste) {
+  pintarChipsCurso();
+  
+  const lista = daSelecao();
+  const ag = agregar(lista);
+  pintarRecorte(ag);
+  pintarKpis(ag);
+  pintarBarra(ag);
+  pintarAtencao(lista);
+  pintarGrafico(lista);
+  
+  pintarTabela(lista);
+}
+
+render();
+</script>
+<style>
+#alternar-tema { position: fixed; bottom: 16px; right: 16px; z-index: 30; font: inherit; font-size: 12.5px; font-weight: 550;
+  padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface);
+  color: var(--ink-2); cursor: pointer; box-shadow: var(--shadow); }
+#alternar-tema:hover { border-color: var(--accent); color: var(--accent); }
+@media print { #alternar-tema { display: none; } }
+</style>
+<script>
+(function () {
+  var raiz = document.documentElement;
+  var b = document.createElement('button');
+  b.type = 'button'; b.id = 'alternar-tema';
+  var escuro = function () { var t = raiz.getAttribute('data-theme'); return t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches; };
+  var rotular = function () { b.textContent = escuro() ? '☀ Tema claro' : '☾ Tema escuro'; };
+  b.addEventListener('click', function () { raiz.setAttribute('data-theme', escuro() ? 'light' : 'dark'); rotular(); });
+  rotular();
+  document.body.appendChild(b);
+})();
+</script>
+
+</body>
+</html>

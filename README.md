@@ -12,5 +12,6 @@ Os arquivos são gerados fora deste repositório (scripts que leem o CRM e a Vin
 
 ## Turmas publicadas
 
-- 7506 — Biomedicina e Nutrição 2028/2 (Censupeg): versão interno em `f7506-interno-2b323b89fdadbfca/`
+- 7508 — Direito (Anhanguera) + Biomedicina (Censupeg), 2029/1: versão interno em `f7508-interno-c6fabb192232fedd/`
+- 7508 — Direito (Anhanguera) + Biomedicina (Censupeg), 2029/1: versão comissao em `f7508-comissao-c81223368884338c/`
 - 7506 — Biomedicina e Nutrição 2028/2 (Censupeg): versão comissao em `f7506-comissao-3b5145612e1a5836/`
